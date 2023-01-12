@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://tuanducdesign.com
+
+# Sitemaps
+Sitemap: https://tuanducdesign.com/sitemap.xml
