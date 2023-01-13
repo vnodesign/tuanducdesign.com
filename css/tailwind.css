@@ -2,138 +2,102 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Code title styles */
-.remark-code-title {
-  @apply vno-rounded-t vno-bg-gray-700 vno-px-5 vno-py-3 vno-font-mono vno-text-sm vno-font-bold vno-text-gray-200;
+.dark {
+  color-scheme: dark;
 }
 
-.remark-code-title + div > pre {
-  @apply vno-mt-0 vno-rounded-t-none;
+html {
+  height: 100%;
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
 }
 
-/* Code block styles */
+body {
+  min-height: 100%;
+}
+
+abbr[title] {
+  text-decoration: none;
+}
+
 .code-highlight {
-  @apply vno-float-left vno-min-w-full;
+  border-radius: 0.25rem;
+  padding: 0.125rem 0.1875rem;
+  margin: 0 -0.1875rem;
 }
 
-.code-line {
-  @apply -vno-mx-4 vno-block vno-border-l-4 vno-border-transparent vno-pl-4 vno-pr-4;
+code[class^='language-diff-'] {
+  @apply vno-flex vno-px-9;
 }
 
-.code-line.inserted {
-  @apply vno-bg-green-500/20;
-}
-
-.code-line.deleted {
-  @apply vno-bg-red-500/20;
-}
-
-.highlight-line {
-  @apply -vno-mx-4 vno-border-l-4 vno-border-sky-400 vno-bg-sky-700/50;
-}
-
-.line-number::before {
-  @apply vno-mr-4 -vno-ml-2 vno-inline-block vno-w-4 vno-text-right vno-text-gray-400;
-  content: attr(line);
-}
-
-/* Token styles */
-/**
- * MIT License
- * Copyright (c) 2018 Sarah Drasner
- * Sarah Drasner's[@sdras] Night Owl
- * Ported by Sara vieria [@SaraVieira]
- * Added by Souvik Mandal [@SimpleIndian]
- */
-.token.comment,
-.token.prolog,
-.token.cdata {
-  color: rgb(99, 119, 119);
-  font-style: italic;
-}
-
-.token.punctuation {
-  color: rgb(199, 146, 234);
-}
-
-.namespace {
-  color: rgb(178, 204, 214);
-}
-
-.token.deleted {
-  color: rgba(239, 83, 80, 0.56);
-  font-style: italic;
-}
-
-.token.symbol,
-.token.property {
-  color: rgb(128, 203, 196);
+code[class^='language-diff-'] > span {
+  @apply vno-min-w-full vno-flex-none;
 }
 
 .token.tag,
-.token.operator,
-.token.keyword {
-  color: rgb(127, 219, 202);
-}
-
-.token.boolean {
-  color: rgb(255, 88, 116);
-}
-
-.token.number {
-  color: rgb(247, 140, 108);
-}
-
-.token.constant,
-.token.function,
-.token.builtin,
-.token.char {
-  color: rgb(130, 170, 255);
-}
-
+.token.class-name,
 .token.selector,
-.token.doctype {
-  color: rgb(199, 146, 234);
-  font-style: italic;
+.token.selector .class,
+.token.selector.class,
+.token.function {
+  @apply vno-text-pink-400;
 }
 
 .token.attr-name,
-.token.inserted {
-  color: rgb(173, 219, 103);
-  font-style: italic;
+.token.keyword,
+.token.rule,
+.token.pseudo-class,
+.token.important {
+  @apply vno-text-slate-300;
 }
 
+.token.attr-value,
+.token.class,
 .token.string,
-.token.url,
-.token.entity,
-.language-css .token.string,
-.style .token.string {
-  color: rgb(173, 219, 103);
+.token.attr-value *,
+.token.property {
+  @apply vno-text-sky-300;
 }
 
-.token.class-name,
-.token.atrule,
-.token.attr-value {
-  color: rgb(255, 203, 139);
+.token.punctuation,
+.token.attr-equals,
+.token.attr-value .attr-equals,
+.token.attr-value .attr-equals + .punctuation,
+.token.attr-value > .punctuation:last-child {
+  @apply vno-text-slate-500;
 }
 
-.token.regex,
-.token.important,
-.token.variable {
-  color: rgb(214, 222, 235);
+.token.unit,
+.language-css .token.function {
+  @apply vno-text-teal-200;
 }
 
-.token.important,
-.token.bold {
-  font-weight: bold;
+.language-shell .token:not(.comment),
+.token.atapply .token:not(.rule):not(.important):not(.punctuation) {
+  color: inherit;
 }
 
-.token.italic {
-  font-style: italic;
+.token.comment,
+.token.module,
+.token.operator,
+.token.combinator {
+  @apply vno-text-slate-400;
 }
 
-.token.table {
-  display: inline;
+.token.unchanged {
+  @apply vno-block;
+}
+
+.token.deleted,
+.token.inserted {
+  @apply vno-relative -vno-mx-9 vno-block vno-border-l-4 vno-pl-8 vno-pr-5 before:vno-absolute before:vno-top-0 before:vno-left-4;
+}
+
+.token.inserted {
+  @apply vno-border-teal-400 vno-bg-teal-400/[0.15] before:vno-text-teal-400 before:vno-content-['+'];
+}
+
+.token.deleted {
+  @apply vno-border-rose-400 vno-bg-rose-500/[0.15] before:vno-text-rose-400 before:vno-content-['-'];
 }
 
 .bar-of-progress::after {

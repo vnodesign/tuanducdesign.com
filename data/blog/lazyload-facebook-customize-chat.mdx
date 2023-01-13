@@ -17,11 +17,12 @@ Trong bài viết đầu tiên ngày hôm nay mình sẽ hướng dẫn các b�
 
 ```html
 <div id="fb-root"></div>
+<div id="fb-customer-chat" class="fb-customerchat"></div>
 <script>
   window.fbAsyncInit = function () {
     FB.init({
       xfbml: true,
-      version: 'v9.0',
+      version: 'v15.0',
     })
   }
   ;(function (d, s, id) {
@@ -42,7 +43,7 @@ Tiếp theo chúng ta cùng xem đoạn Javascript của Facebook đã được 
 
 ```js
 window.fbAsyncInit = function () {
-  FB.init({ xfbml: !0, version: 'v9.0' })
+  FB.init({ xfbml: !0, version: 'v15.0' })
 }
 function td_customerchat() {
   var t = document.createElement('script')

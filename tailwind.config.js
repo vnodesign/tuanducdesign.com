@@ -53,20 +53,36 @@ module.exports = {
               marginTop: '2em',
               fontSize: '1.125em',
             },
+            ul: {
+              listStyleType: 'none',
+              paddingLeft: 0,
+            },
+            'ul > li': {
+              position: 'relative',
+              paddingLeft: '1.75em',
+            },
+            'ul > li::before': {
+              content: '""',
+              width: '0.75em',
+              height: '0.125em',
+              position: 'absolute',
+              top: 'calc(0.875em - 0.0625em)',
+              left: 0,
+              borderRadius: '999px',
+              backgroundColor: theme('colors.slate.300'),
+            },
             code: {
               fontWeight: theme('fontWeight.medium'),
               fontVariantLigatures: 'none',
-              paddingLeft: '4px',
-              paddingRight: '4px',
-              paddingTop: '2px',
-              paddingBottom: '2px',
+            },
+            pre: {
+              color: theme('colors.slate.50'),
               borderRadius: theme('borderRadius.xl'),
-            },
-            'code::before': {
-              content: 'none',
-            },
-            'code::after': {
-              content: 'none',
+              padding: theme('padding.5'),
+              boxShadow: theme('boxShadow.md'),
+              display: 'flex',
+              marginTop: `${20 / 14}em`,
+              marginBottom: `${32 / 14}em`,
             },
             pre: {
               boxShadow: theme('boxShadow.md'),

@@ -1,4 +1,4 @@
-import '@/css/tailwind.css'
+import '@/css/build.css'
 import { ThemeProvider } from 'next-themes'
 import Router from 'next/router'
 import ProgressBar from '@badrap/bar-of-progress'
@@ -28,9 +28,9 @@ export default function App({ Component, pageProps }) {
   return (
     <ThemeProvider attribute="class" defaultTheme={siteMetadata.theme}>
       <Analytics />
-      <div className="vno-flex vno-min-h-screen vno-flex-col">
+      <div className="vno-flex vno-flex-col">
         <Header />
-        <main className="vno-grow">
+        <main className="vno-min-h-screen vno-flex-1">
           <Component {...pageProps} />
         </main>
         <Footer />
