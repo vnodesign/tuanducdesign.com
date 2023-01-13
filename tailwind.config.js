@@ -54,18 +54,32 @@ module.exports = {
               fontSize: '1.125em',
             },
             code: {
-              color: theme('colors.slate.50'),
+              fontWeight: theme('fontWeight.medium'),
+              fontVariantLigatures: 'none',
               paddingLeft: '4px',
               paddingRight: '4px',
               paddingTop: '2px',
               paddingBottom: '2px',
-              borderRadius: '0.25rem',
+              borderRadius: theme('borderRadius.xl'),
             },
             'code::before': {
               content: 'none',
             },
             'code::after': {
               content: 'none',
+            },
+            pre: {
+              boxShadow: theme('boxShadow.md'),
+            },
+            'p + pre': {
+              marginTop: `${-4 / 14}em`,
+            },
+            'pre + pre': {
+              marginTop: `${-16 / 14}em`,
+            },
+            'pre code': {
+              flex: 'none',
+              minWidth: '100%',
             },
             hr: {
               borderColor: theme('colors.slate.100'),
@@ -91,6 +105,9 @@ module.exports = {
             hr: {
               borderColor: theme('colors.slate.200'),
               opacity: '0.05',
+            },
+            pre: {
+              boxShadow: 'inset 0 0 0 1px rgb(255 255 255 / 0.1)',
             },
             strong: {
               color: theme('colors.slate.200'),
