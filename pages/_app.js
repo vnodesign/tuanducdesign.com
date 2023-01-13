@@ -1,5 +1,4 @@
 import '@/css/tailwind.css'
-import Script from 'next/script'
 import { ThemeProvider } from 'next-themes'
 import Router from 'next/router'
 import ProgressBar from '@badrap/bar-of-progress'
@@ -29,12 +28,6 @@ export default function App({ Component, pageProps }) {
   return (
     <ThemeProvider attribute="class" defaultTheme={siteMetadata.theme}>
       <Analytics />
-      <Script
-        async
-        src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4183134625750063`}
-        strategy="lazyOnload"
-        crossOrigin="anonymous"
-      />
       <div className="vno-flex vno-min-h-screen vno-flex-col">
         <Header />
         <main className="vno-grow">

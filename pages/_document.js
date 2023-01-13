@@ -29,8 +29,12 @@ export default class Document extends NextDocument {
               `,
             }}
           />
+          <script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4183134625750063"
+          />
         </Head>
-        <body className="vno-antialiased vno-text-slate-500 dark:vno-text-slate-400 vno-bg-white dark:vno-bg-slate-900">
+        <body className="vno-bg-white vno-text-slate-500 vno-antialiased dark:vno-bg-slate-900 dark:vno-text-slate-400">
           <Main />
           <NextScript />
         </body>
