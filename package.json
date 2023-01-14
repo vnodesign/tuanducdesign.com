@@ -22,7 +22,7 @@
     "autoprefixer": "^10.4.0",
     "classnames": "^2.3.2",
     "depcheck": "^1.4.3",
-    "esbuild": "^0.13.13",
+    "esbuild": "^0.17.0",
     "gray-matter": "^4.0.2",
     "image-size": "1.0.0",
     "mdx-bundler": "^8.0.0",
