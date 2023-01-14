@@ -196,6 +196,7 @@ export default function Header({ hasNav = false, navIsOpen, onNavToggle }) {
                 alt={siteMetadata.title}
                 width={32}
                 height={32}
+                priority
               />
             </Link>
             <Featured />
