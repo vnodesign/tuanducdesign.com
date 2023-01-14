@@ -1485,6 +1485,10 @@ video {
   --tw-text-opacity: 1;
   color: rgba(148, 163, 184, var(--tw-text-opacity));
 }
+.vno-text-blue-500 {
+  --tw-text-opacity: 1;
+  color: rgba(59, 130, 246, var(--tw-text-opacity));
+}
 .vno-no-underline {
   -webkit-text-decoration-line: none;
   text-decoration-line: none;
