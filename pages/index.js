@@ -145,9 +145,9 @@ export default function Home({ posts }) {
                         href={`/blog/${slug}`}
                         className="vno-block"
                       >
-                        <h5 className="vno-mb-2 vno-text-2xl vno-font-bold vno-tracking-tight vno-text-gray-900 dark:vno-text-white">
+                        <h3 className="vno-mb-2 vno-text-2xl vno-font-bold vno-tracking-tight vno-text-gray-900 dark:vno-text-white">
                           {title}
-                        </h5>
+                        </h3>
                       </Link>
                       <p className="vno-mb-3 vno-font-normal vno-text-gray-700 dark:vno-text-gray-400">
                         {summary}
