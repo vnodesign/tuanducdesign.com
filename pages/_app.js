@@ -27,7 +27,6 @@ Router.events.on('routeChangeError', () => progress.finish())
 export default function App({ Component, pageProps }) {
   return (
     <ThemeProvider attribute="class" defaultTheme={siteMetadata.theme}>
-      <Analytics />
       <div className="vno-flex vno-flex-col">
         <Header />
         <main className="vno-min-h-screen vno-flex-1">
@@ -35,6 +34,7 @@ export default function App({ Component, pageProps }) {
         </main>
         <Footer />
       </div>
+      <Analytics />
     </ThemeProvider>
   )
 }
