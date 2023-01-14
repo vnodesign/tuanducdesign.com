@@ -12,6 +12,7 @@
 /.next/
 /out/
 public/sitemap.xml
+public/tags
 .vercel
 
 # production

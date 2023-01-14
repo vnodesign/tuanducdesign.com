@@ -4,7 +4,6 @@ import { getMDXComponent } from 'mdx-bundler/client'
 import NextImage from 'next/image'
 import CustomLink from './Link'
 import Pre from './Pre'
-import dynamic from 'next/dynamic'
 
 export const MDXComponents = {
   Image: (props) => (
@@ -16,7 +15,7 @@ export const MDXComponents = {
   a: CustomLink,
   pre: Pre,
   wrapper: ({ components, layout, ...rest }) => {
-    const Layout = dynamic(() => import(`../layouts/${layout}`))
+    const Layout = require(`../layouts/${layout}`).default
     return <Layout {...rest} />
   },
 }
