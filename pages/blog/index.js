@@ -1,5 +1,6 @@
 import { getAllFilesFrontMatter } from '@/lib/mdx'
-import ListLayout from '@/layouts/ListLayout'
+import dynamic from 'next/dynamic'
+const ListLayout = dynamic(() => import('@/layouts/ListLayout'))
 import { PageSEO } from '@/components/SEO'
 
 export async function getStaticProps() {
