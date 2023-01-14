@@ -17,14 +17,14 @@ export default function PageLayout({ frontMatter, children }) {
               viewBox="0 -9 3 24"
               className="vno-overflow-visible vno-mr-3 vno-text-slate-400 vno-w-auto vno-h-6 group-hover:vno-text-slate-600 dark:group-hover:vno-text-slate-300"
             >
-                <path
-                  d="M3 0L0 3L3 6"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
+              <path
+                d="M3 0L0 3L3 6"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
             </svg>
             Quay lại
           </Link>
@@ -37,9 +37,7 @@ export default function PageLayout({ frontMatter, children }) {
               <h1 className="vno-text-2xl vno-font-extrabold vno-tracking-tight vno-text-slate-900 dark:vno-text-slate-200 md:vno-text-3xl">
                 {title}
               </h1>
-              <div className="vno-prose vno-prose-slate dark:vno-prose-dark">
-                {children}
-              </div>
+              <div className="vno-prose vno-prose-slate dark:vno-prose-dark">{children}</div>
             </article>
           </main>
         </div>

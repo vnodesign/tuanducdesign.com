@@ -6,7 +6,11 @@ import projectsData from '@/data/projectsData'
 export default function Projects() {
   return (
     <div>
-      <PageSEO title={`Dự án - ${siteMetadata.title}`} description={siteMetadata.description} breadcrumb={true} />
+      <PageSEO
+        title={`Dự án - ${siteMetadata.title}`}
+        description={siteMetadata.description}
+        breadcrumb={true}
+      />
       <div className="vno-max-w-[52rem] vno-mx-auto vno-px-4 vno-pb-28 sm:vno-px-6 md:vno-px-8 xl:vno-px-12 lg:vno-max-w-6xl">
         <header className="vno-py-16 sm:vno-text-center">
           <h1 className="vno-mb-4 vno-text-3xl vno-font-extrabold vno-tracking-tight sm:vno-text-4xl vno-text-slate-900 dark:vno-text-slate-200">
@@ -53,24 +57,23 @@ export default function Projects() {
                   </div>
                   <Link
                     href={href}
-                    className="vno-flex vno-items-center vno-text-sm vno-text-sky-500 vno-font-medium">
-                      <span className="vno-absolute -vno-inset-y-2.5 -vno-inset-x-4 md:-vno-inset-y-4 md:-vno-inset-x-6 sm:vno-rounded-2xl"/>
-                      <span className="vno-relative">
-                        Xem dự án
-                      </span>
-                      <svg
-                        className="vno-relative vno-mt-px vno-overflow-visible vno-ml-2.5 vno-text-sky-300 dark:vno-text-sky-700"
-                        width="3"
-                        height="6"
-                        viewBox="0 0 3 6"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <path d="M0 0L3 3L0 6"></path>
-                      </svg>
+                    className="vno-flex vno-items-center vno-text-sm vno-text-sky-500 vno-font-medium"
+                  >
+                    <span className="vno-absolute -vno-inset-y-2.5 -vno-inset-x-4 md:-vno-inset-y-4 md:-vno-inset-x-6 sm:vno-rounded-2xl" />
+                    <span className="vno-relative">Xem dự án</span>
+                    <svg
+                      className="vno-relative vno-mt-px vno-overflow-visible vno-ml-2.5 vno-text-sky-300 dark:vno-text-sky-700"
+                      width="3"
+                      height="6"
+                      viewBox="0 0 3 6"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M0 0L3 3L0 6"></path>
+                    </svg>
                   </Link>
                 </article>
               )

@@ -11,7 +11,8 @@
     "build:tailwind": "pnpm postcss css/tailwind.css -o css/build.css --verbose",
     "analyze": "cross-env ANALYZE=true next build",
     "lint": "next lint --fix --dir pages --dir components --dir lib --dir layouts",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "prettier": "prettier --write ."
   },
   "dependencies": {
     "@headlessui/react": "^1.7.7",

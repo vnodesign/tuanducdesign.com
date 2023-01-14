@@ -7,7 +7,7 @@ const withPWA = require('next-pwa')
 module.exports = withBundleAnalyzer(
   withPWA({
     reactStrictMode: true,
-    swcMinify: true,
+    // swcMinify: true,
     experimental: {
       scrollRestoration: true,
     },

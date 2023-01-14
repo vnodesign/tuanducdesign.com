@@ -24,11 +24,5 @@ export async function getStaticProps({ params }) {
 export default function Page({ page }) {
   const { mdxSource, frontMatter } = page
 
-  return (
-    <MDXLayoutRenderer
-      layout={LAYOUT}
-      mdxSource={mdxSource}
-      frontMatter={frontMatter}
-    />
-  )
+  return <MDXLayoutRenderer layout={LAYOUT} mdxSource={mdxSource} frontMatter={frontMatter} />
 }

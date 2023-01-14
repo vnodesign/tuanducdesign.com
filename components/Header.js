@@ -95,7 +95,11 @@ function NavPopover({ display = 'md:vno-hidden', className, ...props }) {
             onClick={() => setIsOpen(false)}
           >
             <span className="vno-sr-only">Close navigation</span>
-            <svg viewBox="0 0 10 10" className="vno-w-2.5 vno-h-2.5 vno-overflow-visible" aria-hidden="true">
+            <svg
+              viewBox="0 0 10 10"
+              className="vno-w-2.5 vno-h-2.5 vno-overflow-visible"
+              aria-hidden="true"
+            >
               <path
                 d="M0 0L10 10M10 0L0 10"
                 fill="none"
@@ -130,20 +134,23 @@ function NavItems() {
   const router = useRouter()
   return (
     <>
-      {headerNavLinks.map(link => (
+      {headerNavLinks.map((link) => (
         <li key={link.href}>
           <Link
             href={link.href}
             className={classNames(
               'vno-transition-colors vno-duration-200',
               router.pathname == link.href
-                ? 'vno-text-sky-500 dark:vno-text-sky-400' : 'hover:vno-text-sky-500 dark:hover:vno-text-sky-400'
+                ? 'vno-text-sky-500 dark:vno-text-sky-400'
+                : 'hover:vno-text-sky-500 dark:hover:vno-text-sky-400'
             )}
             title={link.title}
           >
             {link.title}
             {link.showNew && (
-              <span className="vno-ml-2 vno-font-medium vno-text-xs vno-leading-5 vno-rounded-full vno-text-sky-600 vno-bg-sky-400/10 vno-px-2 vno-py-0.5 dark:vno-text-sky-400">New</span>
+              <span className="vno-ml-2 vno-font-medium vno-text-xs vno-leading-5 vno-rounded-full vno-text-sky-600 vno-bg-sky-400/10 vno-px-2 vno-py-0.5 dark:vno-text-sky-400">
+                New
+              </span>
             )}
           </Link>
         </li>
@@ -178,7 +185,8 @@ export default function Header({ hasNav = false, navIsOpen, onNavToggle }) {
         isOpaque
           ? 'vno-bg-white supports-backdrop-blur:vno-bg-white/95 dark:vno-bg-slate-900/75'
           : 'vno-bg-white/95 supports-backdrop-blur:vno-bg-white/60 dark:vno-bg-transparent'
-      )}>
+      )}
+    >
       <div className="vno-max-w-8xl vno-mx-auto">
         <div className="vno-mx-4 vno-py-4 vno-border-b vno-border-slate-900/10 lg:vno-border-0 dark:vno-border-slate-300/10">
           <div className="vno-relative vno-flex vno-items-center">
@@ -187,9 +195,7 @@ export default function Header({ hasNav = false, navIsOpen, onNavToggle }) {
               className="vno-mr-3 vno-w-[2.0625rem] vno-flex-none vno-overflow-hidden md:vno-w-auto"
               title={`Trang chủ ${siteMetadata.title}`}
             >
-              <span className="vno-sr-only">
-                Trang chủ {siteMetadata.title}
-              </span>
+              <span className="vno-sr-only">Trang chủ {siteMetadata.title}</span>
               <Image
                 src={siteMetadata.siteLogo}
                 className="vno-rounded-full"

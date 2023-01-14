@@ -16,12 +16,16 @@ function SunIcon({ selected, ...props }) {
       <path
         d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
         className={
-          selected ? 'vno-fill-sky-400/20 vno-stroke-sky-500' : 'vno-stroke-slate-400 dark:vno-stroke-slate-500'
+          selected
+            ? 'vno-fill-sky-400/20 vno-stroke-sky-500'
+            : 'vno-stroke-slate-400 dark:vno-stroke-slate-500'
         }
       />
       <path
         d="M12 4v1M17.66 6.344l-.828.828M20.005 12.004h-1M17.66 17.664l-.828-.828M12 20.01V19M6.34 17.664l.835-.836M3.995 12.004h1.01M6 6l.835.836"
-        className={selected ? 'vno-stroke-sky-500' : 'vno-stroke-slate-400 dark:vno-stroke-slate-500'}
+        className={
+          selected ? 'vno-stroke-sky-500' : 'vno-stroke-slate-400 dark:vno-stroke-slate-500'
+        }
       />
     </svg>
   )
@@ -58,7 +62,9 @@ function PcIcon({ selected, ...props }) {
         strokeWidth="2"
         strokeLinejoin="round"
         className={
-          selected ? 'vno-stroke-sky-500 vno-fill-sky-400/20' : 'vno-stroke-slate-400 dark:vno-stroke-slate-500'
+          selected
+            ? 'vno-stroke-sky-500 vno-fill-sky-400/20'
+            : 'vno-stroke-slate-400 dark:vno-stroke-slate-500'
         }
       />
       <path
@@ -66,7 +72,9 @@ function PcIcon({ selected, ...props }) {
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
-        className={selected ? 'vno-stroke-sky-500' : 'vno-stroke-slate-400 dark:vno-stroke-slate-500'}
+        className={
+          selected ? 'vno-stroke-sky-500' : 'vno-stroke-slate-400 dark:vno-stroke-slate-500'
+        }
       />
     </svg>
   )
@@ -102,36 +110,36 @@ export function ThemeToggle({ panelClassName = 'vno-mt-4' }) {
       <Listbox value={theme} onChange={setTheme}>
         <Listbox.Label className="vno-sr-only">Theme</Listbox.Label>
         <Listbox.Button type="button">
-        <span className="dark:vno-hidden">
-          <SunIcon className="vno-w-6 vno-h-6" selected={mounted && theme} />
-        </span>
-        <span className="vno-hidden dark:vno-inline">
-          <MoonIcon className="vno-w-6 vno-h-6" selected={mounted && theme} />
-        </span>
-      </Listbox.Button>
-      <Listbox.Options
-        className={classNames(
-          'vno-absolute vno-z-50 vno-top-full vno-right-0 vno-bg-white vno-rounded-lg vno-ring-1 vno-ring-slate-900/10 vno-shadow-lg vno-overflow-hidden vno-w-36 vno-py-1 vno-text-sm vno-text-slate-700 vno-font-semibold dark:vno-bg-slate-800 dark:vno-ring-0 dark:vno-text-slate-300',
-          panelClassName
-        )}
-      >
-        {themes.map(({ value, label, icon: Icon }) => (
-          <Listbox.Option key={value} value={value} as={Fragment}>
-            {({ active, selected }) => (
-              <li
-                className={classNames(
-                  'vno-py-1 vno-px-2 vno-flex vno-items-center vno-cursor-pointer',
-                  selected && 'vno-text-sky-500',
-                  active && 'vno-bg-slate-50 dark:vno-bg-slate-600/30'
-                )}
-              >
-                <Icon selected={selected} className="vno-w-6 vno-h-6 vno-mr-2" />
-                {label}
-              </li>
-            )}
-          </Listbox.Option>
-        ))}
-      </Listbox.Options>
+          <span className="dark:vno-hidden">
+            <SunIcon className="vno-w-6 vno-h-6" selected={mounted && theme} />
+          </span>
+          <span className="vno-hidden dark:vno-inline">
+            <MoonIcon className="vno-w-6 vno-h-6" selected={mounted && theme} />
+          </span>
+        </Listbox.Button>
+        <Listbox.Options
+          className={classNames(
+            'vno-absolute vno-z-50 vno-top-full vno-right-0 vno-bg-white vno-rounded-lg vno-ring-1 vno-ring-slate-900/10 vno-shadow-lg vno-overflow-hidden vno-w-36 vno-py-1 vno-text-sm vno-text-slate-700 vno-font-semibold dark:vno-bg-slate-800 dark:vno-ring-0 dark:vno-text-slate-300',
+            panelClassName
+          )}
+        >
+          {themes.map(({ value, label, icon: Icon }) => (
+            <Listbox.Option key={value} value={value} as={Fragment}>
+              {({ active, selected }) => (
+                <li
+                  className={classNames(
+                    'vno-py-1 vno-px-2 vno-flex vno-items-center vno-cursor-pointer',
+                    selected && 'vno-text-sky-500',
+                    active && 'vno-bg-slate-50 dark:vno-bg-slate-600/30'
+                  )}
+                >
+                  <Icon selected={selected} className="vno-w-6 vno-h-6 vno-mr-2" />
+                  {label}
+                </li>
+              )}
+            </Listbox.Option>
+          ))}
+        </Listbox.Options>
       </Listbox>
     </>
   )
