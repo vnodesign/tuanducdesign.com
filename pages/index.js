@@ -5,7 +5,7 @@ import { FaReact, FaWordpress, FaLaravel } from 'react-icons/fa'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import Image from '@/components/Image'
 
-const MAX_DISPLAY = 6
+export const MAX_DISPLAY = 6
 
 export async function getStaticProps() {
   const posts = await getAllFilesFrontMatter('blog')
@@ -16,7 +16,10 @@ export async function getStaticProps() {
 export default function Home({ posts }) {
   return (
     <div>
-      <PageSEO title={`${siteMetadata.title} - Front-end Developer`} description={siteMetadata.description} />
+      <PageSEO
+        title={`${siteMetadata.title} - Front-end Developer`}
+        description={siteMetadata.description}
+      />
       <section className="vno-py-4 vno-bg-white lg:vno-pt-20 lg:vno-pb-16 dark:vno-bg-gray-900">
         <div className="vno-max-w-8xl vno-px-4 vno-mx-auto lg:vno-text-center">
           <Link
@@ -45,10 +48,14 @@ export default function Home({ posts }) {
             </svg>
           </Link>
           <h1 className="vno-mb-4 vno-text-4xl vno-font-bold vno-tracking-tight vno-text-gray-900 lg:vno-font-extrabold lg:vno-text-6xl lg:vno-leading-none dark:vno-text-white lg:vno-text-center xl:vno-px-36 lg:vno-mb-7">
-            Hi, Mình là Đức, mình đang làm việc ở vị trí <span className="vno-font-bold vno-text-sky-500 dark:vno-text-sky-400">Front-end Developer</span>
+            Hi, Mình là Đức, mình đang làm việc ở vị trí{' '}
+            <span className="vno-font-bold vno-text-sky-500 dark:vno-text-sky-400">
+              Front-end Developer
+            </span>
           </h1>
           <p className="vno-mb-10 vno-text-lg vno-font-normal vno-text-gray-500 dark:vno-text-gray-400 lg:vno-text-center lg:vno-text-xl xl:vno-px-60">
-            Blog này mình sẽ chia sẻ các bài viết và các kiến thức mà mình đã áp dụng khi phát triển VPS và tối ưu Website.
+            Blog này mình sẽ chia sẻ các bài viết và các kiến thức mà mình đã áp dụng khi phát triển
+            VPS và tối ưu Website.
           </p>
           <div className="vno-flex vno-flex-col vno-mb-8 md:vno-flex-row lg:vno-justify-center">
             <Link
@@ -141,10 +148,7 @@ export default function Home({ posts }) {
                   </div>
                   <div className="vno-relative vno-flex vno-flex-col vno-justify-between vno-flex-1 vno-p-5">
                     <div className="vno-flex-1">
-                      <Link
-                        href={`/blog/${slug}`}
-                        className="vno-block"
-                      >
+                      <Link href={`/blog/${slug}`} className="vno-block">
                         <h3 className="vno-mb-2 vno-text-2xl vno-font-bold vno-tracking-tight vno-text-gray-900 dark:vno-text-white">
                           {title}
                         </h3>

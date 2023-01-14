@@ -4,9 +4,11 @@
   "private": true,
   "scripts": {
     "start": "next",
-    "dev": "concurrently \"next dev\" \"yarn dev:tailwind\"",
-    "dev:tailwind": "TAILWIND_MODE=watch yarn postcss css/tailwind.css -o css/build.css --watch",
+    "dev": "concurrently \"next dev\" \"pnpm dev:tailwind\"",
+    "dev:tailwind": "TAILWIND_MODE=watch pnpm postcss css/tailwind.css -o css/build.css --watch",
     "build": "next build && next-sitemap",
+    "build:all": "pnpm build:tailwind && pnpm build",
+    "build:tailwind": "pnpm postcss css/tailwind.css -o css/build.css --verbose",
     "analyze": "cross-env ANALYZE=true next build",
     "lint": "next lint --fix --dir pages --dir components --dir lib --dir layouts",
     "prepare": "husky install"
