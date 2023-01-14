@@ -7,7 +7,7 @@ import formatDate from '@/lib/utils/formatDate'
 import classNames from 'classnames'
 
 export default function PostLayout({ frontMatter, authorDetails, next, prev, children }) {
-  const { slug, date, title, tags } = frontMatter
+  const { slug, date, lastmod, title, summary, images, tags } = frontMatter
   const copyToClipboard = () => {
     navigator.clipboard.writeText(window.location.toString())
   }
@@ -15,9 +15,13 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
   return (
     <>
       <BlogSEO
+        title={title}
+        summary={summary}
+        date={date}
+        lastmod={lastmod}
         url={`${siteMetadata.siteUrl}/blog/${slug}`}
         authorDetails={authorDetails}
-        {...frontMatter}
+        images={images}
       />
       <div className="vno-mx-auto vno-max-w-8xl">
         <div className="vno-flex vno-px-4 vno-pt-8 vno-pb-10 lg:vno-px-8">
@@ -63,8 +67,8 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                     {authorDetails.avatar && (
                       <Image
                         src={authorDetails.avatar}
-                        width="38px"
-                        height="38px"
+                        width="38"
+                        height="38"
                         alt={authorDetails.name}
                         className="vno-h-9 vno-w-9 vno-rounded-full vno-bg-slate-50 dark:vno-bg-slate-800"
                       />

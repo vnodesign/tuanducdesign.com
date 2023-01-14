@@ -9,7 +9,7 @@ import dynamic from 'next/dynamic'
 export const MDXComponents = {
   Image: (props) => (
     <div className="vno-not-prose vno-relative vno-my-[2em] vno-overflow-hidden vno-rounded-lg first:vno-mt-0 last:vno-mb-0">
-      <NextImage {...props} layout="responsive" loading="lazy" />
+      <NextImage {...props} loading="lazy" />
       <div className="vno-absolute vno-inset-0 vno-rounded-lg vno-ring-1 vno-ring-inset vno-ring-slate-900/10" />
     </div>
   ),

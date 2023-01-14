@@ -22,11 +22,11 @@ export const PageSEO = ({ title, description, breadcrumb = false }) => {
               alt: title,
               width: 1200,
               height: 630,
-            }
+            },
           ],
-          siteName: "Tuan Duc Design",
-          type: "website",
-          locale: "vi_VN",
+          siteName: siteMetadata.siteTitle,
+          type: 'website',
+          locale: 'vi_VN',
         }}
         facebook={{
           appId: '1031926270674334',
@@ -34,7 +34,7 @@ export const PageSEO = ({ title, description, breadcrumb = false }) => {
         twitter={{
           handle: siteMetadata.twitter,
           site: siteMetadata.twitter,
-          cardType: "summary_large_image",
+          cardType: 'summary_large_image',
         }}
         robotsProps={{
           maxSnippet: -1,
@@ -43,20 +43,20 @@ export const PageSEO = ({ title, description, breadcrumb = false }) => {
         }}
         additionalMetaTags={[
           {
-            content: "100005485267478",
-            property: "fb:admins"
+            content: '100005485267478',
+            property: 'fb:admins',
           },
           {
             content: title,
-            name: "twitter:title",
+            name: 'twitter:title',
           },
           {
             content: description,
-            name: "twitter:description",
+            name: 'twitter:description',
           },
           {
             content: twImageUrl,
-            name: "twitter:image"
+            name: 'twitter:image',
           },
         ]}
       />
@@ -100,11 +100,11 @@ export const TagSEO = ({ title, description }) => {
               alt: title,
               width: 1200,
               height: 630,
-            }
+            },
           ],
-          siteName: "Tuan Duc Design",
-          type: "website",
-          locale: "vi_VN",
+          siteName: siteMetadata.siteTitle,
+          type: 'website',
+          locale: 'vi_VN',
         }}
         facebook={{
           appId: '1031926270674334',
@@ -112,7 +112,7 @@ export const TagSEO = ({ title, description }) => {
         twitter={{
           handle: siteMetadata.twitter,
           site: siteMetadata.twitter,
-          cardType: "summary_large_image",
+          cardType: 'summary_large_image',
         }}
         robotsProps={{
           maxSnippet: -1,
@@ -121,26 +121,26 @@ export const TagSEO = ({ title, description }) => {
         }}
         additionalMetaTags={[
           {
-            content: "100005485267478",
-            property: "fb:admins"
+            content: '100005485267478',
+            property: 'fb:admins',
           },
           {
             content: title,
-            name: "twitter:title",
+            name: 'twitter:title',
           },
           {
             content: description,
-            name: "twitter:description",
+            name: 'twitter:description',
           },
           {
             content: twImageUrl,
-            name: "twitter:image"
+            name: 'twitter:image',
           },
         ]}
         additionalLinkTags={[
           {
-            rel: "alternate",
-            type: "application/rss+xml",
+            rel: 'alternate',
+            type: 'application/rss+xml',
             title: `${title} - RSS feed`,
             href: `${siteMetadata.siteUrl}${router.asPath}/feed.xml`,
           },
@@ -164,18 +164,12 @@ export const TagSEO = ({ title, description }) => {
   )
 }
 
-export const BlogSEO = ({
-  authorDetails,
-  title,
-  summary,
-  date,
-  lastmod,
-  url,
-  images,
-}) => {
+export const BlogSEO = ({ authorDetails, title, summary, date, lastmod, url, images }) => {
   const publishedAt = new Date(date).toISOString()
   const modifiedAt = new Date(lastmod || date).toISOString()
-  const ogImage = images ? `${siteMetadata.siteUrl}${images}` : `${siteMetadata.siteUrl}${siteMetadata.socialBanner}`
+  const ogImage = images
+    ? `${siteMetadata.siteUrl}${images}`
+    : `${siteMetadata.siteUrl}${siteMetadata.socialBanner}`
 
   const router = useRouter()
 
@@ -195,11 +189,11 @@ export const BlogSEO = ({
               alt: title,
               width: 1200,
               height: 630,
-            }
+            },
           ],
-          siteName: "Tuan Duc Design",
-          type: "article",
-          locale: "vi_VN",
+          siteName: siteMetadata.siteTitle,
+          type: 'article',
+          locale: 'vi_VN',
           article: {
             publishedTime: publishedAt,
             modifiedTime: modifiedAt,
@@ -209,9 +203,9 @@ export const BlogSEO = ({
           appId: '1031926270674334',
         }}
         twitter={{
-            handle: siteMetadata.twitter,
-            site: siteMetadata.twitter,
-            cardType: "summary_large_image",
+          handle: siteMetadata.twitter,
+          site: siteMetadata.twitter,
+          cardType: 'summary_large_image',
         }}
         robotsProps={{
           maxSnippet: -1,
@@ -220,43 +214,38 @@ export const BlogSEO = ({
         }}
         additionalMetaTags={[
           {
-            content: "100005485267478",
-            property: "fb:admins"
+            content: '100005485267478',
+            property: 'fb:admins',
           },
           {
             content: title,
-            name: "twitter:title",
+            name: 'twitter:title',
           },
           {
             content: summary,
-            name: "twitter:description",
+            name: 'twitter:description',
           },
           {
             content: ogImage,
-            name: "twitter:image"
+            name: 'twitter:image',
           },
         ]}
       />
       <ArticleJsonLd
         url={url}
         title={title}
-        images={
-          [
-            ogImage,
-          ]
-        }
+        images={[ogImage]}
         datePublished={publishedAt}
         dateModified={modifiedAt}
         authorName={[
           {
             name: authorDetails.name,
             url: authorDetails.twitter,
-          }
+          },
         ]}
         publisherName={siteMetadata.title}
         publisherLogo={`${siteMetadata.siteUrl}${siteMetadata.siteLogo}`}
         description={summary}
-        isAccessibleForFree={true}
       />
       <BreadcrumbJsonLd
         itemListElements={[
