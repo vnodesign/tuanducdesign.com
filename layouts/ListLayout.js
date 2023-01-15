@@ -57,6 +57,11 @@ export default function ListLayout({ posts, title, description, initialDisplayPo
           </div>
         </section>
       </header>
+      {!displayPosts.length && (
+        <div className="vno-text-center">
+          <h3>Không có bài viết để hiển thị</h3>
+        </div>
+      )}
       <div className="vno-relative sm:vno-ml-[calc(2rem+1px)] sm:vno-pb-12 md:vno-ml-[calc(3.5rem+1px)] lg:vno-ml-[max(calc(14.5rem+1px),calc(100%-48rem))]">
         {displayPosts && displayPosts.length > 0 && (
           <>
@@ -122,11 +127,6 @@ export default function ListLayout({ posts, title, description, initialDisplayPo
           </>
         )}
       </div>
-      {!displayPosts.length && (
-        <div className="vno-mt-24 vno-text-center">
-          <h3>Không có bài viết để hiển thị</h3>
-        </div>
-      )}
     </div>
   )
 }

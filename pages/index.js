@@ -138,7 +138,7 @@ export default function Home({ posts }) {
                   <div className="vno-flex-shrink-0">
                     <Link href={`/blog/${slug}`} title={title}>
                       <Image
-                        className="vno-object-cover vno-w-full vno-aspect-video"
+                        className="vno-object-cover vno-w-full vno-aspect-[16/9]"
                         src={images}
                         alt={title}
                         width={1600}
