@@ -9,6 +9,7 @@
     "build": "next build && next-sitemap",
     "build:all": "pnpm build:tailwind && pnpm build",
     "build:tailwind": "pnpm postcss styles/tailwind.css -o styles/build.css --verbose",
+    "analyze": "cross-env ANALYZE=true next build",
     "lint": "next lint --fix --dir pages --dir components --dir lib --dir layouts",
     "prepare": "husky install",
     "prettier": "prettier --write ."
@@ -51,8 +52,10 @@
     "unist-util-visit": "^4.1.1"
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "^13.1.2",
     "@svgr/webpack": "^6.5.1",
     "concurrently": "^7.6.0",
+    "cross-env": "^7.0.3",
     "dedent": "^0.7.0",
     "eslint": "^8.31.0",
     "eslint-config-next": "13.1.2",
