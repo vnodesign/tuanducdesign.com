@@ -7,3 +7,5 @@ Host: https://tuanducdesign.com
 
 # Sitemaps
 Sitemap: https://tuanducdesign.com/sitemap.xml
+
+# Algolia-Crawler-Verif: AD0F805F459F9999
