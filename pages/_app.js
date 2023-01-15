@@ -1,4 +1,4 @@
-import '@/css/build.css'
+import '@/styles/build.css'
 import { ThemeProvider } from 'next-themes'
 import siteMetadata from '@/data/siteMetadata'
 import Analytics from '@/components/analytics'

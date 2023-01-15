@@ -88,7 +88,7 @@ function NavPopover({ display = 'md:vno-hidden', className, ...props }) {
         onClose={setIsOpen}
       >
         <Dialog.Overlay className="vno-fixed vno-inset-0 vno-bg-black/20 vno-backdrop-blur-sm dark:vno-bg-slate-900/80" />
-        <div className="vno-fixed vno-w-full vno-max-w-xs vno-p-6 vno-text-base vno-font-semibold vno-text-slate-500 vno-bg-white vno-rounded-lg vno-shadow-lg vno-top-4 vno-right-4 dark:vno-bg-slate-800 dark:vno-text-slate-400 dark:vno-highlight-white/5">
+        <div className="vno-fixed vno-w-full vno-max-w-xs vno-p-6 vno-text-base vno-font-semibold vno-text-slate-900 vno-bg-white vno-rounded-lg vno-shadow-lg vno-top-4 vno-right-4 dark:vno-bg-slate-800 dark:vno-text-slate-400 dark:vno-highlight-white/5">
           <button
             type="button"
             className="vno-absolute vno-flex vno-items-center vno-justify-center vno-w-8 vno-h-8 vno-top-5 vno-right-5 vno-text-slate-500 hover:vno-text-slate-600 dark:vno-text-slate-400 dark:hover:vno-text-slate-300"
@@ -188,7 +188,12 @@ export default function Header({ hasNav = false, navIsOpen, onNavToggle }) {
       )}
     >
       <div className="vno-max-w-8xl vno-mx-auto">
-        <div className="vno-mx-4 vno-py-4 vno-border-b vno-border-slate-900/10 lg:vno-border-0 dark:vno-border-slate-300/10">
+        <div
+          className={classNames(
+            'vno-py-4 vno-border-b vno-border-slate-900/10 lg:vno-px-8 lg:vno-border-0 dark:vno-border-slate-300/10',
+            hasNav ? 'vno-mx-4 lg:vno-mx-0' : 'vno-px-4'
+          )}
+        >
           <div className="vno-relative vno-flex vno-items-center">
             <Link
               href="/"
@@ -238,7 +243,7 @@ export default function Header({ hasNav = false, navIsOpen, onNavToggle }) {
             <button
               type="button"
               onClick={() => onNavToggle(!navIsOpen)}
-              className="vno-text-slate-500 hover:vno-text-slate-600 dark:hover:vno-text-slate-400"
+              className="vno-text-slate-500 hover:vno-text-slate-600 dark:hover:vno-text-slate-300"
             >
               <span className="vno-sr-only">Navigation</span>
               <svg width="24" height="24">

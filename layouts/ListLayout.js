@@ -27,7 +27,7 @@ export default function ListLayout({ posts, title, description, initialDisplayPo
             <div className="vno-grow-[9999] vno-basis-64 vno-mt-3">
               <div className="vno-group vno-relative">
                 <svg
-                  className="vno-w-5 vno-h-full vno-absolute vno-inset-y-0 vno-left-3 vno-text-slate-300 vno-pointer-events-none group-focus-within:vno-text-slate-500 dark:group-focus-within:vno-text-slate-400 dark:vno-text-slate-400"
+                  className="vno-w-5 vno-h-full vno-absolute vno-inset-y-0 vno-left-3 vno-text-slate-400 vno-pointer-events-none group-focus-within:vno-text-sky-500 dark:group-focus-within:vno-text-slate-400"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -49,7 +49,7 @@ export default function ListLayout({ posts, title, description, initialDisplayPo
                   autoCorrect="off"
                   autoCapitalize="off"
                   spellCheck="false"
-                  className="vno-appearance-none vno-shadow-sm vno-rounded-lg vno-ring-1 vno-ring-slate-900/10 hover:vno-ring-slate-300 vno-leading-5 sm:vno-text-sm vno-border vno-border-transparent vno-py-2 placeholder:vno-text-slate-400 vno-pl-12 vno-pr-3 vno-block vno-w-full vno-text-slate-400 focus:vno-outline-none focus:vno-ring-2 focus:vno-ring-sky-500 vno-bg-white dark:vno-bg-slate-800 dark:vno-ring-0 dark:vno-highlight-white/5 dark:hover:vno-bg-slate-700 dark:vno-text-slate-300"
+                  className="vno-appearance-none vno-shadow vno-rounded-md vno-ring-1 vno-ring-slate-900/5 vno-leading-5 sm:vno-text-sm vno-border vno-border-transparent vno-py-2 placeholder:vno-text-slate-400 vno-pl-12 vno-pr-3 vno-block vno-w-full vno-text-slate-900 focus:vno-outline-none focus:vno-ring-2 focus:vno-ring-sky-500 vno-bg-white dark:vno-bg-slate-700/20 dark:vno-ring-slate-200/20 dark:focus:vno-ring-sky-500 dark:vno-text-white"
                   placeholder="Tìm kiếm bài viết..."
                 />
               </div>

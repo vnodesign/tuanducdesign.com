@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.dark {
-  color-scheme: dark;
-}
-
 html {
   height: 100%;
   font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
@@ -98,15 +94,4 @@ code[class^='language-diff-'] > span {
 
 .token.deleted {
   @apply vno-border-rose-400 vno-bg-rose-500/[0.15] before:vno-text-rose-400 before:vno-content-['-'];
-}
-
-.bar-of-progress::after {
-  content: '';
-  display: block;
-  position: absolute;
-  right: 0;
-  width: 100px;
-  height: 100%;
-  box-shadow: 0 0 10px currentColor, 0 0 5px currentColor;
-  transform: rotate(3deg) translate(0, -4px);
 }
