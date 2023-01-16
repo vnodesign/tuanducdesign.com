@@ -5,7 +5,7 @@ import { clientLinks, toolsLinks, providerLinks } from '@/data/footerWidgetLinks
 
 export default function Footer() {
   return (
-    <footer className="vno-justify-self-end vno-pt-16 vno-pb-8 lg:vno-pt-24 lg:vno-pb-10">
+    <footer className="vno-justify-self-end vno-pt-16 vno-pb-8 lg:vno-pt-24 lg:vno-pb-10 vno-border-t vno-border-t-slate-200 dark:vno-border-t-slate-700">
       <div className="vno-mx-auto vno-p-3 lg:vno-px-4">
         <div className="vno-grid lg:vno-grid-cols-6 vno-gap-12 lg:vno-gap-24 vno-max-w-8xl">
           <div className="vno-col-span-2">
@@ -123,7 +123,7 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-        <hr className="vno-my-8 vno-border-gray-200 dark:vno-border-gray-700 lg:vno-my-12" />
+        <hr className="vno-my-8 vno-border-slate-200 dark:vno-border-slate-700 lg:vno-my-12" />
         <span className="vno-block vno-font-normal vno-text-center vno-text-gray-600 dark:vno-text-gray-400">
           © 2022-{new Date().getFullYear()} {siteMetadata.title} All Rights Reserved.
         </span>
