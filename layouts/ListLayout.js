@@ -7,7 +7,7 @@ export default function ListLayout({ posts, title, description, initialDisplayPo
   const [searchValue, setSearchValue] = useState('')
   const filteredBlogPosts = posts.filter((frontMatter) => {
 //    const searchContent = frontMatter.title + frontMatter.summary + frontMatter.tags.join(' ')
-    return frontMatter.title.match(searchValue)
+    return frontMatter.title.toLowerCase(). match(searchValue.toLowerCase())
   })
 
   // If initialDisplayPosts exist, display it if no searchValue is specified
