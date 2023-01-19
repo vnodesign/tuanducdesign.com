@@ -125,7 +125,7 @@ export default function Footer() {
         </div>
         <hr className="vno-my-8 vno-border-slate-200 dark:vno-border-slate-700 lg:vno-my-12" />
         <span className="vno-block vno-font-normal vno-text-center vno-text-gray-600 dark:vno-text-gray-400">
-          © 2022-{new Date().getFullYear()} {siteMetadata.title} All Rights Reserved.
+          © 2021-{new Date().getFullYear()} {siteMetadata.title} All Rights Reserved.
         </span>
       </div>
     </footer>

@@ -15,7 +15,7 @@ export async function getStaticProps() {
 
 export default function Home({ posts }) {
   return (
-    <div>
+    <>
       <PageSEO
         title={`${siteMetadata.title} - Front-end Developer`}
         description={siteMetadata.description}
@@ -133,7 +133,7 @@ export default function Home({ posts }) {
                 src="/static/avatar-author.png"
                 width="960"
                 height="1280"
-                className="vno-w-full vno-h-auto vno-aspect-video vno-rotate-3 vno-rounded-2xl vno-object-cover"
+                className="vno-w-full vno-h-auto vno-aspect-video vno-rounded-2xl vno-object-cover"
                 priority
               />
             </div>
@@ -142,7 +142,7 @@ export default function Home({ posts }) {
             <div className="vno-col-span-2">
               <h2 className="vno-text-4xl vno-font-extrabold vno-tracking-tight vno-text-slate-900 dark:vno-text-white sm:vno-text-5xl">
                 <span className="vno-text-transparent vno-bg-gradient-to-r vno-from-pink-400 vno-to-pink-500 vno-bg-clip-text">
-                  Sản phẩm cá nhân
+                  Dự án cá nhân
                 </span>
               </h2>
               <div className="vno-flex vno-mt-10">
@@ -175,7 +175,7 @@ export default function Home({ posts }) {
                   </p>
                   <Link
                     href="https://tuanducdesign.com/"
-                    title="Blog cá nhân"
+                    title="Xem thêm dự án Blog cá nhân"
                     className="vno-inline-flex vno-items-center vno-px-3 vno-py-2 vno-text-sm vno-font-medium vno-text-center vno-text-white vno-bg-blue-700 vno-rounded-lg hover:vno-bg-blue-800 focus:vno-outline-none focus:vno-ring-4 focus:vno-ring-blue-300 dark:vno-bg-blue-600 dark:hover:vno-bg-blue-700 dark:focus:vno-ring-blue-800"
                   >
                     Xem thêm
@@ -207,7 +207,7 @@ export default function Home({ posts }) {
                   </p>
                   <Link
                     href="https://cv.tuanducdesign.com/"
-                    title="Portfolio & Resume"
+                    title="Xem thêm dự án Portfolio & Resume"
                     className="vno-inline-flex vno-items-center vno-px-3 vno-py-2 vno-text-sm vno-font-medium vno-text-center vno-text-white vno-bg-blue-700 vno-rounded-lg hover:vno-bg-blue-800 focus:vno-outline-none focus:vno-ring-4 focus:vno-ring-blue-300 dark:vno-bg-blue-600 dark:hover:vno-bg-blue-700 dark:focus:vno-ring-blue-800"
                   >
                     Xem thêm
@@ -281,6 +281,6 @@ export default function Home({ posts }) {
           </div>
         </div>
       </section>
-    </div>
+    </>
   )
 }

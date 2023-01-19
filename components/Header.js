@@ -222,6 +222,7 @@ export default function Header({ hasNav = false, navIsOpen, onNavToggle }) {
                 <Link
                   href="https://github.com/vnodesign"
                   className="vno-block vno-ml-6 vno-text-gray-500 hover:vno-text-gray-900 dark:vno-text-gray-400 dark:hover:vno-text-white"
+                  title="GitHub"
                 >
                   <span className="vno-sr-only">GitHub</span>
                   <svg

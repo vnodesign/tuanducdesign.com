@@ -1,13 +1,11 @@
 import Link from '@/components/Link'
 import { useState } from 'react'
 import formatDate from '@/lib/utils/formatDate'
-import classNames from 'classnames'
 
 export default function ListLayout({ posts, title, description, initialDisplayPosts = [] }) {
   const [searchValue, setSearchValue] = useState('')
   const filteredBlogPosts = posts.filter((frontMatter) => {
-//    const searchContent = frontMatter.title + frontMatter.summary + frontMatter.tags.join(' ')
-    return frontMatter.title.toLowerCase(). match(searchValue.toLowerCase())
+    return frontMatter.title.toLowerCase().match(searchValue.toLowerCase())
   })
 
   // If initialDisplayPosts exist, display it if no searchValue is specified
@@ -92,11 +90,7 @@ export default function ListLayout({ posts, title, description, initialDisplayPo
                     </div>
                     <dl className="vno-absolute vno-left-0 vno-top-0 lg:vno-left-auto lg:vno-right-full lg:vno-mr-[calc(6.5rem+1px)]">
                       <dt className="vno-sr-only">Ngày đăng</dt>
-                      <dd
-                        className={classNames(
-                          'vno-whitespace-nowrap vno-text-sm vno-leading-6 dark:vno-text-slate-400'
-                        )}
-                      >
+                      <dd className="vno-whitespace-nowrap vno-text-sm vno-leading-6 dark:vno-text-slate-400">
                         <time dateTime={frontMatter.date}>{formatDate(frontMatter.date)}</time>
                       </dd>
                     </dl>

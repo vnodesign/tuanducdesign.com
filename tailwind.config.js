@@ -60,15 +60,17 @@ module.exports = {
                 fontWeight: 'inherit',
               },
             },
-            'h1, h2, h3': {
+            h1: {
               letterSpacing: '-0.025em',
             },
             h2: {
               marginBottom: `${16 / 24}em`,
+              letterSpacing: '-0.025em',
             },
             h3: {
               marginTop: '2.4em',
               lineHeight: '1.4',
+              letterSpacing: '-0.025em',
             },
             h4: {
               marginTop: '2em',

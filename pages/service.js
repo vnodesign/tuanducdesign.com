@@ -208,7 +208,7 @@ const faq = [
 
 export default function Service() {
   return (
-    <div>
+    <>
       <PageSEO
         title={`Dịch vụ - ${siteMetadata.title}`}
         description={siteMetadata.description}
@@ -503,7 +503,7 @@ export default function Service() {
           </div>
         </div>
       </section>
-    </div>
+    </>
   )
 }
 

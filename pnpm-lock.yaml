@@ -12,7 +12,6 @@ specifiers:
   classnames: ^2.3.2
   concurrently: ^7.6.0
   cross-env: ^7.0.3
-  dedent: ^0.7.0
   esbuild: ^0.17.0
   eslint: ^8.31.0
   eslint-config-next: 13.1.2
@@ -95,7 +94,6 @@ devDependencies:
   '@svgr/webpack': 6.5.1
   concurrently: 7.6.0
   cross-env: 7.0.3
-  dedent: 0.7.0
   eslint: 8.32.0
   eslint-config-next: 13.1.2_eslint@8.32.0
   eslint-config-prettier: 8.6.0_eslint@8.32.0
@@ -3012,10 +3010,6 @@ packages:
     dependencies:
       mimic-response: 3.1.0
     dev: false
-
-  /dedent/0.7.0:
-    resolution: {integrity: sha512-Q6fKUPqnAHAyhiUgFU7BUzLiv0kd8saH9al7tnu5Q/okj6dnupxyTgFIBjVzJATdfIAm9NAsvXNzjaKa+bxVyA==}
-    dev: true
 
   /deep-equal/2.2.0:
     resolution: {integrity: sha512-RdpzE0Hv4lhowpIUKKMJfeH6C1pXdtT1/it80ubgWqwI3qpuxUBpC1S4hnHg+zjnuOoDkzUtUCEEkG+XG5l3Mw==}
