@@ -7,7 +7,7 @@
     "dev": "concurrently \"NODE_ENV=development next dev\" \"pnpm dev:tailwind\"",
     "dev:tailwind": "TAILWIND_MODE=watch pnpm postcss styles/tailwind.css -o styles/build.css --watch",
     "build": "next build && next-sitemap",
-    "build:all": "&& pnpm build:tailwind && pnpm build",
+    "build:all": "pnpm build:tailwind && pnpm build",
     "build:tailwind": "pnpm postcss styles/tailwind.css -o styles/build.css --verbose",
     "analyze": "cross-env ANALYZE=true next build",
     "lint": "next lint --fix --dir pages --dir components --dir lib --dir layouts",
