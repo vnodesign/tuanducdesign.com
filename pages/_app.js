@@ -4,7 +4,6 @@ import { ThemeProvider } from 'next-themes'
 import siteMetadata from '@/data/siteMetadata'
 const Analytics = dynamic(() => import('@/components/analytics'))
 import Header from '@/components/Header'
-import dynamic from 'next/dynamic'
 const Footer = dynamic(() => import('@/components/Footer'))
 
 export default function App({ Component, pageProps }) {
