@@ -8,7 +8,7 @@ import Pre from './Pre'
 export const MDXComponents = {
   Image: (props) => (
     <div className="vno-not-prose vno-relative vno-my-[2em] vno-overflow-hidden vno-rounded-lg first:vno-mt-0 last:vno-mb-0">
-      <NextImage {...props} loading="lazy" />
+      <NextImage {...props} loading="eager" />
       <div className="vno-absolute vno-inset-0 vno-rounded-lg vno-ring-1 vno-ring-inset vno-ring-slate-900/10" />
     </div>
   ),
