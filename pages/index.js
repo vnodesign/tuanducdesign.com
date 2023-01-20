@@ -243,7 +243,6 @@ export default function Home({ posts }) {
             </span>
           </h2>
           <div className="vno-mt-12 vno-grid vno-grid-cols-1 vno-gap-12 md:vno-grid-cols-2 lg:vno-grid-cols-3">
-            {!posts.length && 'No posts found.'}
             {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
               const { slug, title, summary, images } = frontMatter
               return (
@@ -259,7 +258,6 @@ export default function Home({ posts }) {
                         alt={title}
                         width={450}
                         height={220}
-                        priority
                       />
                     </Link>
                   </div>

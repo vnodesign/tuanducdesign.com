@@ -168,7 +168,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
               </div>
             )}
             {(next || prev) && (
-              <div className="vno-my-10 vno-flex vno-items-center vno-font-semibold vno-text-slate-700 dark:vno-text-slate-200">
+              <div className="vno-pt-10 vno-flex vno-items-center vno-font-semibold vno-text-slate-700 dark:vno-text-slate-200">
                 {prev && (
                   <Link
                     href={`/blog/${prev.slug}`}

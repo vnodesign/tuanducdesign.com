@@ -57,7 +57,14 @@ export default function ListLayout({ posts, title, description, initialDisplayPo
       </header>
       {!displayPosts.length && (
         <div className="vno-text-center">
-          <h3>Không có bài viết để hiển thị</h3>
+          <p>
+            Không có kết quả cho <strong>{searchValue}</strong>
+          </p>
+        </div>
+      )}
+      {posts.length === 0 && (
+        <div className="vno-text-center">
+          <p>Không có bài viết để hiển thị.</p>
         </div>
       )}
       <div className="vno-relative sm:vno-ml-[calc(2rem+1px)] sm:vno-pb-12 md:vno-ml-[calc(3.5rem+1px)] lg:vno-ml-[max(calc(14.5rem+1px),calc(100%-48rem))]">
