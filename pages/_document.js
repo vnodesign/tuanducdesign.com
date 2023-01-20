@@ -16,6 +16,7 @@ export default class Document extends NextDocument {
           <meta name="theme-color" content="#f8fafc" media="(prefers-color-scheme: light)" />
           <meta name="theme-color" content="#0B1120" media="(prefers-color-scheme: dark)" />
           <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
+          <link rel="preload" as="script" href="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4183134625750063" />
         </Head>
         <body className="vno-bg-white vno-text-slate-500 vno-antialiased dark:vno-bg-slate-900 dark:vno-text-slate-400">
           <Main />
