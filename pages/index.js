@@ -22,32 +22,6 @@ export default function Home({ posts }) {
       />
       <section className="vno-relative vno-py-4 lg:vno-pt-20 lg:vno-pb-16">
         <div className="vno-max-w-8xl vno-px-4 vno-mx-auto lg:vno-text-center">
-          <Link
-            className="vno-inline-flex vno-items-center vno-justify-between vno-pl-1 vno-py-1 vno-pr-4 vno-mb-5 vno-text-sm vno-text-gray-700 vno-bg-gray-100 vno-rounded-full dark:vno-bg-gray-800 dark:vno-text-white hover:vno-bg-gray-200"
-            role="alert"
-            href="/service"
-            title="Dịch vụ VPS và Website"
-          >
-            <span className="vno-text-xs vno-bg-blue-600 vno-rounded-full vno-text-white vno-px-4 vno-py-1.5 vno-mr-3">
-              Mới
-            </span>
-            <span className="vno-mr-2 vno-text-sm vno-font-medium">
-              Chào bạn, có phải bạn đang tìm dịch vụ tối ưu VPS và Website không?
-            </span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-              aria-hidden="true"
-              className="vno-w-5 vno-h-5"
-            >
-              <path
-                fillRule="evenodd"
-                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </Link>
           <h1 className="vno-mb-4 vno-text-4xl vno-font-bold vno-tracking-tight vno-text-gray-900 lg:vno-font-extrabold lg:vno-text-6xl lg:vno-leading-none dark:vno-text-white lg:vno-text-center xl:vno-px-36 lg:vno-mb-7">
             Hi, Mình là Đức, mình đang làm việc ở vị trí{' '}
             <span className="vno-font-bold vno-text-sky-500 dark:vno-text-sky-400">
