@@ -6,7 +6,6 @@ import dynamic from 'next/dynamic'
 import Header from '@/components/Header'
 const Footer = dynamic(() => import('@/components/Footer'))
 import { Analytics } from '@vercel/analytics/react'
-import { FacebookProvider, CustomChat } from 'react-facebook'
 
 export default function App({ Component, pageProps }) {
   return (
