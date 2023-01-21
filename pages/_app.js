@@ -56,6 +56,7 @@ window.addEventListener
   ? window.attachEvent('onload', td_customerchat)
   : (window.onload = td_customerchat)
         `}
+      </Script>
       <script
         defer
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4183134625750063"
