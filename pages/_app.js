@@ -39,21 +39,20 @@ export default function App({ Component, pageProps }) {
         chatbox.setAttribute("page_id", "121349286117840");
         chatbox.setAttribute("attribution", "biz_inbox");
   
-        window.fbAsyncInit = function () {
-  FB.init({ xfbml: !0, version: 'v15.0' })
-}
-function td_customerchat() {
-  var t = document.createElement('script')
-  ;(t.async = !0),
-    (t.defer = !0),
-    (t.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js'),
-    document.body.appendChild(t)
-}
-window.addEventListener
-  ? window.addEventListener('load', td_customerchat, !1)
-  : window.attachEvent
-  ? window.attachEvent('onload', td_customerchat)
-  : (window.onload = td_customerchat)
+        window.fbAsyncInit = function() {
+          FB.init({
+            xfbml            : true,
+            version          : 'v15.0'
+          });
+        };
+  
+        (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
         `}
       </Script>
       <script
