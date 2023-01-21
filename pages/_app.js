@@ -21,10 +21,9 @@ export default function App({ Component, pageProps }) {
       </div>
       <Analytics />
       <Script
-        strategy="lazyOnload"
         src={`https://www.googletagmanager.com/gtag/js?id=${siteMetadata.analytics.googleAnalyticsId}`}
       />
-      <Script strategy="lazyOnload" id="ga-script">
+      <Script id="ga-script">
         {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -34,26 +33,27 @@ export default function App({ Component, pageProps }) {
             });
         `}
       </Script>
-      <Script strategy="lazyOnload" id="fb-script">
+      <Script id="fb-script">
         {`
           var chatbox = document.getElementById('fb-customer-chat');
         chatbox.setAttribute("page_id", "121349286117840");
         chatbox.setAttribute("attribution", "biz_inbox");
   
-        window.fbAsyncInit = function() {
-          FB.init({
-            xfbml            : true,
-            version          : 'v15.0'
-          });
-        };
-  
-        (function(d, s, id) {
-          var js, fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-          js = d.createElement(s); js.id = id;
-          js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
-          fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
+        window.fbAsyncInit = function () {
+  FB.init({ xfbml: !0, version: 'v15.0' })
+}
+function td_customerchat() {
+  var t = document.createElement('script')
+  ;(t.async = !0),
+    (t.defer = !0),
+    (t.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js'),
+    document.body.appendChild(t)
+}
+window.addEventListener
+  ? window.addEventListener('load', td_customerchat, !1)
+  : window.attachEvent
+  ? window.attachEvent('onload', td_customerchat)
+  : (window.onload = td_customerchat)
         `}
       </Script>
       <script
