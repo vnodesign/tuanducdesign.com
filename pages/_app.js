@@ -21,9 +21,10 @@ export default function App({ Component, pageProps }) {
       </div>
       <Analytics />
       <Script
+        strategy="beforeInteractive"
         src={`https://www.googletagmanager.com/gtag/js?id=${siteMetadata.analytics.googleAnalyticsId}`}
       />
-      <Script id="ga-script">
+      <Script strategy="beforeInteractive" id="ga-script">
         {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -33,7 +34,7 @@ export default function App({ Component, pageProps }) {
             });
         `}
       </Script>
-      <Script id="fb-script">
+      <Script strategy="beforeInteractive" id="fb-script">
         {`
           var chatbox = document.getElementById('fb-customer-chat');
         chatbox.setAttribute("page_id", "121349286117840");
