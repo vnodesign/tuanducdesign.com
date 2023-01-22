@@ -2,7 +2,7 @@ import '@/styles/build.css'
 import siteMetadata from '@/data/siteMetadata'
 import Script from 'next/script'
 import dynamic from 'next/dynamic'
-const Header = dynamic(() => import('@/components/Header'))
+import Header from '@/components/Header'
 const Footer = dynamic(() => import('@/components/Footer'))
 import { Analytics } from '@vercel/analytics/react'
 
