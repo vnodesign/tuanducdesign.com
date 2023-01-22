@@ -5,7 +5,7 @@ import Script from 'next/script'
 import dynamic from 'next/dynamic'
 const Header = dynamic(() => import('@/components/Header'))
 const Footer = dynamic(() => import('@/components/Footer'))
-// import { Analytics } from '@vercel/analytics/react'
+import { Analytics } from '@vercel/analytics/react'
 
 export default function App({ Component, pageProps }) {
   return (
@@ -17,6 +17,7 @@ export default function App({ Component, pageProps }) {
         </main>
         <Footer />
       </div>
+      <Analytics />
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${siteMetadata.analytics.googleAnalyticsId}`}
       />
