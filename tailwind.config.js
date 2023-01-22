@@ -14,7 +14,7 @@ module.exports = {
     './lib/**/*.js',
     './data/**/*.mdx',
   ],
-  darkMode: 'media',
+  darkMode: ['class', 'html[class~="dark"]'],
   theme: {
     extend: {
       colors: {

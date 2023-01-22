@@ -139,7 +139,6 @@ function NavItems() {
           <Link
             href={link.href}
             className={classNames(
-              'vno-transition-colors vno-duration-200',
               router.pathname == link.href
                 ? 'vno-text-sky-500 dark:vno-text-sky-400'
                 : 'hover:vno-text-sky-500 dark:hover:vno-text-sky-400'
@@ -181,7 +180,7 @@ export default function Header({ hasNav = false, navIsOpen, onNavToggle }) {
   return (
     <header
       className={classNames(
-        'vno-sticky vno-top-0 vno-z-40 vno-w-full vno-flex-none vno-backdrop-blur vno-transition-colors vno-duration-500 lg:vno-z-50 lg:vno-border-b lg:vno-border-slate-900/10 dark:vno-border-slate-50/[0.06]',
+        'vno-sticky vno-top-0 vno-z-40 vno-w-full vno-flex-none vno-backdrop-blur lg:vno-z-50 lg:vno-border-b lg:vno-border-slate-900/10 dark:vno-border-slate-50/[0.06]',
         isOpaque
           ? 'vno-bg-white supports-backdrop-blur:vno-bg-white/95 dark:vno-bg-slate-900/75'
           : 'vno-bg-white/95 supports-backdrop-blur:vno-bg-white/60 dark:vno-bg-transparent'

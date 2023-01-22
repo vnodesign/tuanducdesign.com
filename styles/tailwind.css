@@ -11,6 +11,10 @@ body {
   min-height: 100%;
 }
 
+body * {
+  @apply vno-transition-colors vno-duration-200;
+}
+
 abbr[title] {
   text-decoration: none;
 }

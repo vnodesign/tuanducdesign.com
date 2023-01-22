@@ -102,8 +102,14 @@ export function ThemeToggle({ panelClassName = 'vno-mt-4' }) {
   const [mounted, setMounted] = useState(false)
   const { theme, setTheme } = useTheme()
 
-  // When mounted on client, now we can show the UI
-  useEffect(() => setMounted(true), [])
+  // useEffect only runs on the client, so now we can safely show the UI
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) {
+    return null
+  }
 
   return (
     <>
