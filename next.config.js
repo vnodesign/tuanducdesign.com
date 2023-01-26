@@ -16,6 +16,10 @@ module.exports = withBundleAnalyzer(
       dirs: ['pages', 'components', 'lib', 'layouts'],
     },
     webpack: (config, { dev, isServer }) => {
+      config.module.rules.push({
+        test: /\.svg$/,
+        use: ['@svgr/webpack'],
+      })
       // Note, preact is only enabled for production builds (`next build`)
       if (!dev && !isServer) {
         config.resolve.alias = {

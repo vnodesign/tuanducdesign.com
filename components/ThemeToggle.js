@@ -1,7 +1,47 @@
-import { Fragment, useEffect, useState } from 'react'
-import { useTheme } from 'next-themes'
-import classNames from 'classnames'
+import { useIsomorphicLayoutEffect } from '@/hooks/useIsomorphicLayoutEffect'
 import { Listbox } from '@headlessui/react'
+import classNames from 'classnames'
+import { Fragment, useEffect, useRef } from 'react'
+import { create } from 'zustand'
+
+const useSettingTheme = create((set) => ({
+  theme: null,
+  setTheme: (theme) => set({ theme }),
+}))
+
+function update() {
+  if (
+    localStorage.theme === 'dark' ||
+    (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+  ) {
+    document.documentElement.classList.add('dark', 'changing-theme')
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0B1120')
+  } else {
+    document.documentElement.classList.remove('dark', 'changing-theme')
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f8fafc')
+  }
+  window.setTimeout(() => {
+    document.documentElement.classList.remove('changing-theme')
+  })
+}
+
+let themes = [
+  {
+    value: 'light',
+    label: 'Light',
+    icon: SunIcon,
+  },
+  {
+    value: 'dark',
+    label: 'Dark',
+    icon: MoonIcon,
+  },
+  {
+    value: 'system',
+    label: 'System',
+    icon: PcIcon,
+  },
+]
 
 function SunIcon({ selected, ...props }) {
   return (
@@ -80,36 +120,68 @@ function PcIcon({ selected, ...props }) {
   )
 }
 
-const themes = [
-  {
-    value: 'light',
-    label: 'Light',
-    icon: SunIcon,
-  },
-  {
-    value: 'dark',
-    label: 'Dark',
-    icon: MoonIcon,
-  },
-  {
-    value: 'system',
-    label: 'System',
-    icon: PcIcon,
-  },
-]
+function useTheme() {
+  let { theme, setTheme } = useSettingTheme()
+  let initial = useRef(true)
 
-export function ThemeToggle({ panelClassName = 'vno-mt-4' }) {
-  const [mounted, setMounted] = useState(false)
-  const { theme, setTheme } = useTheme()
-
-  // useEffect only runs on the client, so now we can safely show the UI
-  useEffect(() => {
-    setMounted(true)
+  useIsomorphicLayoutEffect(() => {
+    let theme = localStorage.theme
+    if (theme === 'light' || theme === 'dark') {
+      setTheme(theme)
+    } else {
+      setTheme('system')
+    }
   }, [])
 
-  if (!mounted) {
-    return null
-  }
+  useIsomorphicLayoutEffect(() => {
+    if (theme === 'system') {
+      localStorage.removeItem('theme')
+    } else if (theme === 'light' || theme === 'dark') {
+      localStorage.theme = theme
+    }
+    if (initial.current) {
+      initial.current = false
+    } else {
+      update()
+    }
+  }, [theme])
+
+  useEffect(() => {
+    let mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+
+    if (mediaQuery?.addEventListener) {
+      mediaQuery.addEventListener('change', update)
+    } else {
+      mediaQuery.addListener(update)
+    }
+
+    function onStorage() {
+      update()
+      let theme = localStorage.theme
+      if (theme === 'light' || theme === 'dark') {
+        setTheme(theme)
+      } else {
+        setTheme('system')
+      }
+    }
+    window.addEventListener('storage', onStorage)
+
+    return () => {
+      if (mediaQuery?.removeEventListener) {
+        mediaQuery.removeEventListener('change', update)
+      } else {
+        mediaQuery.removeListener(update)
+      }
+
+      window.removeEventListener('storage', onStorage)
+    }
+  }, [setTheme])
+
+  return [theme, setTheme]
+}
+
+export function ThemeToggle({ panelClassName = 'vno-mt-4' }) {
+  let [theme, setTheme] = useTheme()
 
   return (
     <>
@@ -117,10 +189,10 @@ export function ThemeToggle({ panelClassName = 'vno-mt-4' }) {
         <Listbox.Label className="vno-sr-only">Theme</Listbox.Label>
         <Listbox.Button type="button">
           <span className="dark:vno-hidden">
-            <SunIcon className="vno-w-6 vno-h-6" selected={mounted && theme} />
+            <SunIcon className="vno-w-6 vno-h-6" selected={theme} />
           </span>
           <span className="vno-hidden dark:vno-inline">
-            <MoonIcon className="vno-w-6 vno-h-6" selected={mounted && theme} />
+            <MoonIcon className="vno-w-6 vno-h-6" selected={theme} />
           </span>
         </Listbox.Button>
         <Listbox.Options
@@ -152,9 +224,9 @@ export function ThemeToggle({ panelClassName = 'vno-mt-4' }) {
 }
 
 export function ThemeSelect() {
-  const { theme, setTheme } = useTheme()
+  let [theme, setTheme] = useTheme()
 
-  const { label } = themes.find((x) => x.value === theme)
+  let { label } = themes.find((x) => x.value === theme)
 
   return (
     <div className="vno-flex vno-items-center vno-justify-between">
