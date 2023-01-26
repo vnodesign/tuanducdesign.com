@@ -9,31 +9,11 @@ export default class Document extends NextDocument {
 
   render() {
     return (
-      <Html lang={siteMetadata.language} className="dark">
+      <Html lang={siteMetadata.language}>
         <Head>
           <link rel="shortcut icon" href="/static/CA0E67E9-AAD0-4D36-82D8-674C7504DFD1.jpg" />
           <link rel="manifest" href="/static/site.manifest" />
           <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
-          <link
-            rel="preload"
-            href="https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js"
-            as="script"
-          />
-          <link
-            rel="preload"
-            href="https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png"
-            as="image"
-          />
-          <link
-            rel="preload"
-            href="https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png"
-            as="image"
-          />
-          <link rel="dns-prefetch" href="//connect.facebook.net" />
-          <link rel="dns-prefetch" href="//www.facebook.com" />
-          <link rel="dns-prefetch" href="//graph.facebook.com" />
-          <link rel="dns-prefetch" href="//static.xx.fbcdn.net" />
-          <link rel="dns-prefetch" href="//staticxx.facebook.com" />
           <link rel="dns-prefetch" href="//www.googletagmanager.com" />
           <link rel="dns-prefetch" href="//pagead2.googlesyndication.com" />
           <meta name="theme-color" content="#f8fafc" />
