@@ -6,8 +6,8 @@ import { clientLinks, toolsLinks, providerLinks } from '@/data/footerWidgetLinks
 export default function Footer() {
   return (
     <footer className="vno-justify-self-end vno-pt-16 vno-pb-8 lg:vno-pt-24 lg:vno-pb-10 vno-border-t vno-border-t-slate-200 dark:vno-border-t-slate-700">
-      <div className="vno-mx-auto vno-p-3 lg:vno-px-4">
-        <div className="vno-grid lg:vno-grid-cols-6 vno-gap-12 lg:vno-gap-24 vno-max-w-8xl">
+      <div className="vno-max-w-8xl vno-mx-auto vno-p-3 lg:vno-px-4">
+        <div className="vno-grid lg:vno-grid-cols-6 vno-gap-12 lg:vno-gap-24">
           <div className="vno-col-span-2">
             <Link href="/" className="vno-flex vno-mb-6" title={`${siteMetadata.title} Logo`}>
               <Image

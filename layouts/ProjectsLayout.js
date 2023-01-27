@@ -95,6 +95,7 @@ export default function ProjectsLayout({ frontMatter, next, prev, children }) {
                     height="800"
                     sizes="(min-width: 1440px) 1440px, 100vw"
                     quality={90}
+                    priority
                   />
                 </div>
               </div>
@@ -103,6 +104,18 @@ export default function ProjectsLayout({ frontMatter, next, prev, children }) {
         )}
         <div className="vno-overflow-hidden">
           <div className="vno-relative vno-max-w-8xl vno-py-6 vno-mx-auto vno-px-4 sm:vno-px-6 lg:vno-px-8 vno-flex vno-flex-col sm:vno-flex-row sm:vno-items-center sm:vno-justify-between vno-gap-6">
+            <Image
+              src={require('@/img/projects/beams-2@75.jpg')}
+              alt="Background Light"
+              className="vno-absolute vno-top-[-20rem] sm:vno-top-[-25rem] vno-left-1/2 vno-ml-[-35rem] vno-max-w-none vno-w-[119.4375rem] dark:vno-hidden vno-pointer-events-none"
+              unoptimized
+            />
+            <Image
+              src={require('@/img/projects/beams-2-dark@75.jpg')}
+              alt="Background Dark"
+              className="vno-absolute vno-top-0 vno-right-[-12rem] md:vno-right-0 vno-max-w-none vno-w-[70.0625rem] vno-hidden dark:vno-block vno-pointer-events-none"
+              unoptimized
+            />
             <dl className="vno-relative vno-flex vno-flex-wrap vno-h-14 vno-overflow-hidden">
               {[
                 ...(tech ? [{ name: 'Công nghệ', value: tech }] : []),
@@ -137,9 +150,11 @@ export default function ProjectsLayout({ frontMatter, next, prev, children }) {
               </span>
             </Link>
           </div>
-          <div className="vno-prose vno-prose-slate dark:vno-prose-dark">
-            <div className="vno-max-w-8xl vno-mx-auto vno-pt-14 sm:vno-pt-20 md:vno-pt-32 xl:vno-pt-36 vno-mb-20 md:vno-mb-32 vno-px-4 sm:vno-px-6 lg:vno-px-8">
-              {children}
+          <div className="vno-relative [&>:first-child]:!vno-mt-0 [&>:last-child]:!vno-mb-0">
+            <div className="vno-prose vno-prose-slate dark:vno-prose-dark">
+              <div className="vno-max-w-8xl vno-mx-auto vno-pt-14 sm:vno-pt-20 md:vno-pt-32 xl:vno-pt-36 vno-mb-20 md:vno-mb-32 vno-px-4 sm:vno-px-6 lg:vno-px-8">
+                {children}
+              </div>
             </div>
           </div>
         </div>

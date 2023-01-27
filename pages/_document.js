@@ -10,7 +10,7 @@ export default class Document extends NextDocument {
 
   render() {
     return (
-      <Html lang={siteMetadata.language}>
+      <Html lang={siteMetadata.language} className="dark">
         <Head>
           <link rel="shortcut icon" href="/static/CA0E67E9-AAD0-4D36-82D8-674C7504DFD1.jpg" />
           <link rel="manifest" href="/static/site.manifest" />

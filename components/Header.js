@@ -13,6 +13,7 @@ function Featured() {
     <Link
       href="/blog/series-nextdns"
       className="vno-ml-3 vno-text-xs vno-leading-5 vno-font-medium vno-text-sky-600 dark:vno-text-sky-400 vno-bg-sky-400/10 vno-rounded-full vno-py-1 vno-px-3 vno-hidden xl:vno-flex vno-items-center hover:vno-bg-sky-400/20"
+      title="Hướng dẫn sử dụng NextDNS"
     >
       <strong className="vno-font-semibold">Hướng dẫn sử dụng NextDNS</strong>
       <svg
@@ -158,7 +159,7 @@ function NavItems() {
   )
 }
 
-export default function Header({ hasNav = false, navIsOpen, onNavToggle }) {
+export default function Header() {
   let [isOpaque, setIsOpaque] = useState(false)
 
   useEffect(() => {
@@ -180,19 +181,14 @@ export default function Header({ hasNav = false, navIsOpen, onNavToggle }) {
   return (
     <header
       className={classNames(
-        'vno-sticky vno-top-0 vno-z-40 vno-w-full vno-flex-none vno-backdrop-blur lg:vno-z-50 lg:vno-border-b lg:vno-border-slate-900/10 dark:vno-border-slate-50/[0.06]',
+        'vno-sticky vno-top-0 vno-z-50 vno-w-full vno-flex-none vno-backdrop-blur vno-transition-colors vno-duration-500 lg:vno-z-50 lg:vno-border-b lg:vno-border-slate-900/10 dark:vno-border-slate-50/[0.06]',
         isOpaque
           ? 'vno-bg-white supports-backdrop-blur:vno-bg-white/95 dark:vno-bg-slate-900/75'
           : 'vno-bg-white/95 supports-backdrop-blur:vno-bg-white/60 dark:vno-bg-transparent'
       )}
     >
       <div className="vno-max-w-8xl vno-mx-auto">
-        <div
-          className={classNames(
-            'vno-py-4 vno-border-b vno-border-slate-900/10 lg:vno-px-8 lg:vno-border-0 dark:vno-border-slate-300/10',
-            hasNav ? 'vno-mx-4 lg:vno-mx-0' : 'vno-px-4'
-          )}
-        >
+        <div className="vno-mx-4 vno-border-b vno-border-slate-900/10 vno-py-4 dark:vno-border-slate-300/10 lg:vno-border-0">
           <div className="vno-relative vno-flex vno-items-center">
             <Link
               href="/"
@@ -220,7 +216,7 @@ export default function Header({ hasNav = false, navIsOpen, onNavToggle }) {
                 <ThemeToggle panelClassName="vno-mt-8" />
                 <Link
                   href="https://github.com/vnodesign"
-                  className="vno-block vno-ml-6 vno-text-gray-500 hover:vno-text-gray-900 dark:vno-text-gray-400 dark:hover:vno-text-white"
+                  className="vno-block vno-ml-6 vno-text-slate-400 hover:vno-text-slate-500 dark:hover:vno-text-slate-300"
                   title="GitHub"
                 >
                   <span className="vno-sr-only">GitHub</span>
@@ -238,26 +234,6 @@ export default function Header({ hasNav = false, navIsOpen, onNavToggle }) {
             <NavPopover className="vno-ml-auto" display="lg:vno-hidden" />
           </div>
         </div>
-        {hasNav && (
-          <div className="vno-flex vno-items-center vno-p-4 vno-border-b vno-border-slate-900/10 lg:vno-hidden dark:vno-border-slate-50/[0.06]">
-            <button
-              type="button"
-              onClick={() => onNavToggle(!navIsOpen)}
-              className="vno-text-slate-500 hover:vno-text-slate-600 dark:hover:vno-text-slate-300"
-            >
-              <span className="vno-sr-only">Navigation</span>
-              <svg width="24" height="24">
-                <path
-                  d="M5 6h14M5 12h14M5 18h14"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                />
-              </svg>
-            </button>
-          </div>
-        )}
       </div>
     </header>
   )
