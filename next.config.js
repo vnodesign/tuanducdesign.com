@@ -8,12 +8,15 @@ module.exports = withBundleAnalyzer(
   withPWA({
     reactStrictMode: true,
     swcMinify: true,
+    pageExtensions: ['js', 'jsx', 'md', 'mdx'],
     experimental: {
       scrollRestoration: true,
     },
-    pageExtensions: ['js', 'jsx', 'md', 'mdx'],
     eslint: {
       dirs: ['pages', 'components', 'lib', 'layouts'],
+    },
+    async redirects() {
+      return require('./redirects.json')
     },
     webpack: (config, { dev, isServer }) => {
       config.module.rules.push({

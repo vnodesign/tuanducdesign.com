@@ -1,0 +1,127 @@
+[
+  {
+    "source": "/series-nextdns",
+    "destination": "/blog/series-nextdns",
+    "permanent": false
+  },
+  {
+    "source": "/series",
+    "destination": "/blog/series",
+    "permanent": false
+  },
+  {
+    "source": "/series/:path*",
+    "destination": "/blog/:path*",
+    "permanent": false
+  },
+  {
+    "source": "/category/:path*",
+    "destination": "/tags/:path*",
+    "permanent": false
+  },
+  {
+    "source": "/my-customer",
+    "destination": "/",
+    "permanent": false
+  },
+  {
+    "source": "/contacts",
+    "destination": "/",
+    "permanent": false
+  },
+  {
+    "source": "/categories",
+    "destination": "/",
+    "permanent": false
+  },
+  {
+    "source": "/tags",
+    "destination": "/",
+    "permanent": false
+  },
+  {
+    "source": "/lazyload-facebook-customize-chat",
+    "destination": "/blog/lazyload-facebook-customize-chat",
+    "permanent": false
+  },
+  {
+    "source": "/tang-toc-website-tu-preload",
+    "destination": "/blog/tang-toc-website-tu-preload",
+    "permanent": false
+  },
+  {
+    "source": "/lazyload-zalo-plugins",
+    "destination": "/blog/lazyload-zalo-plugins",
+    "permanent": false
+  },
+  {
+    "source": "/lazyload-twitter-publish",
+    "destination": "/blog/lazyload-twitter-publish",
+    "permanent": false
+  },
+  {
+    "source": "/cai-dat-module-pagespeed-len-may-chu-nginx",
+    "destination": "/blog/cai-dat-module-pagespeed-len-may-chu-nginx",
+    "permanent": false
+  },
+  {
+    "source": "/huong-dan-su-dung-thu-vien-deferjs-cua-mai-nhut-tan",
+    "destination": "/blog/huong-dan-su-dung-thu-vien-deferjs-cua-mai-nhut-tan",
+    "permanent": false
+  },
+  {
+    "source": "/tang-toc-website-bang-cach-su-dung-staticaly",
+    "destination": "/blog/tang-toc-website-bang-cach-su-dung-staticaly",
+    "permanent": false
+  },
+  {
+    "source": "/lazyload-google-fonts",
+    "destination": "/blog/lazyload-google-fonts",
+    "permanent": false
+  },
+  {
+    "source": "/cach-kiem-tra-xem-co-bao-nhieu-requests-tren-website",
+    "destination": "/blog/cach-kiem-tra-xem-co-bao-nhieu-requests-tren-website",
+    "permanent": false
+  },
+  {
+    "source": "/cach-su-dung-github-va-staticaly-de-toi-uu-website",
+    "destination": "/blog/cach-su-dung-github-va-staticaly-de-toi-uu-website",
+    "permanent": false
+  },
+  {
+    "source": "/lazyload-image-va-iframe",
+    "destination": "/blog/lazyload-image-va-iframe",
+    "permanent": false
+  },
+  {
+    "source": "/meo-toi-uu-website-khi-su-dung-zalo-plugins",
+    "destination": "/blog/meo-toi-uu-website-khi-su-dung-zalo-plugins",
+    "permanent": false
+  },
+  {
+    "source": "/meo-toi-uu-website-khi-su-dung-facebook-plugins",
+    "destination": "/blog/meo-toi-uu-website-khi-su-dung-facebook-plugins",
+    "permanent": false
+  },
+  {
+    "source": "/bo-ba-thu-vien-than-thanh-giup-website-toi-uu",
+    "destination": "/blog/bo-ba-thu-vien-than-thanh-giup-website-toi-uu",
+    "permanent": false
+  },
+  {
+    "source": "/lazyload-google-adsense",
+    "destination": "/blog/lazyload-google-adsense",
+    "permanent": false
+  },
+  {
+    "source": "/lazyload-youtube-va-responsive-video",
+    "destination": "/blog/lazyload-youtube-va-responsive-video",
+    "permanent": false
+  },
+  {
+    "source": "/lazyload-google-map",
+    "destination": "/blog/lazyload-google-map",
+    "permanent": false
+  }
+]
