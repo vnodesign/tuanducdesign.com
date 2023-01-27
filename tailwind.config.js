@@ -145,7 +145,7 @@ module.exports = {
               color: theme('colors.white'),
               borderBottomColor: theme('colors.sky.400'),
             },
-            'h2, h3, h4, code': {
+            'h1, h2, h3, h4, h5, h6, code': {
               color: theme('colors.slate.200'),
             },
             hr: {

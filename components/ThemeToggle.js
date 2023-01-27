@@ -5,7 +5,7 @@ import { Fragment, useEffect, useRef } from 'react'
 import { create } from 'zustand'
 
 const useSettingTheme = create((set) => ({
-  theme: null,
+  theme: '',
   setTheme: (theme) => set({ theme }),
 }))
 
