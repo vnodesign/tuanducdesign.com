@@ -12,7 +12,6 @@ export default function Layout({ children }) {
         <div className="vno-absolute vno-inset-x-0 vno-top-0 vno-z-20 vno-flex vno-justify-center vno-overflow-hidden vno-pointer-events-none">
           <div className="vno-w-[108rem] vno-flex-none vno-flex vno-justify-end">
             <picture>
-              <source srcSet={require('@/img/beams/docs@30.avif').default.src} type="image/avif" />
               <img
                 src={require('@/img/beams/docs@tinypng.png').default.src}
                 alt="Background Light"
@@ -21,10 +20,6 @@ export default function Layout({ children }) {
               />
             </picture>
             <picture>
-              <source
-                srcSet={require('@/img/beams/docs-dark@30.avif').default.src}
-                type="image/avif"
-              />
               <img
                 src={require('@/img/beams/docs-dark@tinypng.png').default.src}
                 alt="Background Dark"
