@@ -4,11 +4,7 @@ import React from 'react'
 import { useRouter } from 'next/router'
 import Script from 'next/script'
 import NProgress from 'nprogress'
-import Loader from '@/components/Loader'
-import loadable from '@loadable/component'
-const Layout = loadable(() => import('@/components/Layout'), {
-  fallback: <Loader />,
-})
+import Layout from '@/components/Layout'
 import { ClientReload } from '@/components/ClientReload'
 const isDevelopment = process.env.NODE_ENV === 'development'
 const isSocket = process.env.SOCKET
