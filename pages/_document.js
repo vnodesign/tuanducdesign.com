@@ -23,11 +23,6 @@ export default class Document extends NextDocument {
           <link rel="dns-prefetch" href="//www.googletagservices.com" />
           <link rel="dns-prefetch" href="//adservice.google.com" />
           <meta name="theme-color" content="#ffffff" />
-          <script
-            async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4183134625750063"
-            crossOrigin="anonymous"
-          />
         </Head>
         <body className="vno-bg-white vno-text-slate-500 vno-antialiased dark:vno-bg-slate-900 dark:vno-text-slate-400">
           <Main />

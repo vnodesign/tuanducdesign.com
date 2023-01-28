@@ -2,6 +2,7 @@
 import '@/styles/tailwind.css'
 import React from 'react'
 import { useRouter } from 'next/router'
+import Script from 'next/script'
 import NProgress from 'nprogress'
 import Loader from '@/components/Loader'
 import loadable from '@loadable/component'
@@ -36,6 +37,16 @@ export default function App({ Component, pageProps }) {
       <Layout>
         <Component {...pageProps} />
       </Layout>
+      <Script
+        id="adsense-script"
+        async
+        strategy="afterInteractive"
+        onError={(e) => {
+          console.error('Script failed to load', e)
+        }}
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4183134625750063"
+        crossOrigin="anonymous"
+      />
     </div>
   )
 }
