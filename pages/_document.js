@@ -17,8 +17,19 @@ export default class Document extends NextDocument {
           <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
           <link rel="dns-prefetch" href="//www.googletagmanager.com" />
           <link rel="dns-prefetch" href="//pagead2.googlesyndication.com" />
-          <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f8fafc" />
-          <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0B1120" />
+          <meta name="theme-color" content="#f8fafc" />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                  if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.documentElement.classList.add('dark');
+                    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0B1120')
+                  } else {
+                    document.documentElement.classList.remove('dark')
+                  }
+              `,
+            }}
+          />
           <script
             async
             src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4183134625750063"
