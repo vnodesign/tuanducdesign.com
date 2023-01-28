@@ -10,12 +10,15 @@ const useSettingTheme = create((set) => ({
 }))
 
 function update() {
-  if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  if (
+    localStorage.theme === 'dark' ||
+    (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+  ) {
     document.documentElement.classList.add('dark')
-    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0B1120')
+    document.documentElement.classList.remove('light')
   } else {
     document.documentElement.classList.remove('dark')
-    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f8fafc')
+    document.documentElement.classList.add('light')
   }
 }
 

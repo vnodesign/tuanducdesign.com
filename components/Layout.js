@@ -1,13 +1,12 @@
 import { useRouter } from 'next/router'
-import dynamic from 'next/dynamic'
-const Header = dynamic(() => import('@/components/Header'))
-const Footer = dynamic(() => import('@/components/Footer'))
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
 export default function Layout({ children }) {
   const router = useRouter()
   const showBg = router.pathname !== '/' && router.pathname !== '/service'
   return (
-    <div className="vno-flex vno-flex-col">
+    <>
       {showBg && (
         <div className="vno-absolute vno-inset-x-0 vno-top-0 vno-z-20 vno-flex vno-justify-center vno-overflow-hidden vno-pointer-events-none">
           <div className="vno-w-[108rem] vno-flex-none vno-flex vno-justify-end">
@@ -31,8 +30,8 @@ export default function Layout({ children }) {
         </div>
       )}
       <Header />
-      <main className="vno-min-h-screen vno-flex-1">{children}</main>
+      <main className="vno-grow">{children}</main>
       <Footer />
-    </div>
+    </>
   )
 }

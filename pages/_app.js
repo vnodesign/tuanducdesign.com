@@ -1,29 +1,41 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import '@/styles/tailwind.css'
-import Layout from '@/components/Layout'
-import Router from 'next/router'
-import ProgressBar from '@badrap/bar-of-progress'
-
-const progress = new ProgressBar({
-  size: 2,
-  color: '#38bdf8',
-  className: 'bar-of-progress',
-  delay: 100,
+import React from 'react'
+import { useRouter } from 'next/router'
+import NProgress from 'nprogress'
+import Loader from '@/components/Loader'
+import loadable from '@loadable/component'
+const Layout = loadable(() => import('@/components/Layout'), {
+  fallback: <Loader />,
 })
-
-// this fixes safari jumping to the bottom of the page
-if (typeof window !== 'undefined') {
-  progress.start()
-  progress.finish()
-}
-
-Router.events.on('routeChangeStart', () => progress.start())
-Router.events.on('routeChangeComplete', () => progress.finish())
-Router.events.on('routeChangeError', () => progress.finish())
+import { ClientReload } from '@/components/ClientReload'
+const isDevelopment = process.env.NODE_ENV === 'development'
+const isSocket = process.env.SOCKET
 
 export default function App({ Component, pageProps }) {
+  const router = useRouter()
+  NProgress.configure({ showSpinner: false })
+  React.useEffect(() => {
+    const handleRouteStart = () => NProgress.start()
+    const handleRouteDone = () => NProgress.done()
+
+    router.events.on('routeChangeStart', handleRouteStart)
+    router.events.on('routeChangeComplete', handleRouteDone)
+    router.events.on('routeChangeError', handleRouteDone)
+
+    return () => {
+      // Make sure to remove the event handler on unmount!
+      router.events.off('routeChangeStart', handleRouteStart)
+      router.events.off('routeChangeComplete', handleRouteDone)
+      router.events.off('routeChangeError', handleRouteDone)
+    }
+  }, [])
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <div className="vno-flex vno-flex-col vno-min-h-screen">
+      {isDevelopment && isSocket && <ClientReload />}
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </div>
   )
 }

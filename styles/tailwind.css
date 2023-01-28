@@ -2,7 +2,7 @@
 
 /*! purgecss start ignore */
 @import 'prism.css';
-@import 'bar-of-progress.css';
+@import 'nprogress.css';
 /*! purgecss end ignore */
 
 @import 'tailwindcss/components';
