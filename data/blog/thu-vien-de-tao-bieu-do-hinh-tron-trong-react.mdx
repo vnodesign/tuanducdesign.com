@@ -1,0 +1,198 @@
+---
+title: '3 thư viện tốt nhất để tạo biểu đồ hình tròn trong React'
+date: '2023-01-29'
+lastmod: '2023-01-29'
+tags: ['React']
+draft: false
+summary: 'Có nhiều thư viện khác nhau giúp bạn tạo một biểu đồ hình tròn đẹp mắt trong React mà không gặp bất kỳ khó khăn nào'
+images: '/static/images/thu-vien-de-tao-bieu-do-hinh-tron-trong-react.jpg'
+authors: 'tuanducdesign'
+---
+
+Có nhiều thư viện khác nhau giúp bạn tạo một biểu đồ hình tròn đẹp mắt (còn gọi là circle chart, pie graph, v.v.) trong React mà không gặp bất kỳ khó khăn nào. Bài viết này sẽ hướng dẫn bạn những cái nổi bật nhất trong số đó.
+
+## VictoryPie
+
+Một thư viện vẽ biểu đồ rất dễ sử dụng. Nó cũng hỗ trợ với TypeScript.
+
+### Cài đặt
+
+Cài đặt victory-pie bằng cách thực hiện lệnh bên dưới:
+
+**Với YARN**
+
+```bash
+yarn add victory-pie
+```
+
+**Với PNPM**
+
+```bash
+pnpm i victory-pie
+```
+
+**Với NPM**
+
+```bash
+npm i victory-pie
+```
+
+### Ví dụ
+
+Tạo một ứng dụng React mới và thay thế mã mặc định trong `App.js` của bạn bằng đoạn mã sau:
+
+```js
+import React from 'react'
+import { VictoryPie } from 'victory-pie'
+
+const myData = [
+  { x: 'Group A', y: 900 },
+  { x: 'Group B', y: 400 },
+  { x: 'Group C', y: 300 },
+]
+
+const App = () => {
+  return (
+    <div>
+      <VictoryPie data={myData} colorScale={['blue', 'yellow', 'red']} radius={100} />
+    </div>
+  )
+}
+
+export default App
+```
+
+Kết quả:
+
+![VictoryPie](/static/images/victory-pie.jpg)
+
+Xem thêm tại: [https://github.com/formidablelabs/victory](https://github.com/formidablelabs/victory)
+
+## Recharts
+
+Cái này không phải là rất nhỏ về kích thước nhưng mạnh mẽ. Nó hỗ trợ SVG gốc và TypeScript, vì vậy bạn không phải cài đặt các gói gõ để viết mã của mình theo tiêu chuẩn hiện đại.
+
+### Cài đặt
+
+Cài đặt recharts bằng cách thực hiện lệnh bên dưới:
+
+**Với YARN**
+
+```bash
+yarn add recharts
+```
+
+**Với PNPM**
+
+```bash
+pnpm i recharts
+```
+
+**Với NPM**
+
+```bash
+npm i recharts
+```
+
+### Ví dụ
+
+Tạo một ứng dụng React mới và thay thế mã mặc định trong `App.js` của bạn bằng đoạn mã sau:
+
+```js
+import React from 'react'
+import { PieChart, Pie, Tooltip } from 'recharts'
+
+const myData = [
+  { name: 'Group A', value: 900 },
+  { name: 'Group B', value: 400 },
+  { name: 'Group C', value: 300 },
+]
+
+const App = () => {
+  return (
+    <PieChart width={800} height={800}>
+      <Pie
+        dataKey="value"
+        isAnimationActive={true}
+        data={myData}
+        outerRadius={300}
+        fill="orangered"
+        label
+      />
+
+      {/* Display the tooltips */}
+      <Tooltip />
+    </PieChart>
+  )
+}
+
+export default App
+```
+
+Kết quả:
+
+![Recharts](/static/images/recharts.jpg)
+
+Xem thêm tại: [https://github.com/recharts/recharts](https://github.com/recharts/recharts)
+
+## react-minimal-pie-chart
+
+Một thư viện nhẹ để tạo biểu đồ hình tròn với các tùy chọn linh hoạt và hoạt ảnh CSS đi kèm. Kích thước được giải nén là khoảng 169 kB, trong khi kích thước gzip nhỏ hơn 2 kB.
+
+### Cài đặt
+
+Cài đặt react-minimal-pie-chart bằng cách thực hiện lệnh bên dưới:
+
+**Với YARN**
+
+```bash
+yarn add react-minimal-pie-chart
+```
+
+**Với PNPM**
+
+```bash
+pnpm i react-minimal-pie-chart
+```
+
+**Với NPM**
+
+```bash
+npm i react-minimal-pie-chart
+```
+
+### Ví dụ
+
+Tạo một ứng dụng React mới và thay thế mã mặc định trong `App.js` của bạn bằng đoạn mã sau:
+
+```js
+import React from 'react'
+import { PieChart } from 'react-minimal-pie-chart'
+
+const myData = [
+  { title: 'Dogs', value: 100, color: 'orange' },
+  { title: 'Cats', value: 50, color: 'green' },
+  { title: 'Dragons', value: 15, color: 'purple' },
+]
+
+const App = () => {
+  return (
+    <div>
+      <PieChart
+        // your data
+        data={myData}
+        // width and height of the view box
+        viewBoxSize={[600, 600]}
+      />
+    </div>
+  )
+}
+
+export default App
+```
+
+Kết quả:
+
+![react-minimal-pie-chart](/static/images/react-minimal-pie-chart.jpg)
+
+Xem thêm tại: [https://github.com/toomuchdesign/react-minimal-pie-chart](https://github.com/toomuchdesign/react-minimal-pie-chart)

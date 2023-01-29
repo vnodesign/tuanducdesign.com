@@ -1,0 +1,151 @@
+---
+title: 'Hướng dẫn cài đặt react-ga trên React'
+date: '2023-01-29'
+lastmod: '2023-01-29'
+tags: ['React', 'Google Analytics']
+draft: false
+summary: 'Bài viết này sẽ hướng dẫn bạn cách cài đặt react-ga trên React'
+images: '/static/images/huong-dan-cai-dat-react-ga-tren-react.png'
+authors: 'tuanducdesign'
+---
+
+Hướng dẫn này chỉ cho bạn cách theo dõi lưu lượng truy cập trên ứng dụng React (hoặc trang web) của bạn bằng Google Analytics.
+
+![Hướng dẫn cài đặt react-ga trên React](/static/images/huong-dan-cai-dat-react-ga-tren-react.png)
+
+Đầu tiên, hãy cài đặt các gói cần thiết:
+
+**Bắt buộc**
+
+Để làm theo hướng dẫn này, bạn nên có những điều sau đây:
+
+- Có tài khoản Google Analytics
+- Có kiến thức cơ bản về React
+
+## Cài đặt
+
+Gói [react-ga](https://www.npmjs.com/package/react-ga) là một thư viện mã nguồn mở được thiết kế để hoạt động với phiên bản mới nhất của Google Analytics, Universal Analytics.
+
+Thêm gói vào dự án của bạn.
+
+**Với YARN**
+
+```bash
+yarn add react-ga
+```
+
+**Với PNPM**
+
+```bash
+pnpm i react-ga
+```
+
+**Với NPM**
+
+```bash
+npm i react-ga
+```
+
+## Chèn vào dự án
+
+Tạo một tệp có tên `Analytics.js` bên trong thư mục dự án của bạn.
+
+```js
+import ReactGA from 'react-ga'
+
+const Analytics = () => {
+  // replace this with your google analytics id
+  const GA_ID = 'UA-000000-01'
+
+  ReactGA.initialize(GA_ID)
+  ReactGA.pageview(window.location.pathname + window.location.search)
+}
+
+export default Analytics
+```
+
+**Với React**
+
+Chèn đoạn sau vào component mà bạn muốn hiển thị:
+
+```js
+import Analytics from './Analytics'
+
+const MyComponent = () => {
+  Analytics()
+  // other code here
+}
+
+export default MyComponent
+```
+
+**Với NextJS**
+
+Chèn đoạn sau vào tệp `_document.js` của bạn:
+
+```js
+import Document, { Html, Head, Main, NextScript } from 'next/document'
+import Analytics from './Analytics'
+class MyDocument extends Document {
+  render() {
+    Analytics()
+    return (
+      <Html>
+        <Head />
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    )
+  }
+}
+
+export default MyDocument
+```
+
+Cách tốt hơn là triển khai với hook **useEffect**:
+
+**Với React**
+
+```js
+import React, { useEffect } from 'react'
+import Analytics from './Analytics'
+
+const MyPage = () => {
+  useEffect(() => {
+    Analytics()
+  }, [])
+  // other code
+}
+
+export default MyPage
+```
+
+**Với NextJS**
+
+```js
+import React, { useEffect } from 'react'
+import Document, { Html, Head, Main, NextScript } from 'next/document'
+import Analytics from './Analytics'
+class MyDocument extends Document {
+  render() {
+    useEffect(() => {
+      Analytics()
+    }, [])
+    return (
+      <Html>
+        <Head />
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    )
+  }
+}
+
+export default MyDocument
+```
+
+Bây giờ hãy kiểm tra công việc của bạn (lưu ý rằng nó sẽ hoạt động ngay cả trên môi trường localhost).

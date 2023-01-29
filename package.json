@@ -3,8 +3,8 @@
   "version": "1.0.1",
   "private": true,
   "scripts": {
-    "start": "cross-env SOCKET=true node ./scripts/next-remote-watch.js ./data",
     "dev": "next dev",
+    "dev:content": "NODE_ENV=development cross-env SOCKET=true node ./scripts/next-remote-watch.js ./data",
     "build": "next build && next-sitemap",
     "serve": "next start",
     "analyze": "cross-env ANALYZE=true next build",
