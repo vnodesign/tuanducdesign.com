@@ -1,0 +1,68 @@
+---
+title: 'Hướng dẫn cài đặt Font Awesome trên React'
+date: '2023-01-29'
+lastmod: '2023-01-29'
+tags: ['React', 'Font Awesome']
+draft: false
+summary: 'Bài viết này sẽ hướng dẫn bạn cách cài đặt Font Awesome trên React'
+images: '/static/images/huong-dan-cai-dat-font-awesome-tren-react.png'
+authors: 'tuanducdesign'
+---
+
+Bài viết này sẽ hướng dẫn bạn cách cài đặt Font Awesome trên React.
+
+![Hướng dẫn cài đặt Font Awesome trên React](/static/images/huong-dan-cai-dat-font-awesome-tren-react.png)
+
+Đầu tiên, hãy cài đặt các gói cần thiết:
+
+**Với YARN**
+
+```
+yarn add @fortawesome/react-fontawesome @fortawesome/free-solid-svg-icons @fortawesome/fontawesome-svg-core
+```
+
+**Với PNPM**
+
+```
+pnpm i @fortawesome/react-fontawesome @fortawesome/free-solid-svg-icons @fortawesome/fontawesome-svg-core
+```
+
+**Với NPM**
+
+```
+npm i @fortawesome/react-fontawesome @fortawesome/free-solid-svg-icons @fortawesome/fontawesome-svg-core
+```
+
+Tiếp theo, import các icon bạn cần và sử dụng chúng trong component trên React của bạn:
+
+```jsx
+import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faClock, faUserCircle, faCoffee } from '@fortawesome/free-solid-svg-icons'
+
+const MyComponent = () => {
+  return (
+    <div style={{ padding: 50 }}>
+      <p>
+        <FontAwesomeIcon icon={faClock} style={{ fontSize: 100, color: 'blue', marginRight: 30 }} />
+        <FontAwesomeIcon icon={faUserCircle} style={{ fontSize: 100, color: 'orange' }} />
+      </p>
+      <p>
+        <FontAwesomeIcon icon={faCoffee} style={{ fontSize: 200, color: 'brown' }} />
+      </p>
+    </div>
+  )
+}
+
+export default MyComponent
+```
+
+Kết quả sau khi thêm Font Awesome:
+
+![Kết quả sau khi thêm Font Awesome](/static/images/ket-qua-sau-khi-them-font-awesome.jpg)
+
+Bạn có thể tìm thấy tất cả các icon có sẵn trong tệp sau:
+
+```
+/node_modules/@fortawesome/free-solid-svg-icons/index.d.ts
+```
