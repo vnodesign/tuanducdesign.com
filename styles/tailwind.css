@@ -70,17 +70,25 @@ code[class^='language-diff-'] > span {
   @apply vno-block;
 }
 
-.token.deleted,
-.token.inserted {
+.code-line.deleted,
+.code-line.inserted {
   @apply vno-relative -vno-mx-9 vno-block vno-border-l-4 vno-pl-8 vno-pr-5 before:vno-absolute before:vno-top-0 before:vno-left-4;
 }
 
-.token.inserted {
+.code-line.inserted {
   @apply vno-border-teal-400 vno-bg-teal-400/[0.15] before:vno-text-teal-400 before:vno-content-['+'];
 }
 
-.token.deleted {
+.code-line.deleted {
   @apply vno-border-rose-400 vno-bg-rose-500/[0.15] before:vno-text-rose-400 before:vno-content-['-'];
+}
+
+.highlight-line {
+  @apply -vno-mx-5 vno-pl-4 vno-pr-5 vno-border-l-4 vno-border-sky-400;
+}
+
+.code-line {
+  @apply vno-block;
 }
 
 #nprogress {

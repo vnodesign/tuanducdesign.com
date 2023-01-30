@@ -1,10 +1,9 @@
+import Head from 'next/head'
 import { NextSeo, ArticleJsonLd, BreadcrumbJsonLd } from 'next-seo'
 import { useRouter } from 'next/router'
 import siteMetadata from '@/data/siteMetadata'
 
-export const PageSEO = ({ title, description, breadcrumb = false }) => {
-  const ogImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner
-  const twImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner
+const CommonSEO = ({ title, description, openGraph, twImage }) => {
   const router = useRouter()
   return (
     <>
@@ -12,22 +11,7 @@ export const PageSEO = ({ title, description, breadcrumb = false }) => {
         title={title}
         description={description}
         canonical={`${siteMetadata.siteUrl}${router.asPath}`}
-        openGraph={{
-          title: title,
-          description: description,
-          url: `${siteMetadata.siteUrl}${router.asPath}`,
-          images: [
-            {
-              url: ogImageUrl,
-              alt: title,
-              width: 1200,
-              height: 630,
-            },
-          ],
-          siteName: siteMetadata.siteTitle,
-          type: 'website',
-          locale: 'vi_VN',
-        }}
+        openGraph={openGraph}
         facebook={{
           appId: '1031926270674334',
         }}
@@ -55,11 +39,69 @@ export const PageSEO = ({ title, description, breadcrumb = false }) => {
             name: 'twitter:description',
           },
           {
-            content: twImageUrl,
+            content: twImage,
             name: 'twitter:image',
           },
         ]}
       />
+      <Head>
+        <link rel="shortcut icon" href={siteMetadata.siteLogo} />
+        <link rel="manifest" href="/static/site.manifest" />
+        <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="//stats.g.doubleclick.net" />
+        <link rel="dns-prefetch" href="//pagead2.googlesyndication.com" />
+        <link rel="dns-prefetch" href="//www.googletagservices.com" />
+        <link rel="dns-prefetch" href="//adservice.google.com" />
+        <meta name="theme-color" content="#ffffff" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+                try {
+                  if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.documentElement.classList.add('dark')
+                    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0B1120')
+                  } else {
+                    document.documentElement.classList.remove('dark')
+                  }
+                } catch (_) {}
+              `,
+          }}
+        />
+      </Head>
+    </>
+  )
+}
+
+export const PageSEO = ({ title, description, breadcrumb = false }) => {
+  const ogImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner
+  const twImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner
+  const router = useRouter()
+  return (
+    <>
+      <CommonSEO
+        title={title}
+        description={description}
+        openGraph={{
+          title: title,
+          description: description,
+          url: `${siteMetadata.siteUrl}${router.asPath}`,
+          images: [
+            {
+              url: ogImageUrl,
+              alt: title,
+              width: 1200,
+              height: 630,
+            },
+          ],
+          siteName: siteMetadata.siteTitle,
+          type: 'website',
+          locale: 'vi_VN',
+        }}
+        twImage={twImageUrl}
+      />
+      <Head>
+        <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
+      </Head>
       {breadcrumb && (
         <BreadcrumbJsonLd
           itemListElements={[
@@ -86,10 +128,9 @@ export const TagSEO = ({ title, description }) => {
   const router = useRouter()
   return (
     <>
-      <NextSeo
+      <CommonSEO
         title={title}
         description={description}
-        canonical={`${siteMetadata.siteUrl}${router.asPath}`}
         openGraph={{
           title: title,
           description: description,
@@ -106,46 +147,11 @@ export const TagSEO = ({ title, description }) => {
           type: 'website',
           locale: 'vi_VN',
         }}
-        facebook={{
-          appId: '1031926270674334',
-        }}
-        twitter={{
-          handle: siteMetadata.twitter,
-          site: siteMetadata.twitter,
-          cardType: 'summary_large_image',
-        }}
-        robotsProps={{
-          maxSnippet: -1,
-          maxImagePreview: 'none',
-          maxVideoPreview: -1,
-        }}
-        additionalMetaTags={[
-          {
-            content: '100005485267478',
-            property: 'fb:admins',
-          },
-          {
-            content: title,
-            name: 'twitter:title',
-          },
-          {
-            content: description,
-            name: 'twitter:description',
-          },
-          {
-            content: twImageUrl,
-            name: 'twitter:image',
-          },
-        ]}
-        additionalLinkTags={[
-          {
-            rel: 'alternate',
-            type: 'application/rss+xml',
-            title: `${title} - RSS feed`,
-            href: `${siteMetadata.siteUrl}${router.asPath}/feed.xml`,
-          },
-        ]}
+        twImage={twImageUrl}
       />
+      <Head>
+        <link rel="alternate" type="application/rss+xml" href={`${router.asPath}/feed.xml`} />
+      </Head>
       <BreadcrumbJsonLd
         itemListElements={[
           {
@@ -175,10 +181,9 @@ export const BlogSEO = ({ authorDetails, title, summary, date, lastmod, url, ima
 
   return (
     <>
-      <NextSeo
+      <CommonSEO
         title={title}
         description={summary}
-        canonical={`${siteMetadata.siteUrl}${router.asPath}`}
         openGraph={{
           title: title,
           description: summary,
@@ -199,38 +204,11 @@ export const BlogSEO = ({ authorDetails, title, summary, date, lastmod, url, ima
             modifiedTime: modifiedAt,
           },
         }}
-        facebook={{
-          appId: '1031926270674334',
-        }}
-        twitter={{
-          handle: siteMetadata.twitter,
-          site: siteMetadata.twitter,
-          cardType: 'summary_large_image',
-        }}
-        robotsProps={{
-          maxSnippet: -1,
-          maxImagePreview: 'none',
-          maxVideoPreview: -1,
-        }}
-        additionalMetaTags={[
-          {
-            content: '100005485267478',
-            property: 'fb:admins',
-          },
-          {
-            content: title,
-            name: 'twitter:title',
-          },
-          {
-            content: summary,
-            name: 'twitter:description',
-          },
-          {
-            content: ogImage,
-            name: 'twitter:image',
-          },
-        ]}
+        twImage={ogImage}
       />
+      <Head>
+        <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
+      </Head>
       <ArticleJsonLd
         url={url}
         title={title}

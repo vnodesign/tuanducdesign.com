@@ -1,7 +1,7 @@
 ---
 title: 'Hướng dẫn cài đặt react-ga trên React'
 date: '2023-01-29'
-lastmod: '2023-01-29'
+lastmod: '2023-01-30'
 tags: ['React', 'Google Analytics']
 draft: false
 summary: 'Bài viết này sẽ hướng dẫn bạn cách cài đặt react-ga trên React'
@@ -37,7 +37,7 @@ yarn add react-ga
 **Với PNPM**
 
 ```bash
-pnpm i react-ga
+pnpm add react-ga
 ```
 
 **Với NPM**
@@ -50,7 +50,7 @@ npm i react-ga
 
 Tạo một tệp có tên `Analytics.js` bên trong thư mục dự án của bạn.
 
-```js
+```js {4,5}
 import ReactGA from 'react-ga'
 
 const Analytics = () => {

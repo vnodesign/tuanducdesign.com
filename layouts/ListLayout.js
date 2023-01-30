@@ -39,7 +39,7 @@ export default function ListLayout({ posts, title, description, initialDisplayPo
                   />
                 </svg>
                 <input
-                  type="search"
+                  type="text"
                   name="search"
                   value={searchValue}
                   onChange={(e) => setSearchValue(e.target.value)}

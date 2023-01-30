@@ -1,16 +1,22 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import '@/styles/tailwind.css'
+import siteMetadata from '@/data/siteMetadata'
 import React from 'react'
 import { useRouter } from 'next/router'
 import Script from 'next/script'
 import NProgress from 'nprogress'
-import Layout from '@/components/Layout'
+import { Header } from '@/components/Header'
+import Footer from '@/components/Footer'
+import { Analytics } from '@vercel/analytics/react'
+import ReactGA from 'react-ga'
 import { ClientReload } from '@/components/ClientReload'
 const isDevelopment = process.env.NODE_ENV === 'development'
 const isSocket = process.env.SOCKET
 
 export default function App({ Component, pageProps }) {
   const router = useRouter()
+  const showHeader = router.pathname !== '/'
+  ReactGA.initialize(`${siteMetadata.analytics.googleAnalyticsId}`)
   NProgress.configure({ showSpinner: false })
   React.useEffect(() => {
     const handleRouteStart = () => NProgress.start()
@@ -30,9 +36,12 @@ export default function App({ Component, pageProps }) {
   return (
     <div className="vno-flex vno-flex-col vno-min-h-screen">
       {isDevelopment && isSocket && <ClientReload />}
-      <Layout>
+      <Analytics />
+      {showHeader && <Header />}
+      <main className="vno-grow">
         <Component {...pageProps} />
-      </Layout>
+      </main>
+      <Footer />
       <Script
         id="adsense-script"
         async

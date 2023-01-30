@@ -45,11 +45,6 @@ module.exports = {
       16: '16',
     },
     extend: {
-      borderRadius: {
-        xl: 24,
-        '2xl': 32,
-        full: 1000,
-      },
       colors: {
         primary: {
           50: '#F0F2FF',
