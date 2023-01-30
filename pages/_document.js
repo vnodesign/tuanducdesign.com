@@ -11,17 +11,17 @@ export default class Document extends NextDocument {
     return (
       <Html lang={siteMetadata.language} className="dark">
         <Head>
-        <link rel="shortcut icon" href={siteMetadata.siteLogo} />
-        <link rel="manifest" href="/static/site.manifest" />
-        <link rel="dns-prefetch" href="//www.googletagmanager.com" />
-        <link rel="dns-prefetch" href="//stats.g.doubleclick.net" />
-        <link rel="dns-prefetch" href="//pagead2.googlesyndication.com" />
-        <link rel="dns-prefetch" href="//www.googletagservices.com" />
-        <link rel="dns-prefetch" href="//adservice.google.com" />
-        <meta name="theme-color" content="#ffffff" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
+          <link rel="shortcut icon" href={siteMetadata.siteLogo} />
+          <link rel="manifest" href="/static/site.manifest" />
+          <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+          <link rel="dns-prefetch" href="//stats.g.doubleclick.net" />
+          <link rel="dns-prefetch" href="//pagead2.googlesyndication.com" />
+          <link rel="dns-prefetch" href="//www.googletagservices.com" />
+          <link rel="dns-prefetch" href="//adservice.google.com" />
+          <meta name="theme-color" content="#ffffff" />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
                 try {
                   if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
                     document.documentElement.classList.add('dark')
@@ -31,9 +31,9 @@ export default class Document extends NextDocument {
                   }
                 } catch (_) {}
               `,
-          }}
-        />
-      </Head>
+            }}
+          />
+        </Head>
         <body className="vno-bg-white vno-text-slate-500 vno-antialiased dark:vno-bg-slate-900 dark:vno-text-slate-400">
           <Main />
           <NextScript />
