@@ -34,11 +34,11 @@ export default function App({ Component, pageProps }) {
     }
   }, [])
   return (
-    <div className="vno-flex vno-flex-col vno-min-h-screen">
+    <div className="vno-flex vno-flex-col">
       {isDevelopment && isSocket && <ClientReload />}
       <Analytics />
       {showHeader && <Header />}
-      <main className="vno-grow">
+      <main className="vno-min-h-screen vno-flex-1">
         <Component {...pageProps} />
       </main>
       <Footer />
