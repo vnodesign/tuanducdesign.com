@@ -94,13 +94,6 @@ function Header() {
             >
               Liên hệ Facebook
             </Link>
-            <Link
-              href="https://github.com/tuanducdesign"
-              className="vno-flex vno-items-center vno-justify-center vno-w-full vno-h-12 vno-px-4 vno-font-semibold vno-text-white vno-rounded-lg vno-bg-blue-900 hover:vno-bg-blue-700 focus:vno-outline-none focus:vno-ring-2 focus:vno-ring-blue-400 focus:vno-ring-offset-2 focus:vno-ring-offset-blue-50 sm:vno-w-auto dark:vno-bg-blue-500 dark:vno-highlight-white/20 dark:hover:vno-bg-blue-400"
-              title="Theo dõi mình trên GitHub"
-            >
-              Theo dõi mình trên GitHub
-            </Link>
           </div>
         </div>
       </div>
