@@ -54,6 +54,11 @@ export default class Document extends NextDocument {
               `,
             }}
           />
+          <script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4183134625750063"
+            crossOrigin="anonymous"
+          ></script>
         </InlineStylesHead>
         <body className="vno-bg-white vno-text-slate-500 vno-antialiased dark:vno-bg-slate-900 dark:vno-text-slate-400">
           <Main />
