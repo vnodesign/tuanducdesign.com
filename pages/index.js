@@ -90,16 +90,16 @@ function Header() {
             <Link
               href="https://www.facebook.com/tuanduc.support"
               className="vno-flex vno-items-center vno-justify-center vno-w-full vno-h-12 vno-px-6 vno-font-semibold vno-text-white vno-rounded-lg vno-bg-slate-900 hover:vno-bg-slate-700 focus:vno-outline-none focus:vno-ring-2 focus:vno-ring-slate-400 focus:vno-ring-offset-2 focus:vno-ring-offset-slate-50 sm:vno-w-auto dark:vno-bg-sky-500 dark:vno-highlight-white/20 dark:hover:vno-bg-sky-400"
-              title="Kết nối với mình trên Facebook"
+              title="Liên hệ Facebook"
             >
-              Kết nối với mình trên Facebook
+              Liên hệ Facebook
             </Link>
             <Link
               href="https://github.com/tuanducdesign"
               className="vno-flex vno-items-center vno-justify-center vno-w-full vno-h-12 vno-px-4 vno-font-semibold vno-text-white vno-rounded-lg vno-bg-blue-900 hover:vno-bg-blue-700 focus:vno-outline-none focus:vno-ring-2 focus:vno-ring-blue-400 focus:vno-ring-offset-2 focus:vno-ring-offset-blue-50 sm:vno-w-auto dark:vno-bg-blue-500 dark:vno-highlight-white/20 dark:hover:vno-bg-blue-400"
-              title="Kết nối với mình trên GitHub"
+              title="Theo dõi mình trên GitHub"
             >
-              Kết nối với mình trên GitHub
+              Theo dõi mình trên GitHub
             </Link>
           </div>
         </div>
