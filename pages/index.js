@@ -44,27 +44,7 @@ function Header() {
             priority
           />
           <div className="vno-flex vno-items-center">
-            <Link
-              className="vno-flex vno-items-center vno-justify-center vno-w-8 vno-h-8 -vno-my-1 vno-text-slate-500 hover:vno-text-slate-600 md:vno-hidden dark:hover:vno-text-slate-300"
-              href="/search"
-              title="Tìm kiếm nội dung"
-            >
-              <span className="vno-sr-only">Search</span>
-              <svg
-                width="24"
-                height="24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-              >
-                <path d="m19 19-3.5-3.5" />
-                <circle cx="11" cy="11" r="6" />
-              </svg>
-            </Link>
-            <NavPopover className="vno-ml-2 -vno-my-1 -vno-mr-1" display="md:vno-hidden" />
+            <NavPopover className="vno-ml-auto" display="md:vno-hidden" />
             <div className="vno-items-center vno-hidden md:vno-flex">
               <nav>
                 <ul className="vno-flex vno-items-center vno-space-x-8">
@@ -115,25 +95,11 @@ function Header() {
               Kết nối với mình trên Facebook
             </Link>
             <Link
-              href="/search"
-              className="vno-items-center vno-hidden vno-h-12 vno-px-4 vno-space-x-3 vno-text-left vno-bg-white vno-rounded-lg vno-shadow-sm sm:vno-flex vno-w-72 vno-ring-1 vno-ring-slate-900/10 hover:vno-ring-slate-300 focus:vno-outline-none focus:vno-ring-2 focus:vno-ring-sky-500 vno-text-slate-400 dark:vno-bg-slate-800 dark:vno-ring-0 dark:vno-text-slate-300 dark:vno-highlight-white/5 dark:hover:vno-bg-slate-700"
-              title="Tìm kiếm nội dung"
+              href="https://github.com/tuanducdesign"
+              className="vno-flex vno-items-center vno-justify-center vno-w-full vno-h-12 vno-px-4 vno-font-semibold vno-text-white vno-rounded-lg vno-bg-blue-900 hover:vno-bg-blue-700 focus:vno-outline-none focus:vno-ring-2 focus:vno-ring-blue-400 focus:vno-ring-offset-2 focus:vno-ring-offset-blue-50 sm:vno-w-auto dark:vno-bg-blue-500 dark:vno-highlight-white/20 dark:hover:vno-bg-blue-400"
+              title="Kết nối với mình trên GitHub"
             >
-              <svg
-                width="24"
-                height="24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="vno-flex-none vno-text-slate-300 dark:vno-text-slate-400"
-                aria-hidden="true"
-              >
-                <path d="m19 19-3.5-3.5" />
-                <circle cx="11" cy="11" r="6" />
-              </svg>
-              <span className="vno-flex-auto">Tìm kiếm nội dung...</span>
+              Kết nối với mình trên GitHub
             </Link>
           </div>
         </div>

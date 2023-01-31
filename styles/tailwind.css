@@ -95,7 +95,7 @@ code[class^='language-diff-'] > span {
   pointer-events: none;
 }
 #nprogress .bar {
-  background: rgb(63, 131, 248);
+  background: #38bdf8;
   position: fixed;
   z-index: 9999;
   top: 0;
@@ -109,7 +109,7 @@ code[class^='language-diff-'] > span {
   right: 0px;
   width: 100px;
   height: 100%;
-  box-shadow: 0 0 10px rgb(63, 131, 248), 0 0 5px rgb(63, 131, 248);
+  box-shadow: 0 0 10px #38bdf8, 0 0 5px #38bdf8;
   opacity: 1;
   -webkit-transform: rotate(3deg) translate(0px, -4px);
   -ms-transform: rotate(3deg) translate(0px, -4px);
@@ -127,8 +127,8 @@ code[class^='language-diff-'] > span {
   height: 18px;
   box-sizing: border-box;
   border: solid 2px transparent;
-  border-top-color: rgb(63, 131, 248);
-  border-left-color: rgb(63, 131, 248);
+  border-top-color: #38bdf8;
+  border-left-color: #38bdf8;
   border-radius: 50%;
   -webkit-animation: nprogresss-spinner 400ms linear infinite;
   animation: nprogress-spinner 400ms linear infinite;
@@ -156,4 +156,11 @@ code[class^='language-diff-'] > span {
   100% {
     transform: rotate(360deg);
   }
+}
+
+#searchModal::-webkit-search-cancel-button,
+#searchModal::-webkit-search-decoration,
+#searchModal::-webkit-search-results-button,
+#searchModal::-webkit-search-results-decoration {
+  display: none;
 }
