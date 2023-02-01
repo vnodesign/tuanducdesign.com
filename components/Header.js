@@ -113,14 +113,14 @@ export function NavPopover({ display = 'md:vno-hidden', className, ...props }) {
           <ul className="vno-space-y-6">
             <NavItems />
             <li>
-                      <Link
-                        href="https://github.com/vnodesign"
-                        className="hover:vno-text-sky-500 dark:hover:vno-text-sky-400"
-                        title="GitHub"
-                      >
-                        GitHub
-                      </Link>
-                    </li>
+              <Link
+                href="https://github.com/vnodesign"
+                className="hover:vno-text-sky-500 dark:hover:vno-text-sky-400"
+                title="GitHub"
+              >
+                GitHub
+              </Link>
+            </li>
           </ul>
           <div className="vno-pt-6 vno-mt-6 vno-border-t vno-border-slate-200 dark:vno-border-slate-200/10">
             <ThemeSelect />
