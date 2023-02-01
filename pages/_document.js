@@ -14,7 +14,7 @@ export default class Document extends NextDocument {
           <meta name="application-name" content={siteMetadata.title} />
           <meta name="apple-mobile-web-app-title" content={siteMetadata.title} />
           <meta name="msapplication-TileColor" content="#38bdf8" />
-          <meta name="theme-color" content="#f8fafc" />
+          <meta name="theme-color" content="#ffffff" />
           <link rel="shortcut icon" href={siteMetadata.siteLogo} />
           <link rel="manifest" href="/static/manifest.json" />
           <link
