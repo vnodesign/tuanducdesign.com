@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useContext, createContext, useRef } from 'react'
 import { useTop } from '@/hooks/useTop'
 import classNames from 'classnames'
@@ -17,7 +18,7 @@ const CustomHeading = ({ level, id, children, ...props }) => {
     return () => {
       context.unregisterHeading(id)
     }
-  }, [top, id, context.registerHeading, context.unregisterHeading, context])
+  }, [top, id, context?.registerHeading, context?.unregisterHeading])
   return (
     <Component
       className={classNames(

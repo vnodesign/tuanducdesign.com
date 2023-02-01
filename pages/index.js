@@ -8,7 +8,7 @@ import styles from './index.module.css'
 import classNames from 'classnames'
 import { NavItems, NavPopover } from '@/components/Header'
 import { ThemeToggle } from '@/components/ThemeToggle'
-export const MAX_DISPLAY = 3
+export const MAX_DISPLAY = 6
 
 export async function getStaticProps() {
   const posts = await getAllFilesFrontMatter('blog')
