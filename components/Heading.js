@@ -4,7 +4,7 @@ import { useTop } from '@/hooks/useTop'
 import classNames from 'classnames'
 
 const CustomHeading = ({ level, id, children, ...props }) => {
-  let Component = `${level}`
+  let Component = level
   const context = useContext(createContext)
 
   let ref = useRef()
@@ -23,7 +23,7 @@ const CustomHeading = ({ level, id, children, ...props }) => {
     <Component
       className={classNames(
         'vno-group vno-flex vno-whitespace-pre-wrap',
-        level === 2 &&
+        level === 'h2' &&
           'vno-mb-2 vno-text-sm vno-leading-6 vno-text-sky-500 vno-font-semibold vno-tracking-normal dark:vno-text-sky-400'
       )}
       id={id}

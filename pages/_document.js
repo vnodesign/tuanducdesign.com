@@ -9,7 +9,10 @@ export default class Document extends NextDocument {
 
   render() {
     return (
-      <Html lang={siteMetadata.language} className="dark">
+      <Html
+        lang={siteMetadata.language}
+        className="dark [--scroll-mt:9.875rem] lg:[--scroll-mt:6.3125rem]"
+      >
         <Head>
           <meta name="application-name" content={siteMetadata.title} />
           <meta name="apple-mobile-web-app-title" content={siteMetadata.title} />
