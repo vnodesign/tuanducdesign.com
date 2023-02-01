@@ -11,14 +11,22 @@ export default class Document extends NextDocument {
     return (
       <Html lang={siteMetadata.language} className="dark">
         <Head>
+          <meta name="application-name" content={siteMetadata.title} />
+          <meta name="apple-mobile-web-app-title" content={siteMetadata.title} />
+          <meta name="msapplication-TileColor" content="#38bdf8" />
+          <meta name="theme-color" content="#f8fafc" />
           <link rel="shortcut icon" href={siteMetadata.siteLogo} />
-          <link rel="manifest" href="/static/site.manifest" />
+          <link rel="manifest" href="/static/manifest.json" />
+          <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/static/apple-touch-icon-180x180.png"
+          />
           <link rel="dns-prefetch" href="//www.googletagmanager.com" />
           <link rel="dns-prefetch" href="//stats.g.doubleclick.net" />
           <link rel="dns-prefetch" href="//pagead2.googlesyndication.com" />
           <link rel="dns-prefetch" href="//www.googletagservices.com" />
           <link rel="dns-prefetch" href="//adservice.google.com" />
-          <meta name="theme-color" content="#ffffff" />
           <script
             dangerouslySetInnerHTML={{
               __html: `

@@ -2,7 +2,6 @@ lockfileVersion: 5.4
 
 specifiers:
   '@headlessui/react': ^1.7.7
-  '@loadable/component': ^5.15.3
   '@next/bundle-analyzer': ^13.1.2
   '@reach/rect': ^0.18.0
   '@svgr/webpack': ^6.5.1
@@ -59,7 +58,6 @@ specifiers:
 
 dependencies:
   '@headlessui/react': 1.7.8_biqbaboplfbrettd7655fr4n2y
-  '@loadable/component': 5.15.3_react@18.2.0
   '@reach/rect': 0.18.0_biqbaboplfbrettd7655fr4n2y
   '@tailwindcss/aspect-ratio': 0.4.2_tailwindcss@3.2.4
   '@tailwindcss/forms': 0.5.3_tailwindcss@3.2.4
@@ -1602,18 +1600,6 @@ packages:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.0
       '@jridgewell/sourcemap-codec': 1.4.14
-
-  /@loadable/component/5.15.3_react@18.2.0:
-    resolution: {integrity: sha512-VOgYgCABn6+/7aGIpg7m0Ruj34tGetaJzt4bQ345FwEovDQZ+dua+NWLmuJKv8rWZyxOUSfoJkmGnzyDXH2BAQ==}
-    engines: {node: '>=8'}
-    peerDependencies:
-      react: ^16.3.0 || ^17.0.0 || ^18.0.0
-    dependencies:
-      '@babel/runtime': 7.20.13
-      hoist-non-react-statics: 3.3.2
-      react: 18.2.0
-      react-is: 16.13.1
-    dev: false
 
   /@mdx-js/esbuild/2.2.1_esbuild@0.17.5:
     resolution: {integrity: sha512-Jf6TJ0VwFO51+cULHtByv+Sz+hoGpsmkbwzgPyMbmK9OvnXCkljinHQdbF9Dt7MuDPFxPRVyf5JMeo+WAEZtMw==}
@@ -4511,12 +4497,6 @@ packages:
       space-separated-tokens: 2.0.2
     dev: false
 
-  /hoist-non-react-statics/3.3.2:
-    resolution: {integrity: sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==}
-    dependencies:
-      react-is: 16.13.1
-    dev: false
-
   /html-enumerated-attributes/0.1.0:
     resolution: {integrity: sha512-Zd89WC8JnzDV2WYZxJJMHj3IYEoGzOW3LHh32aT6RRabJJihsTqVR5NMw5AT78MIFzFBVlmpn/2H/mxOCgfjqw==}
     dev: false
@@ -6688,6 +6668,7 @@ packages:
 
   /react-is/16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
+    dev: true
 
   /react/18.2.0:
     resolution: {integrity: sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==}
