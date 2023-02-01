@@ -44,7 +44,22 @@ function Header() {
             priority
           />
           <div className="vno-flex vno-items-center">
-            <NavPopover className="vno-ml-auto" display="md:vno-hidden" />
+            <Link
+              href="https://github.com/vnodesign"
+              className="vno-text-slate-500 hover:vno-text-slate-600 vno-w-8 vno-h-8 -vno-my-1 vno-flex vno-items-center vno-justify-center md:vno-hidden dark:hover:vno-text-slate-300"
+              title="GitHub"
+            >
+              <span className="vno-sr-only">GitHub</span>
+              <svg
+                viewBox="0 0 16 16"
+                className="vno-w-5 vno-h-5"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+              </svg>
+            </Link>
+            <NavPopover className="-vno-my-1 vno-ml-2 -vno-mr-1" display="md:vno-hidden" />
             <div className="vno-items-center vno-hidden md:vno-flex">
               <nav>
                 <ul className="vno-flex vno-items-center vno-space-x-8">
@@ -86,13 +101,20 @@ function Header() {
             </span>
             .
           </p>
-          <div className="vno-flex vno-justify-center vno-mt-6 vno-space-x-6 vno-text-sm sm:vno-mt-10">
+          <div className="vno-flex vno-flex-col vno-mt-6 md:vno-flex-row lg:vno-justify-center vno-text-sm sm:vno-mt-10">
             <Link
               href="https://www.facebook.com/tuanduc.support"
-              className="vno-flex vno-items-center vno-justify-center vno-w-full vno-h-12 vno-px-6 vno-font-semibold vno-text-white vno-rounded-lg vno-bg-slate-900 hover:vno-bg-slate-700 focus:vno-outline-none focus:vno-ring-2 focus:vno-ring-slate-400 focus:vno-ring-offset-2 focus:vno-ring-offset-slate-50 sm:vno-w-auto dark:vno-bg-sky-500 dark:vno-highlight-white/20 dark:hover:vno-bg-sky-400"
-              title="Liên hệ Facebook"
+              className="vno-text-white vno-bg-blue-600 hover:vno-bg-blue-700 focus:vno-ring-4 focus:vno-ring-blue-300 dark:focus:vno-ring-blue-800 vno-font-medium vno-rounded-lg vno-text-base vno-px-6 vno-py-2.5 vno-text-center md:vno-mr-5 vno-mb-3 md:vno-mb-0 vno-inline-flex vno-items-center vno-justify-center"
+              title="Kết nối với mình trên Facebook"
             >
-              Liên hệ Facebook
+              Kết nối với mình trên Facebook
+            </Link>
+            <Link
+              href="https://github.com/tuanducdesign"
+              className="vno-text-white vno-bg-pink-600 hover:vno-bg-pink-700 focus:vno-ring-4 focus:vno-ring-pink-300 dark:focus:vno-ring-pink-800 vno-font-medium vno-rounded-lg vno-text-base vno-px-6 vno-py-2.5 vno-text-center md:vno-mr-5 vno-mb-3 md:vno-mb-0 vno-inline-flex vno-items-center vno-justify-center"
+              title="Theo dõi mình trên GitHub"
+            >
+              Theo dõi mình trên GitHub
             </Link>
           </div>
         </div>
@@ -118,10 +140,10 @@ export default function Home({ posts }) {
         title={`${siteMetadata.title} - Front-end Developer`}
         description={siteMetadata.description}
       />
-      <div className="vno-mb-20 vno-space-y-20 vno-overflow-hidden sm:vno-mb-32 sm:vno-space-y-32 md:vno-mb-40 md:vno-space-y-40">
+      <div className="vno-mb-20 vno-overflow-hidden sm:vno-mb-32 md:vno-mb-40">
         <Header />
-        <section className="vno-px-8">
-          <div className="vno-mx-auto vno-max-w-8xl">
+        <section className="vno-px-8 vno-mt-20 sm:vno-mt-32 md:vno-mt-40">
+          <div className="vno-mx-auto vno-max-w-7xl">
             <div className="vno-grid vno-grid-cols-1 vno-gap-10 md:vno-grid-cols-3">
               <div className="vno-col-span-2">
                 <h2 className="vno-text-4xl vno-font-extrabold vno-tracking-tight vno-text-slate-900 dark:vno-text-white sm:vno-text-5xl">
@@ -129,7 +151,7 @@ export default function Home({ posts }) {
                     Mình là ai?
                   </span>
                 </h2>
-                <div className="vno-mt-6">
+                <div className="vno-mt-6 vno-text-lg">
                   <p>
                     Mình là một{' '}
                     <span className="vno-text-sky-500 dark:vno-text-sky-400">
@@ -184,33 +206,60 @@ export default function Home({ posts }) {
                   <FaVuejs className="vno-w-10 vno-h-10 vno-mr-5 vno-text-green-400" />
                   <FaWordpress className="vno-w-10 vno-h-10 vno-mr-5 vno-text-[#00749c]" />
                 </div>
-                <div className="vno-mt-10">
-                  <p className="vno-mt-6">
-                    Phần lớn thời gian mình dành cho việc xây dựng các sản phẩm trên Vue.js và
-                    WordPress.
-                  </p>
-                  <p className="vno-mt-6">
-                    Thời gian gần đây mình có tìm hiểu thêm về Next.js một Framework được xây dựng
-                    trên thư viện React.js, để xây dựng các dự án phức tạp hơn.
+                <div className="vno-mt-10 vno-text-lg">
+                  <p>
+                    Phần lớn thời gian mình dành cho việc xây dựng các sản phẩm trên{' '}
+                    <Link
+                      href="https://vuejs.org/"
+                      title="Vue.js"
+                      className="vno-text-sky-500 vno-font-semibold dark:vno-text-sky-400"
+                    >
+                      Vue.js
+                    </Link>{' '}
+                    và{' '}
+                    <Link
+                      href="https://wordpress.org/"
+                      title="WordPress"
+                      className="vno-text-sky-500 vno-font-semibold dark:vno-text-sky-400"
+                    >
+                      WordPress
+                    </Link>
+                    . Thời gian gần đây mình có tìm hiểu thêm về{' '}
+                    <Link
+                      href="https://nextjs.org/"
+                      title="Next.js"
+                      className="vno-text-sky-500 vno-font-semibold dark:vno-text-sky-400"
+                    >
+                      Next.js
+                    </Link>{' '}
+                    một Framework được xây dựng trên thư viện{' '}
+                    <Link
+                      href="https://reactjs.org/"
+                      title="React.js"
+                      className="vno-text-sky-500 vno-font-semibold dark:vno-text-sky-400"
+                    >
+                      React.js
+                    </Link>
+                    , để xây dựng các dự án phức tạp hơn.
                   </p>
                 </div>
               </div>
               <div className="vno-col-span-2 md:vno-col-span-1">
-                <div className="vno-mx-auto vno-max-w-8xl vno-mb-5 last:vno-mb-0 vno-border vno-border-gray-200 vno-rounded-lg vno-shadow-md vno-bg-white/50 vno-backdrop-blur dark:vno-border-gray-700 dark:vno-bg-gray-800/70">
+                <div className="vno-mx-auto vno-max-w-8xl vno-mb-5 last:vno-mb-0 vno-rounded-lg vno-bg-slate-50 dark:vno-bg-slate-800 dark:vno-highlight-white/5">
                   <div className="vno-p-5">
                     <Link href="https://tuanducdesign.com/" title="Blog cá nhân">
-                      <h5 className="vno-mb-2 vno-text-2xl vno-font-bold vno-tracking-tight vno-text-gray-900 dark:vno-text-white">
+                      <h5 className="vno-mb-2 vno-text-2xl vno-font-bold vno-tracking-tight vno-text-slate-700 dark:vno-text-slate-300">
                         Blog cá nhân
                       </h5>
                     </Link>
-                    <p className="vno-mb-3 vno-font-normal vno-text-gray-700 dark:vno-text-gray-400">
+                    <p className="vno-mb-3 vno-font-normal vno-text-slate-700 dark:vno-text-slate-300">
                       Dự án này mình sử dụng thư viện React.js, Framework Next.js và CSS framework
                       TailwindCSS.
                     </p>
                     <Link
                       href="https://tuanducdesign.com/"
                       title="Xem thêm dự án Blog cá nhân"
-                      className="vno-inline-flex vno-items-center vno-px-3 vno-py-2 vno-text-sm vno-font-medium vno-text-center vno-text-white vno-bg-blue-700 vno-rounded-lg hover:vno-bg-blue-800 focus:vno-outline-none focus:vno-ring-4 focus:vno-ring-blue-300 dark:vno-bg-blue-600 dark:hover:vno-bg-blue-700 dark:focus:vno-ring-blue-800"
+                      className="vno-inline-flex vno-items-center vno-px-3 vno-py-2 vno-text-sm vno-font-medium vno-text-center vno-text-white vno-bg-slate-900 vno-rounded-lg hover:vno-bg-slate-700 focus:vno-outline-none focus:vno-ring-4 focus:vno-ring-slate-400 dark:vno-bg-slate-700 dark:hover:vno-bg-slate-600"
                     >
                       Xem thêm
                       <svg
@@ -229,20 +278,20 @@ export default function Home({ posts }) {
                     </Link>
                   </div>
                 </div>
-                <div className="vno-mx-auto vno-max-w-8xl vno-mb-5 last:vno-mb-0 vno-border vno-border-gray-200 vno-rounded-lg vno-shadow-md vno-bg-white/50 vno-backdrop-blur dark:vno-border-gray-700 dark:vno-bg-gray-800/70">
+                <div className="vno-mx-auto vno-max-w-8xl vno-mb-5 last:vno-mb-0 vno-rounded-lg vno-bg-slate-50 dark:vno-bg-slate-800 dark:vno-highlight-white/5">
                   <div className="vno-p-5">
                     <Link href="https://cv.tuanducdesign.com/" title="Portfolio & Resume">
-                      <h5 className="vno-mb-2 vno-text-2xl vno-font-bold vno-tracking-tight vno-text-gray-900 dark:vno-text-white">
+                      <h5 className="vno-mb-2 vno-text-2xl vno-font-bold vno-tracking-tight vno-text-slate-700 dark:vno-text-slate-300">
                         Portfolio & Resume
                       </h5>
                     </Link>
-                    <p className="vno-mb-3 vno-font-normal vno-text-gray-700 dark:vno-text-gray-400">
+                    <p className="vno-mb-3 vno-font-normal vno-text-slate-700 dark:vno-text-slate-300">
                       Dự án này mình sử dụng Vite.js, Framework Vue.js và CSS framework TailwindCSS.
                     </p>
                     <Link
                       href="https://cv.tuanducdesign.com/"
                       title="Xem thêm dự án Portfolio & Resume"
-                      className="vno-inline-flex vno-items-center vno-px-3 vno-py-2 vno-text-sm vno-font-medium vno-text-center vno-text-white vno-bg-blue-700 vno-rounded-lg hover:vno-bg-blue-800 focus:vno-outline-none focus:vno-ring-4 focus:vno-ring-blue-300 dark:vno-bg-blue-600 dark:hover:vno-bg-blue-700 dark:focus:vno-ring-blue-800"
+                      className="vno-inline-flex vno-items-center vno-px-3 vno-py-2 vno-text-sm vno-font-medium vno-text-center vno-text-white vno-bg-slate-900 vno-rounded-lg hover:vno-bg-slate-700 focus:vno-outline-none focus:vno-ring-4 focus:vno-ring-slate-400 dark:vno-bg-slate-700 dark:hover:vno-bg-slate-600"
                     >
                       Xem thêm
                       <svg

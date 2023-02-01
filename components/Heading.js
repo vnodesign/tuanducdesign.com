@@ -17,7 +17,7 @@ const CustomHeading = ({ level, id, children, ...props }) => {
     return () => {
       context.unregisterHeading(id)
     }
-  }, [top, id, context?.registerHeading, context?.unregisterHeading])
+  }, [top, id, context.registerHeading, context.unregisterHeading, context])
   return (
     <Component
       className={classNames(
