@@ -12,7 +12,7 @@ const CommonSEO = ({ title, description, openGraph, twImage }) => {
         description={description}
         canonical={`${siteMetadata.siteUrl}${router.asPath}`}
         openGraph={openGraph}
-        themeColor="#38bdf8"
+        themeColor="#ffffff"
         facebook={{
           appId: '1031926270674334',
         }}
