@@ -14,11 +14,9 @@ function update() {
   ) {
     document.documentElement.classList.add('dark')
     document.documentElement.classList.remove('light')
-    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0B1120')
   } else {
     document.documentElement.classList.remove('dark')
     document.documentElement.classList.add('light')
-    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f8fafc')
   }
 }
 
