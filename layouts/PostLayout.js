@@ -1,7 +1,9 @@
+import dynamic from 'next/dynamic'
+import { Suspense } from 'react'
 import Link from '@/components/Link'
 import { BlogSEO } from '@/components/SEO'
 import Image from '@/components/Image'
-import Tag from '@/components/Tag'
+const Tag = dynamic(() => import('@/components/Tag'))
 import siteMetadata from '@/data/siteMetadata'
 import formatDate from '@/lib/utils/formatDate'
 import classNames from 'classnames'
@@ -101,9 +103,11 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
           >
             {frontMatter.tags && (
               <div className="vno-flex vno-flex-wrap">
-                {frontMatter.tags.map((tag) => (
-                  <Tag key={tag} text={tag} />
-                ))}
+                <Suspense fallback={<div>Loading...</div>}>
+                  {frontMatter.tags.map((tag) => (
+                    <Tag key={tag} text={tag} />
+                  ))}
+                </Suspense>
               </div>
             )}
             {(next || prev) && (

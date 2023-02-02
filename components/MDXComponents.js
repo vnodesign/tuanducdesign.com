@@ -8,7 +8,12 @@ import { H1, H2, H3, H4, H5, H6 } from './Heading'
 export const MDXComponents = {
   Image: (props) => (
     <div className="vno-not-prose vno-relative vno-my-[2em] vno-overflow-hidden vno-rounded-lg first:vno-mt-0 last:vno-mb-0">
-      <NextImage {...props} loading="eager" />
+      <NextImage
+        {...props}
+        loading="lazy"
+        placeholder="blur"
+        blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP88R8AAvUB+VkkrXoAAAAASUVORK5CYII="
+      />
       <div className="vno-absolute vno-inset-0 vno-rounded-lg vno-ring-1 vno-ring-inset vno-ring-slate-900/10" />
     </div>
   ),

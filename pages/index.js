@@ -1,13 +1,17 @@
+import dynamic from 'next/dynamic'
+import { Suspense } from 'react'
+const LatestPosts = dynamic(() => import('@/components/home/LatestPosts'))
+import { getAllFilesFrontMatter } from '@/lib/mdx'
 import Link from '@/components/Link'
 import { PageSEO } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata'
 import { FaReact, FaWordpress, FaVuejs } from 'react-icons/fa'
-import { getAllFilesFrontMatter } from '@/lib/mdx'
 import Image from '@/components/Image'
 import styles from './index.module.css'
 import classNames from 'classnames'
 import { NavItems, NavPopover } from '@/components/Header'
 import { ThemeToggle } from '@/components/ThemeToggle'
+
 export const MAX_DISPLAY = 6
 
 export async function getStaticProps() {
@@ -300,54 +304,9 @@ export default function Home({ posts }) {
           </div>
         </section>
       </div>
-      <section className="vno-relative vno-py-10 vno-my-10 md:vno-my-20">
-        <div>
-          <div className="vno-absolute vno-inset-x-0 vno-top-0 vno-hidden vno-h-[37.5rem] vno-bg-gradient-to-b vno-from-[#0c1120] dark:vno-block"></div>
-          <div className="vno-bg-grid-slate-900/[0.04] dark:vno-bg-grid-slate-100/[0.03] vno-absolute vno-inset-x-0 vno-top-0 vno-h-[37.5rem] vno-bg-top [mask-image:linear-gradient(0deg,transparent,black)] dark:vno-bg-[center_top_-1px]"></div>
-        </div>
-        <div className="vno-relative vno-mx-auto vno-max-w-8xl vno-px-4 md:vno-px-5">
-          <h2 className="vno-text-4xl vno-font-extrabold vno-tracking-tight vno-text-slate-900 dark:vno-text-white sm:vno-text-5xl">
-            <span className="vno-bg-gradient-to-r vno-from-sky-400 vno-to-sky-500 vno-bg-clip-text vno-text-transparent">
-              Bài viết mới đăng
-            </span>
-          </h2>
-          <div className="vno-mt-12 vno-grid vno-grid-cols-1 vno-gap-12 md:vno-grid-cols-2 lg:vno-grid-cols-3">
-            {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
-              const { slug, title, summary, images } = frontMatter
-              return (
-                <article
-                  key={slug}
-                  className="vno-h-full vno-bg-white vno-rounded-lg vno-shadow-xl dark:vno-bg-slate-800"
-                >
-                  <div className="vno-flex-shrink-0">
-                    <Link href={`/blog/${slug}`} title={title}>
-                      <Image
-                        className="vno-object-cover vno-w-full vno-aspect-video"
-                        src={images}
-                        alt={title}
-                        width={450}
-                        height={220}
-                      />
-                    </Link>
-                  </div>
-                  <div className="vno-relative vno-flex vno-flex-col vno-justify-between vno-flex-1 vno-p-5">
-                    <div className="vno-flex-1">
-                      <Link href={`/blog/${slug}`} className="vno-block" title={title}>
-                        <h3 className="vno-mb-2 vno-text-xl vno-font-bold vno-tracking-tight vno-text-gray-900 dark:vno-text-white">
-                          {title}
-                        </h3>
-                      </Link>
-                      <p className="vno-mb-3 vno-font-normal vno-text-gray-700 dark:vno-text-gray-400">
-                        {summary}
-                      </p>
-                    </div>
-                  </div>
-                </article>
-              )
-            })}
-          </div>
-        </div>
-      </section>
+      <Suspense fallback={<div>Loading...</div>}>
+        <LatestPosts posts={posts} totalPages={MAX_DISPLAY} />
+      </Suspense>
     </>
   )
 }
