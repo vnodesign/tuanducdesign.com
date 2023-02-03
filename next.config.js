@@ -2,10 +2,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
 
-const withPWA = require('next-pwa')
-
-module.exports = withBundleAnalyzer(
-  withPWA({
+module.exports = withBundleAnalyzer({
     reactStrictMode: true,
     swcMinify: true,
     pageExtensions: ['js', 'jsx', 'md', 'mdx'],
@@ -33,11 +30,5 @@ module.exports = withBundleAnalyzer(
 
       return config
     },
-    pwa: {
-      dest: 'public',
-      register: true,
-      skipWaiting: true,
-      disable: process.env.NODE_ENV === 'development',
-    },
-  })
+  }
 )
