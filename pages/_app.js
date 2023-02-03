@@ -34,17 +34,6 @@ export default function App({ Component, pageProps }) {
   }, [])
   return (
     <>
-      <Analytics />
-      <Script
-        id="adsense-script"
-        async
-        onError={(e) => {
-          console.error('Script failed to load', e)
-        }}
-        strategy="afterInteractive"
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4183134625750063"
-        crossorigin="anonymous"
-      />
       <div className="vno-flex vno-flex-col">
         {isDevelopment && isSocket && <ClientReload />}
         {showHeader && <Header />}
@@ -53,6 +42,17 @@ export default function App({ Component, pageProps }) {
         </main>
         <Footer />
       </div>
+      <Analytics />
+      <Script
+        id="adsense-script"
+        async
+        strategy="afterInteractive"
+        onError={(e) => {
+          console.error('Script failed to load', e)
+        }}
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4183134625750063"
+        crossOrigin="anonymous"
+      />
     </>
   )
 }
