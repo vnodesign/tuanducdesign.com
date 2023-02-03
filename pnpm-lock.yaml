@@ -46,7 +46,7 @@ specifiers:
   rehype-slug: ^5.1.0
   remark-gfm: ^3.0.1
   remark-math: ^5.1.1
-  sharp: 0.31.1
+  sharp: 0.31.3
   slug: ^8.2.2
   socket.io: ^4.5.4
   socket.io-client: ^4.5.4
@@ -83,7 +83,7 @@ dependencies:
   rehype-slug: 5.1.0
   remark-gfm: 3.0.1
   remark-math: 5.1.1
-  sharp: 0.31.1
+  sharp: 0.31.3
   slug: 8.2.2
   unist-util-visit: 4.1.2
   zustand: 4.3.2_react@18.2.0
@@ -7312,8 +7312,8 @@ packages:
     resolution: {integrity: sha512-E5LDX7Wrp85Kil5bhZv46j8jOeboKq5JMmYM3gVGdGH8xFpPWXUMsNrlODCrkoxMEeNi/XZIwuRvY4XNwYMJpw==}
     dev: true
 
-  /sharp/0.31.1:
-    resolution: {integrity: sha512-GR8M1wBwOiFKLkm9JPun27OQnNRZdHfSf9VwcdZX6UrRmM1/XnOrLFTF0GAil+y/YK4E6qcM/ugxs80QirsHxg==}
+  /sharp/0.31.3:
+    resolution: {integrity: sha512-XcR4+FCLBFKw1bdB+GEhnUNXNXvnt0tDo4WsBsraKymuo/IAuPuCBVAL2wIkUw2r/dwFW5Q5+g66Kwl2dgDFVg==}
     engines: {node: '>=14.15.0'}
     requiresBuild: true
     dependencies:
