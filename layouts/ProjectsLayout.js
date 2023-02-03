@@ -1,3 +1,4 @@
+import gtagTrack from '@/lib/utils/gtag'
 import Link from '@/components/Link'
 import { PageSEO } from '@/components/SEO'
 import classNames from 'classnames'
@@ -15,7 +16,11 @@ export default function ProjectsLayout({ frontMatter, next, prev, children }) {
           <div className="vno-max-w-8xl vno-mx-auto vno-px-4 sm:vno-px-6 lg:vno-px-8 vno-grid vno-items-center vno-grid-cols-[1fr,auto,1fr] vno-gap-6">
             <div className="vno-text-center">
               <p className="vno-text-[0.8125rem] vno-leading-6 vno-font-semibold vno-text-sky-500">
-                <Link href="/projects" title="Dự án">
+                <Link
+                  href="/projects"
+                  title="Dự án"
+                  onClick={() => gtagTrack('ProjectsLink', '/projects')}
+                >
                   Dự án
                 </Link>
               </p>
@@ -25,7 +30,12 @@ export default function ProjectsLayout({ frontMatter, next, prev, children }) {
             </div>
             <div className="vno-order-first vno-flex">
               {prev && (
-                <Link href={`/projects/${prev.slug}`} className="vno-relative" title={prev.title}>
+                <Link
+                  href={`/projects/${prev.slug}`}
+                  className="vno-relative"
+                  title={prev.title}
+                  onClick={() => gtagTrack('PrevProjectsLink', `/projects/${prev.slug}`)}
+                >
                   <div className="vno-hidden md:vno-block vno-text-[0.8125rem] vno-leading-6 vno-text-slate-500">
                     <span aria-hidden="true" className="vno-mr-2">
                       ←
@@ -53,7 +63,12 @@ export default function ProjectsLayout({ frontMatter, next, prev, children }) {
             </div>
             <div className="vno-flex vno-text-right vno-justify-end">
               {next && (
-                <Link href={`/projects/${next.slug}`} className="vno-relative" title={next.title}>
+                <Link
+                  href={`/projects/${next.slug}`}
+                  className="vno-relative"
+                  title={next.title}
+                  onClick={() => gtagTrack('NextProjectsLink', `/projects/${next.slug}`)}
+                >
                   <div className="vno-hidden md:vno-block vno-text-[0.8125rem] vno-leading-6 vno-text-slate-500">
                     Kế
                     <span aria-hidden="true" className="vno-ml-2">
@@ -90,7 +105,7 @@ export default function ProjectsLayout({ frontMatter, next, prev, children }) {
                 <div className="vno-shadow-md vno-ring-1 vno-ring-slate-900/5 vno-shadow-slate-900/10 vno-bg-slate-200">
                   <Image
                     src={images}
-                    alt={`Dự án ${title}`}
+                    alt={title}
                     width="1440"
                     height="800"
                     sizes="(min-width: 1440px) 1440px, 100vw"
@@ -108,19 +123,19 @@ export default function ProjectsLayout({ frontMatter, next, prev, children }) {
               src={require('@/img/projects/beams-2@75.jpg')}
               alt="Background Light"
               className="vno-absolute vno-top-[-20rem] sm:vno-top-[-25rem] vno-left-1/2 vno-ml-[-35rem] vno-max-w-none vno-w-[119.4375rem] dark:vno-hidden vno-pointer-events-none"
-              unoptimized
+              priority
             />
             <Image
               src={require('@/img/projects/beams-2-dark@75.jpg')}
               alt="Background Dark"
               className="vno-absolute vno-top-0 vno-right-[-12rem] md:vno-right-0 vno-max-w-none vno-w-[70.0625rem] vno-hidden dark:vno-block vno-pointer-events-none"
-              unoptimized
+              priority
             />
             <dl className="vno-relative vno-flex vno-flex-wrap vno-h-14 vno-overflow-hidden">
               {[
                 ...(tech ? [{ name: 'Công nghệ', value: tech }] : []),
                 {
-                  name: 'Ngày đăng',
+                  name: 'Phát triển lúc',
                   value: <time dateTime={date}>{formatDate(date)}</time>,
                 },
               ].map((item, itemIndex) => (

@@ -1,3 +1,4 @@
+import gtagTrack from '@/lib/utils/gtag'
 import Link from '@/components/Link'
 import { useState } from 'react'
 import formatDate from '@/lib/utils/formatDate'
@@ -8,7 +9,6 @@ export default function ListLayout({ posts, title, description, initialDisplayPo
     return frontMatter.title.toLowerCase().match(searchValue.toLowerCase())
   })
 
-  // If initialDisplayPosts exist, display it if no searchValue is specified
   const displayPosts =
     initialDisplayPosts.length > 0 && !searchValue ? initialDisplayPosts : filteredBlogPosts
 
@@ -72,58 +72,78 @@ export default function ListLayout({ posts, title, description, initialDisplayPo
           <>
             <div className="vno-absolute vno-top-3 vno-bottom-0 vno-right-full vno-mr-7 vno-hidden vno-w-px vno-bg-slate-200 dark:vno-bg-slate-800 sm:vno-block md:vno-mr-[3.25rem]" />
             <div className="vno-space-y-16">
-              {displayPosts.map((frontMatter) => (
-                <article key={frontMatter.slug} className="vno-group vno-relative">
-                  <div className="vno-absolute -vno-inset-y-2.5 -vno-inset-x-4 group-hover:vno-bg-slate-50/70 dark:group-hover:vno-bg-slate-800/50 sm:vno-rounded-2xl md:-vno-inset-y-4 md:-vno-inset-x-6" />
-                  <svg
-                    viewBox="0 0 9 9"
-                    className="vno-absolute vno-right-full vno-top-2 vno-mr-6 vno-hidden vno-h-[calc(0.5rem+1px)] vno-w-[calc(0.5rem+1px)] vno-overflow-visible vno-text-slate-200 dark:vno-text-slate-600 sm:vno-block md:vno-mr-12"
-                  >
-                    <circle
-                      cx="4.5"
-                      cy="4.5"
-                      r="4.5"
-                      stroke="currentColor"
-                      className="vno-fill-white dark:vno-fill-slate-900"
-                      strokeWidth={2}
-                    />
-                  </svg>
-                  <div className="vno-relative">
-                    <h3 className="vno-pt-8 vno-text-base vno-font-semibold vno-tracking-tight vno-text-slate-900 dark:vno-text-slate-200 lg:vno-pt-0">
-                      {frontMatter.title}
-                    </h3>
-                    <div className="vno-prose vno-prose-slate vno-mt-2 vno-mb-4 vno-line-clamp-2 prose-a:vno-relative prose-a:vno-z-10 dark:vno-prose-dark">
-                      {frontMatter.summary}
-                    </div>
-                    <dl className="vno-absolute vno-left-0 vno-top-0 lg:vno-left-auto lg:vno-right-full lg:vno-mr-[calc(6.5rem+1px)]">
-                      <dt className="vno-sr-only">Ngày đăng</dt>
-                      <dd className="vno-whitespace-nowrap vno-text-sm vno-leading-6 dark:vno-text-slate-400">
-                        <time dateTime={frontMatter.date}>{formatDate(frontMatter.date)}</time>
-                      </dd>
-                    </dl>
-                  </div>
-                  <Link
-                    href={`/blog/${frontMatter.slug}`}
-                    className="vno-flex vno-items-center vno-text-sm vno-font-medium vno-text-sky-500"
-                  >
-                    <span className="vno-absolute -vno-inset-y-2.5 -vno-inset-x-4 sm:vno-rounded-2xl md:-vno-inset-y-4 md:-vno-inset-x-6" />
-                    <span className="vno-relative">Đọc tiếp</span>
+              {displayPosts.map((frontMatter) => {
+                const publishDate = new Date(frontMatter.date)
+                const modifiedDate = new Date(frontMatter.lastmod)
+                const showNewBadge =
+                  Math.abs(new Date(publishDate).getTime() - new Date().getTime()) /
+                    (24 * 60 * 60 * 1000) <
+                  30
+                const showModifiedBadge = modifiedDate > publishDate
+                return (
+                  <article key={frontMatter.slug} className="vno-group vno-relative">
+                    <div className="vno-absolute -vno-inset-y-2.5 -vno-inset-x-4 group-hover:vno-bg-slate-50/70 dark:group-hover:vno-bg-slate-800/50 sm:vno-rounded-2xl md:-vno-inset-y-4 md:-vno-inset-x-6" />
                     <svg
-                      className="vno-relative vno-mt-px vno-ml-2.5 vno-overflow-visible vno-text-sky-300 dark:vno-text-sky-700"
-                      width="3"
-                      height="6"
-                      viewBox="0 0 3 6"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
+                      viewBox="0 0 9 9"
+                      className="vno-absolute vno-right-full vno-top-2 vno-mr-6 vno-hidden vno-h-[calc(0.5rem+1px)] vno-w-[calc(0.5rem+1px)] vno-overflow-visible vno-text-slate-200 dark:vno-text-slate-600 sm:vno-block md:vno-mr-12"
                     >
-                      <path d="M0 0L3 3L0 6"></path>
+                      <circle
+                        cx="4.5"
+                        cy="4.5"
+                        r="4.5"
+                        stroke="currentColor"
+                        className="vno-fill-white dark:vno-fill-slate-900"
+                        strokeWidth={2}
+                      />
                     </svg>
-                  </Link>
-                </article>
-              ))}
+                    <div className="vno-relative">
+                      <h3 className="vno-pt-8 vno-text-base vno-font-semibold vno-tracking-tight vno-text-slate-900 dark:vno-text-slate-200 lg:vno-pt-0">
+                        {frontMatter.title}{' '}
+                        {showNewBadge && (
+                          <span className="vno-inline-block vno-px-2 vno-py-0.5 vno-relative -vno-top-[2px] vno-font-medium vno-ml-2 vno-text-xs vno-rounded-full vno-text-sky-600 vno-bg-sky-400/10 dark:vno-text-sky-400">
+                            New
+                          </span>
+                        )}
+                        {showModifiedBadge && (
+                          <span className="vno-inline-block vno-px-2 vno-py-0.5 vno-relative -vno-top-[2px] vno-font-medium vno-ml-2 vno-text-xs vno-rounded-full vno-text-sky-600 vno-bg-sky-400/10 dark:vno-text-sky-400">
+                            Modified
+                          </span>
+                        )}
+                      </h3>
+                      <div className="vno-prose vno-prose-slate vno-mt-2 vno-mb-4 vno-line-clamp-2 prose-a:vno-relative prose-a:vno-z-10 dark:vno-prose-dark">
+                        {frontMatter.summary}
+                      </div>
+                      <dl className="vno-absolute vno-left-0 vno-top-0 lg:vno-left-auto lg:vno-right-full lg:vno-mr-[calc(6.5rem+1px)]">
+                        <dt className="vno-sr-only">Published</dt>
+                        <dd className="vno-whitespace-nowrap vno-text-sm vno-leading-6 dark:vno-text-slate-400">
+                          <time dateTime={frontMatter.date}>{formatDate(frontMatter.date)}</time>
+                        </dd>
+                      </dl>
+                    </div>
+                    <Link
+                      href={`/blog/${frontMatter.slug}`}
+                      className="vno-flex vno-items-center vno-text-sm vno-font-medium vno-text-sky-500"
+                      onClick={() => gtagTrack('ReadMoreLink', `/blog/${frontMatter.slug}`)}
+                    >
+                      <span className="vno-absolute -vno-inset-y-2.5 -vno-inset-x-4 sm:vno-rounded-2xl md:-vno-inset-y-4 md:-vno-inset-x-6" />
+                      <span className="vno-relative">Đọc tiếp</span>
+                      <svg
+                        className="vno-relative vno-mt-px vno-ml-2.5 vno-overflow-visible vno-text-sky-300 dark:vno-text-sky-700"
+                        width="3"
+                        height="6"
+                        viewBox="0 0 3 6"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="M0 0L3 3L0 6"></path>
+                      </svg>
+                    </Link>
+                  </article>
+                )
+              })}
             </div>
           </>
         )}

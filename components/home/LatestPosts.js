@@ -1,3 +1,4 @@
+import gtagTrack from '@/lib/utils/gtag'
 import Link from '@/components/Link'
 import Image from '@/components/Image'
 
@@ -23,7 +24,11 @@ export default function LatestPosts({ posts, totalPages }) {
                 className="vno-h-full vno-bg-white vno-rounded-lg vno-shadow-xl dark:vno-bg-slate-800"
               >
                 <div className="vno-flex-shrink-0">
-                  <Link href={`/blog/${slug}`} title={title}>
+                  <Link
+                    href={`/blog/${slug}`}
+                    title={title}
+                    onClick={() => gtagTrack('ImageLink', `/blog/${slug}`)}
+                  >
                     <Image
                       className="vno-object-cover vno-w-full vno-aspect-video"
                       src={images}
@@ -35,7 +40,12 @@ export default function LatestPosts({ posts, totalPages }) {
                 </div>
                 <div className="vno-relative vno-flex vno-flex-col vno-justify-between vno-flex-1 vno-p-5">
                   <div className="vno-flex-1">
-                    <Link href={`/blog/${slug}`} className="vno-block" title={title}>
+                    <Link
+                      href={`/blog/${slug}`}
+                      className="vno-block"
+                      title={title}
+                      onClick={() => gtagTrack('HeadingLink', `/blog/${slug}`)}
+                    >
                       <h3 className="vno-mb-2 vno-text-xl vno-font-bold vno-tracking-tight vno-text-gray-900 dark:vno-text-white">
                         {title}
                       </h3>

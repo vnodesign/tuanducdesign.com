@@ -61,7 +61,7 @@ function Header() {
                   href="https://github.com/vnodesign"
                   className="vno-block vno-ml-6 vno-text-slate-400 hover:vno-text-slate-500 dark:hover:vno-text-slate-300"
                 >
-                  <span className="vno-sr-only">VNO Design on GitHub</span>
+                  <span className="vno-sr-only">GitHub</span>
                   <svg
                     viewBox="0 0 16 16"
                     className="vno-w-5 vno-h-5"
@@ -82,11 +82,11 @@ function Header() {
           <p className="vno-max-w-3xl vno-mx-auto vno-mt-6 vno-text-lg vno-text-center vno-text-slate-600 dark:vno-text-slate-400">
             Blog này mình sẽ chia sẻ các bài viết và các kiến thức mà mình đã áp dụng khi{' '}
             <span className="vno-font-extrabold vno-text-sky-500 dark:vno-text-sky-400">
-              phát triển VPS
+              Phát triển VPS
             </span>{' '}
             và{' '}
             <span className="vno-font-extrabold vno-text-sky-500 dark:vno-text-sky-400">
-              tối ưu Website
+              Tối ưu Website
             </span>
             .
           </p>

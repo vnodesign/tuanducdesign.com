@@ -6,49 +6,8 @@ import siteMetadata from '@/data/siteMetadata'
 import headerNavLinks from '@/data/headerNavLinks'
 import Image from './Image'
 import Link from './Link'
+import gtagTrack from '@/lib/utils/gtag'
 import { ThemeSelect, ThemeToggle } from './ThemeToggle'
-
-function Featured() {
-  return (
-    <Link
-      href="/blog/series-nextdns"
-      className="vno-ml-3 vno-text-xs vno-leading-5 vno-font-medium vno-text-sky-600 dark:vno-text-sky-400 vno-bg-sky-400/10 vno-rounded-full vno-py-1 vno-px-3 vno-hidden xl:vno-flex vno-items-center hover:vno-bg-sky-400/20"
-      title="Hướng dẫn sử dụng NextDNS"
-    >
-      <strong className="vno-font-semibold">Hướng dẫn sử dụng NextDNS</strong>
-      <svg
-        width="2"
-        height="2"
-        fill="currentColor"
-        aria-hidden="true"
-        className="vno-ml-2 vno-text-sky-600 dark:vno-text-sky-400/70"
-      >
-        <circle cx="1" cy="1" r="1" />
-      </svg>
-      <span className="vno-ml-2 min-[1372px]:vno-hidden">
-        Chặn ADS, bảo vệ gia đình, và hơn thế nữa
-      </span>
-      <span className="vno-ml-2 vno-hidden min-[1372px]:vno-inline">
-        Chặn ADS, bảo vệ gia đình, và hơn thế nữa
-      </span>
-      <svg
-        width="3"
-        height="6"
-        className="vno-ml-3 vno-overflow-visible vno-text-sky-300 dark:vno-text-sky-400"
-        aria-hidden="true"
-      >
-        <path
-          d="M0 0L3 3L0 6"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    </Link>
-  )
-}
 
 export function NavPopover({ display = 'md:vno-hidden', className, ...props }) {
   let [isOpen, setIsOpen] = useState(false)
@@ -145,6 +104,7 @@ export function NavItems() {
                 : 'hover:vno-text-sky-500 dark:hover:vno-text-sky-400'
             )}
             title={link.title}
+            onClick={() => gtagTrack('NavLink', link.href)}
           >
             {link.title}
             {link.showNew && (
@@ -215,6 +175,7 @@ export function Header() {
                 href="/"
                 className="vno-mr-3 vno-w-[2.0625rem] vno-flex-none vno-overflow-hidden md:vno-w-auto"
                 title={`Trang chủ ${siteMetadata.title}`}
+                onClick={() => gtagTrack('LogoLink', '/')}
               >
                 <span className="vno-sr-only">Trang chủ {siteMetadata.title}</span>
                 <Image
@@ -226,7 +187,6 @@ export function Header() {
                   priority
                 />
               </Link>
-              <Featured />
               <div className="vno-relative vno-items-center vno-hidden vno-ml-auto lg:vno-flex">
                 <nav className="vno-text-sm vno-font-semibold vno-leading-6 vno-text-slate-700 dark:vno-text-slate-200">
                   <ul className="vno-flex vno-space-x-8">

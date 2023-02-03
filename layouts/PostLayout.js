@@ -1,5 +1,6 @@
 import dynamic from 'next/dynamic'
 import { Suspense } from 'react'
+import gtagTrack from '@/lib/utils/gtag'
 import Link from '@/components/Link'
 import { BlogSEO } from '@/components/SEO'
 import Image from '@/components/Image'
@@ -26,6 +27,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
             href="/blog"
             className="vno-group vno-flex vno-text-sm vno-font-semibold vno-leading-6 vno-text-slate-700 hover:vno-text-slate-900 dark:vno-text-slate-200 dark:hover:vno-text-white"
             title="Quay lại Blog"
+            onClick={() => gtagTrack('GoBackBlog', '/blog')}
           >
             <svg
               viewBox="0 -9 3 24"
@@ -55,7 +57,9 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                 <dl>
                   <dt className="vno-sr-only">Date</dt>
                   <dd className="vno-absolute vno-inset-x-0 vno-top-0 vno-text-slate-700 dark:vno-text-slate-400">
-                    <time dateTime={frontMatter.date}>{formatDate(frontMatter.date)}</time>
+                    <time dateTime={frontMatter.date}>{formatDate(frontMatter.date)}</time>{' '}
+                    {frontMatter.lastmod > frontMatter.date &&
+                      `(Updated ${formatDate(frontMatter.lastmod)})`}
                   </dd>
                 </dl>
               </div>
@@ -117,6 +121,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                     href={`/blog/${prev.slug}`}
                     className="vno-mr-8 vno-flex hover:vno-text-slate-900 dark:hover:vno-text-white"
                     title={prev.title}
+                    onClick={() => gtagTrack('PrevPostLink', `/blog/${prev.slug}`)}
                   >
                     <span aria-hidden="true" className="vno-mr-2">
                       ←
@@ -129,6 +134,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                     href={`/blog/${next.slug}`}
                     className="vno-ml-auto vno-flex vno-text-right hover:vno-text-slate-900 dark:hover:vno-text-white"
                     title={next.title}
+                    onClick={() => gtagTrack('NextPostLink', `/blog/${next.slug}`)}
                   >
                     {next.title}
                     <span aria-hidden="true" className="vno-ml-2">

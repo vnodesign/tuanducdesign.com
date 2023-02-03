@@ -1,7 +1,7 @@
 ---
 title: 'Khởi chạy máy chủ MongoDB'
 date: '2022-01-09'
-lastmod: '2023-01-08'
+lastmod: '2023-02-03'
 tags: ['MongoDB', 'Windows']
 draft: false
 summary: 'Để khởi động MongoDB Server trong Windows, hãy khởi động Mongo Daemon (mongod.exe) có trong thư mục bin của Thư mục cài đặt MongoDB.'
@@ -15,13 +15,15 @@ authors: 'tuanducdesign'
 
 ## Người dùng Windows
 
-Giả sử rằng bạn đã cài đặt Máy chủ MongoDB với các tùy chọn mặc định, đặc biệt là thư mục cài đặt dưới dạng C:\\Program Files\\MongoDB\\Server\\4.0. Bên trong thư mục này, bạn có thư mục bin chứa mongod.exe.
+Giả sử rằng bạn đã cài đặt Máy chủ MongoDB với các tùy chọn mặc định, đặc biệt là thư mục cài đặt dưới dạng `C:\\Program Files\\MongoDB\\Server\\4.0`. Bên trong thư mục này, bạn có thư mục bin chứa mongod.exe.
 
-Cũng giả sử rằng đường dẫn cơ sở dữ liệu là: C:\\data\\db\\
+Cũng giả sử rằng đường dẫn cơ sở dữ liệu là: `C:\\data\\db\\`
 
 Để khởi động MongoDB Server trong Windows, hãy khởi động Mongo Daemon (mongod.exe) bằng lệnh sau:
 
+```bash
 C:\\> "C:\\Program Files\\MongoDB\\Server\\4.0\\bin\\mongod.exe"
+```
 
 Lưu ý rằng chương trình chúng tôi đang chạy là mongod.exe chứ không phải mongo.exe.
 
@@ -33,7 +35,7 @@ Từ các thông báo được ghi vào bảng điều khiển, bạn có thể 
 
 - Máy chủ Mongo được khởi động như một tiến trình với id tiến trình là (pid): 11716.
 - Máy chủ Mongo đang lắng nghe ở cổng: 27107. Bạn có thể thấy ở cuối nhật ký \[initandlisten\] đang chờ kết nối trên cổng 27017.
-- Máy chủ Mongo đang sử dụng cơ sở dữ liệu có tại vị trí C:\\data\\db\\.
+- Máy chủ Mongo đang sử dụng cơ sở dữ liệu có tại vị trí `C:\\data\\db\\`.
 
 Trong quá trình sử dụng bạn không đóng cửa sổ Command Prompt này.
 

@@ -5,8 +5,8 @@ const headerNavLinks = [
     showNew: false,
   },
   {
-    href: '/service',
-    title: 'Dịch vụ',
+    href: 'https://cv.tuanducdesign.com',
+    title: 'CV',
     showNew: false,
   },
   {
@@ -15,8 +15,8 @@ const headerNavLinks = [
     showNew: true,
   },
   {
-    href: 'https://cv.tuanducdesign.com',
-    title: 'CV',
+    href: '/blog/series-nextdns',
+    title: 'Series NextDNS',
     showNew: false,
   },
 ]

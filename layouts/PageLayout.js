@@ -1,3 +1,4 @@
+import gtagTrack from '@/lib/utils/gtag'
 import Link from '@/components/Link'
 import { PageSEO } from '@/components/SEO'
 
@@ -12,6 +13,8 @@ export default function PageLayout({ frontMatter, children }) {
           <Link
             href="/blog"
             className="vno-group vno-flex vno-font-semibold vno-text-sm vno-leading-6 vno-text-slate-700 hover:vno-text-slate-900 dark:vno-text-slate-200 dark:hover:vno-text-white"
+            title="Quay lại Blog"
+            onClick={() => gtagTrack('GoBackBlog', '/blog')}
           >
             <svg
               viewBox="0 -9 3 24"

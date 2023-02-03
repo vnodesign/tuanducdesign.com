@@ -1,3 +1,4 @@
+import gtagTrack from '@/lib/utils/gtag'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import Link from '@/components/Link'
 import { PageSEO } from '@/components/SEO'
@@ -24,7 +25,11 @@ function Site({ frontMatter, priority = false }) {
       </div>
       <div className="vno-flex vno-flex-wrap vno-items-center vno-mt-6">
         <h2 className="vno-text-sm vno-leading-6 vno-text-slate-900 dark:vno-text-white vno-font-semibold group-hover:vno-text-sky-500 dark:group-hover:vno-text-sky-400">
-          <Link href={`/projects/${frontMatter.slug}`} title={frontMatter.title}>
+          <Link
+            href={`/projects/${frontMatter.slug}`}
+            title={frontMatter.title}
+            onClick={() => gtagTrack('ProjectsLink', `/projects/${frontMatter.slug}`)}
+          >
             <span className="vno-absolute vno-inset-0 vno-rounded-3xl" />
             {frontMatter.title}
           </Link>
