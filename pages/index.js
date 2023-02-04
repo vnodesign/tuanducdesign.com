@@ -1,6 +1,3 @@
-import dynamic from 'next/dynamic'
-import { Suspense } from 'react'
-const LatestPosts = dynamic(() => import('@/components/home/LatestPosts'))
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import Link from '@/components/Link'
 import { PageSEO } from '@/components/SEO'
@@ -11,8 +8,9 @@ import styles from './index.module.css'
 import classNames from 'classnames'
 import { NavItems, NavPopover } from '@/components/Header'
 import { ThemeToggle } from '@/components/ThemeToggle'
+import LatestPosts from '@/components/home/LatestPosts'
 
-export const MAX_DISPLAY = 6
+export const MAX_DISPLAY = 3
 
 export async function getStaticProps() {
   const posts = await getAllFilesFrontMatter('blog')
@@ -304,9 +302,7 @@ export default function Home({ posts }) {
           </div>
         </section>
       </div>
-      <Suspense fallback={<div>Loading...</div>}>
-        <LatestPosts posts={posts} totalPages={MAX_DISPLAY} />
-      </Suspense>
+      <LatestPosts posts={posts} totalPages={MAX_DISPLAY} />
     </>
   )
 }

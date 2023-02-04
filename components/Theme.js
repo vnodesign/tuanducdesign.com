@@ -3,7 +3,7 @@ import { create } from 'zustand'
 import { useEffect, useRef } from 'react'
 
 const useSettingTheme = create((set) => ({
-  theme: null,
+  theme: '',
   setTheme: (theme) => set({ theme }),
 }))
 
