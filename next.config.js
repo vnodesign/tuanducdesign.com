@@ -4,6 +4,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 const withPWA = require('next-pwa')({
   dest: 'public',
+  disable: process.env.NODE_ENV === 'development',
 })
 
 const nextConfig = {
@@ -142,11 +143,20 @@ const nextConfig = {
       },
     ]
   },
-  webpack: (config) => {
+  webpack: (config, { dev, isServer }) => {
     config.module.rules.push({
       test: /\.svg$/,
       use: ['@svgr/webpack'],
     })
+
+    if (!dev && !isServer) {
+      Object.assign(config.resolve.alias, {
+        'react/jsx-runtime.js': 'preact/compat/jsx-runtime',
+        react: 'preact/compat',
+        'react-dom/test-utils': 'preact/test-utils',
+        'react-dom': 'preact/compat',
+      })
+    }
 
     return config
   },

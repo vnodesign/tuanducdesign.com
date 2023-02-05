@@ -11,7 +11,7 @@ export default class Document extends NextDocument {
     return (
       <Html
         lang={siteMetadata.language}
-        className="[--scroll-mt:9.875rem] lg:[--scroll-mt:6.3125rem]"
+        className="dark [--scroll-mt:9.875rem] lg:[--scroll-mt:6.3125rem]"
       >
         <Head>
           <script
