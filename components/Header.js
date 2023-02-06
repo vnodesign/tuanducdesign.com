@@ -1,7 +1,7 @@
 import { Dialog } from '@headlessui/react'
 import { useEffect, useState } from 'react'
 import classNames from 'classnames'
-import Router, { useRouter } from 'next/router'
+import Router from 'next/router'
 import siteMetadata from '@/data/siteMetadata'
 import headerNavLinks from '@/data/headerNavLinks'
 import Image from './Image'
@@ -91,30 +91,27 @@ export function NavPopover({ display = 'md:vno-hidden', className, ...props }) {
 }
 
 export function NavItems() {
-  const router = useRouter()
   return (
     <>
-      {headerNavLinks.map((link) => (
-        <li key={link.href}>
-          <Link
-            href={link.href}
-            className={classNames(
-              router.pathname == link.href
-                ? 'vno-text-sky-500 dark:vno-text-sky-400'
-                : 'hover:vno-text-sky-500 dark:hover:vno-text-sky-400'
-            )}
-            title={link.title}
-            onClick={() => gtagTrack('NavLink', link.href)}
-          >
-            {link.title}
-            {link.showNew && (
-              <span className="vno-ml-2 vno-font-medium vno-text-xs vno-leading-5 vno-rounded-full vno-text-sky-600 vno-bg-sky-400/10 vno-px-2 vno-py-0.5 dark:vno-text-sky-400">
-                New
-              </span>
-            )}
-          </Link>
-        </li>
-      ))}
+      {headerNavLinks.map((link) => {
+        return (
+          <li key={link.href}>
+            <Link
+              href={link.href}
+              className="hover:vno-text-sky-500 dark:hover:vno-text-sky-400"
+              title={link.title}
+              onClick={() => gtagTrack('NavLink', link.href)}
+            >
+              {link.title}
+              {link.showNew && (
+                <span className="vno-ml-2 vno-font-medium vno-text-xs vno-leading-5 vno-rounded-full vno-text-sky-600 vno-bg-sky-400/10 vno-px-2 vno-py-0.5 dark:vno-text-sky-400">
+                  New
+                </span>
+              )}
+            </Link>
+          </li>
+        )
+      })}
     </>
   )
 }

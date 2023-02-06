@@ -13,7 +13,13 @@ export default class Document extends NextDocument {
         lang={siteMetadata.language}
         className="[--scroll-mt:9.875rem] lg:[--scroll-mt:6.3125rem]"
       >
-        <Head />
+        <Head>
+          <script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4183134625750063"
+            crossOrigin="anonymous"
+          />
+        </Head>
         <body className="vno-bg-white vno-text-slate-500 vno-antialiased dark:vno-bg-slate-900 dark:vno-text-slate-400">
           <Main />
           <NextScript />
