@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import '@/styles/tailwind.css'
 import React from 'react'
 import { useRouter } from 'next/router'
@@ -29,7 +28,7 @@ export default function App({ Component, pageProps }) {
       router.events.off('routeChangeComplete', handleRouteDone)
       router.events.off('routeChangeError', handleRouteDone)
     }
-  }, [])
+  }, [router.events])
   return (
     <>
       <div className="vno-flex vno-flex-col">

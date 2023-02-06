@@ -106,7 +106,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
             )}
           >
             {frontMatter.tags && (
-              <div className="vno-flex vno-flex-wrap">
+              <div className="vno-flex vno-flex-wrap vno-mb-3.5">
                 <Suspense fallback={<div>Loading...</div>}>
                   {frontMatter.tags.map((tag) => (
                     <Tag key={tag} text={tag} />
@@ -115,7 +115,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
               </div>
             )}
             {(next || prev) && (
-              <div className="vno-pt-10 vno-flex vno-items-center vno-font-semibold vno-text-slate-700 dark:vno-text-slate-200">
+              <div className="vno-pt-6 vno-flex vno-items-center vno-font-semibold vno-text-slate-700 dark:vno-text-slate-200 vno-border-t vno-border-t-slate-200 dark:vno-border-t-slate-700">
                 {prev && (
                   <Link
                     href={`/blog/${prev.slug}`}
