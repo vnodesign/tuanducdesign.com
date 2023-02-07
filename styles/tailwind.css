@@ -157,10 +157,3 @@ code[class^='language-diff-'] > span {
     transform: rotate(360deg);
   }
 }
-
-#searchModal::-webkit-search-cancel-button,
-#searchModal::-webkit-search-decoration,
-#searchModal::-webkit-search-results-button,
-#searchModal::-webkit-search-results-decoration {
-  display: none;
-}

@@ -13,10 +13,8 @@ function update() {
     (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
   ) {
     document.documentElement.classList.add('dark')
-    document.documentElement.classList.remove('light')
   } else {
     document.documentElement.classList.remove('dark')
-    document.documentElement.classList.add('light')
   }
 }
 
@@ -47,13 +45,7 @@ export function useTheme() {
   }, [theme])
 
   useEffect(() => {
-    let mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
-
-    if (mediaQuery?.addEventListener) {
-      mediaQuery.addEventListener('change', update)
-    } else {
-      mediaQuery.addListener(update)
-    }
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', update)
 
     function onStorage() {
       update()
@@ -64,14 +56,12 @@ export function useTheme() {
         setTheme('system')
       }
     }
+
     window.addEventListener('storage', onStorage)
+    window.addEventListener('load', update)
 
     return () => {
-      if (mediaQuery?.removeEventListener) {
-        mediaQuery.removeEventListener('change', update)
-      } else {
-        mediaQuery.removeListener(update)
-      }
+      window.matchMedia('(prefers-color-scheme: dark)').removeEventListener('change', update)
 
       window.removeEventListener('storage', onStorage)
     }
