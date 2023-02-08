@@ -22,10 +22,10 @@ export default function ListLayout({ posts, title, description, initialDisplayPo
         <section className="vno-mt-3 vno-max-w-sm sm:vno-mx-auto sm:vno-px-4">
           <h2 className="vno-sr-only">Tìm kiếm</h2>
           <div className="vno-flex vno-flex-wrap">
-            <div className="vno-grow-[9999] vno-basis-64 vno-mt-3">
+            <div className="vno-mt-3 vno-grow-[9999] vno-basis-64">
               <div className="vno-group vno-relative">
                 <svg
-                  className="vno-w-5 vno-h-full vno-absolute vno-inset-y-0 vno-left-3 vno-text-slate-400 vno-pointer-events-none group-focus-within:vno-text-sky-500 dark:group-focus-within:vno-text-slate-400"
+                  className="vno-pointer-events-none vno-absolute vno-inset-y-0 vno-left-3 vno-h-full vno-w-5 vno-text-slate-400 group-focus-within:vno-text-sky-500 dark:group-focus-within:vno-text-slate-400"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -47,7 +47,7 @@ export default function ListLayout({ posts, title, description, initialDisplayPo
                   autoCorrect="off"
                   autoCapitalize="off"
                   spellCheck="false"
-                  className="vno-appearance-none vno-shadow vno-rounded-md vno-ring-1 vno-ring-slate-900/5 vno-leading-5 sm:vno-text-sm vno-border vno-border-transparent vno-py-2 placeholder:vno-text-slate-400 vno-pl-12 vno-pr-3 vno-block vno-w-full vno-text-slate-900 focus:vno-outline-none focus:vno-ring-2 focus:vno-ring-sky-500 vno-bg-white dark:vno-bg-slate-700/20 dark:vno-ring-slate-200/20 dark:focus:vno-ring-sky-500 dark:vno-text-white"
+                  className="vno-block vno-w-full vno-appearance-none vno-rounded-md vno-border vno-border-transparent vno-bg-white vno-py-2 vno-pl-12 vno-pr-3 vno-leading-5 vno-text-slate-900 vno-shadow vno-ring-1 vno-ring-slate-900/5 placeholder:vno-text-slate-400 focus:vno-outline-none focus:vno-ring-2 focus:vno-ring-sky-500 dark:vno-bg-slate-700/20 dark:vno-text-white dark:vno-ring-slate-200/20 dark:focus:vno-ring-sky-500 sm:vno-text-sm"
                   placeholder="Tìm kiếm bài viết..."
                 />
               </div>
@@ -100,12 +100,12 @@ export default function ListLayout({ posts, title, description, initialDisplayPo
                       <h3 className="vno-pt-8 vno-text-base vno-font-semibold vno-tracking-tight vno-text-slate-900 dark:vno-text-slate-200 lg:vno-pt-0">
                         {frontMatter.title}{' '}
                         {showNewBadge && (
-                          <span className="vno-inline-block vno-px-2 vno-py-0.5 vno-relative -vno-top-[2px] vno-font-medium vno-ml-2 vno-text-xs vno-rounded-full vno-text-sky-600 vno-bg-sky-400/10 dark:vno-text-sky-400">
+                          <span className="vno-relative -vno-top-[2px] vno-ml-2 vno-inline-block vno-rounded-full vno-bg-sky-400/10 vno-px-2 vno-py-0.5 vno-text-xs vno-font-medium vno-text-sky-600 dark:vno-text-sky-400">
                             New
                           </span>
                         )}
                         {showModifiedBadge && (
-                          <span className="vno-inline-block vno-px-2 vno-py-0.5 vno-relative -vno-top-[2px] vno-font-medium vno-ml-2 vno-text-xs vno-rounded-full vno-text-sky-600 vno-bg-sky-400/10 dark:vno-text-sky-400">
+                          <span className="vno-relative -vno-top-[2px] vno-ml-2 vno-inline-block vno-rounded-full vno-bg-sky-400/10 vno-px-2 vno-py-0.5 vno-text-xs vno-font-medium vno-text-sky-600 dark:vno-text-sky-400">
                             Modified
                           </span>
                         )}

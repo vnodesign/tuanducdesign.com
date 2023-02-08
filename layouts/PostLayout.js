@@ -72,7 +72,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                         width="34"
                         height="34"
                         alt={authorDetails.name}
-                        className="vno-rounded-full vno-bg-slate-50 dark:vno-bg-slate-800 vno-h-9 vno-w-9"
+                        className="vno-h-9 vno-w-9 vno-rounded-full vno-bg-slate-50 dark:vno-bg-slate-800"
                       />
                     )}
                     <div className="vno-ml-3 vno-text-sm vno-leading-4">
@@ -94,7 +94,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                   </li>
                 </ul>
               </div>
-              <div className="vno-mt-12 vno-prose vno-prose-slate dark:vno-prose-dark">
+              <div className="vno-prose vno-prose-slate vno-mt-12 dark:vno-prose-dark">
                 {children}
               </div>
             </article>
@@ -106,7 +106,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
             )}
           >
             {frontMatter.tags && (
-              <div className="vno-flex vno-flex-wrap vno-mb-3.5">
+              <div className="vno-mb-3.5 vno-flex vno-flex-wrap">
                 <Suspense fallback={<div>Loading...</div>}>
                   {frontMatter.tags.map((tag) => (
                     <Tag key={tag} text={tag} />
@@ -115,7 +115,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
               </div>
             )}
             {(next || prev) && (
-              <div className="vno-pt-6 vno-flex vno-items-center vno-font-semibold vno-text-slate-700 dark:vno-text-slate-200 vno-border-t vno-border-t-slate-200 dark:vno-border-t-slate-700">
+              <div className="vno-flex vno-items-center vno-border-t vno-border-t-slate-200 vno-pt-6 vno-font-semibold vno-text-slate-700 dark:vno-border-t-slate-700 dark:vno-text-slate-200">
                 {prev && (
                   <Link
                     href={`/blog/${prev.slug}`}

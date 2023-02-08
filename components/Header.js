@@ -27,7 +27,7 @@ export function NavPopover({ display = 'md:vno-hidden', className, ...props }) {
     <div className={classNames(className, display)} {...props}>
       <button
         type="button"
-        className="vno-flex vno-items-center vno-justify-center vno-w-8 vno-h-8 vno-text-slate-500 hover:vno-text-slate-600 dark:hover:vno-text-slate-300"
+        className="vno-flex vno-h-8 vno-w-8 vno-items-center vno-justify-center vno-text-slate-500 hover:vno-text-slate-600 dark:hover:vno-text-slate-300"
         onClick={() => setIsOpen(true)}
       >
         <span className="vno-sr-only">Navigation</span>
@@ -43,21 +43,21 @@ export function NavPopover({ display = 'md:vno-hidden', className, ...props }) {
       </button>
       <Dialog
         as="div"
-        className={classNames('vno-fixed vno-z-50 vno-inset-0', display)}
+        className={classNames('vno-fixed vno-inset-0 vno-z-50', display)}
         open={isOpen}
         onClose={setIsOpen}
       >
         <Dialog.Overlay className="vno-fixed vno-inset-0 vno-bg-black/20 vno-backdrop-blur-sm dark:vno-bg-slate-900/80" />
-        <div className="vno-fixed vno-w-full vno-max-w-xs vno-p-6 vno-text-base vno-font-semibold vno-text-slate-900 vno-bg-white vno-rounded-lg vno-shadow-lg vno-top-4 vno-right-4 dark:vno-bg-slate-800 dark:vno-text-slate-400 dark:vno-highlight-white/5">
+        <div className="vno-fixed vno-top-4 vno-right-4 vno-w-full vno-max-w-xs vno-rounded-lg vno-bg-white vno-p-6 vno-text-base vno-font-semibold vno-text-slate-900 vno-shadow-lg dark:vno-bg-slate-800 dark:vno-text-slate-400 dark:vno-highlight-white/5">
           <button
             type="button"
-            className="vno-absolute vno-flex vno-items-center vno-justify-center vno-w-8 vno-h-8 vno-top-5 vno-right-5 vno-text-slate-500 hover:vno-text-slate-600 dark:vno-text-slate-400 dark:hover:vno-text-slate-300"
+            className="vno-absolute vno-top-5 vno-right-5 vno-flex vno-h-8 vno-w-8 vno-items-center vno-justify-center vno-text-slate-500 hover:vno-text-slate-600 dark:vno-text-slate-400 dark:hover:vno-text-slate-300"
             onClick={() => setIsOpen(false)}
           >
             <span className="vno-sr-only">Close navigation</span>
             <svg
               viewBox="0 0 10 10"
-              className="vno-w-2.5 vno-h-2.5 vno-overflow-visible"
+              className="vno-h-2.5 vno-w-2.5 vno-overflow-visible"
               aria-hidden="true"
             >
               <path
@@ -81,7 +81,7 @@ export function NavPopover({ display = 'md:vno-hidden', className, ...props }) {
               </Link>
             </li>
           </ul>
-          <div className="vno-pt-6 vno-mt-6 vno-border-t vno-border-slate-200 dark:vno-border-slate-200/10">
+          <div className="vno-mt-6 vno-border-t vno-border-slate-200 vno-pt-6 dark:vno-border-slate-200/10">
             <ThemeSelect />
           </div>
         </div>
@@ -103,7 +103,7 @@ export function NavItems() {
           >
             {link.title}
             {link.showNew && (
-              <span className="vno-ml-2 vno-font-medium vno-text-xs vno-leading-5 vno-rounded-full vno-text-sky-600 vno-bg-sky-400/10 vno-px-2 vno-py-0.5 dark:vno-text-sky-400">
+              <span className="vno-ml-2 vno-rounded-full vno-bg-sky-400/10 vno-px-2 vno-py-0.5 vno-text-xs vno-font-medium vno-leading-5 vno-text-sky-600 dark:vno-text-sky-400">
                 New
               </span>
             )}
@@ -135,13 +135,13 @@ export function Header() {
 
   return (
     <>
-      <div className="vno-absolute vno-inset-x-0 vno-top-0 vno-z-20 vno-flex vno-justify-center vno-overflow-hidden vno-pointer-events-none">
-        <div className="vno-w-[108rem] vno-flex-none vno-flex vno-justify-end">
+      <div className="vno-pointer-events-none vno-absolute vno-inset-x-0 vno-top-0 vno-z-20 vno-flex vno-justify-center vno-overflow-hidden">
+        <div className="vno-flex vno-w-[108rem] vno-flex-none vno-justify-end">
           <picture>
             <Image
               src={require('@/img/beams/docs@tinypng.png')}
               alt="Background Light"
-              className="vno-w-[71.75rem] vno-flex-none vno-max-w-none dark:vno-hidden"
+              className="vno-w-[71.75rem] vno-max-w-none vno-flex-none dark:vno-hidden"
               priority
             />
           </picture>
@@ -149,7 +149,7 @@ export function Header() {
             <Image
               src={require('@/img/beams/docs-dark@tinypng.png')}
               alt="Background Dark"
-              className="vno-w-[90rem] vno-flex-none vno-max-w-none vno-hidden dark:vno-block"
+              className="vno-hidden vno-w-[90rem] vno-max-w-none vno-flex-none dark:vno-block"
               priority
             />
           </picture>
@@ -157,13 +157,13 @@ export function Header() {
       </div>
       <header
         className={classNames(
-          'vno-sticky vno-top-0 vno-z-50 vno-w-full vno-flex-none vno-backdrop-blur vno-transition-colors vno-duration-500 lg:vno-z-50 lg:vno-border-b lg:vno-border-slate-900/10 dark:vno-border-slate-50/[0.06]',
+          'vno-sticky vno-top-0 vno-z-50 vno-w-full vno-flex-none vno-backdrop-blur vno-transition-colors vno-duration-500 dark:vno-border-slate-50/[0.06] lg:vno-z-50 lg:vno-border-b lg:vno-border-slate-900/10',
           isOpaque
             ? 'vno-bg-white supports-backdrop-blur:vno-bg-white/95 dark:vno-bg-slate-900/75'
             : 'vno-bg-white/95 supports-backdrop-blur:vno-bg-white/60 dark:vno-bg-transparent'
         )}
       >
-        <div className="vno-max-w-8xl vno-mx-auto">
+        <div className="vno-mx-auto vno-max-w-8xl">
           <div className="vno-mx-4 vno-border-b vno-border-slate-900/10 vno-py-4 dark:vno-border-slate-300/10 lg:vno-border-0">
             <div className="vno-relative vno-flex vno-items-center">
               <Link
@@ -182,23 +182,23 @@ export function Header() {
                   priority
                 />
               </Link>
-              <div className="vno-relative vno-items-center vno-hidden vno-ml-auto lg:vno-flex">
+              <div className="vno-relative vno-ml-auto vno-hidden vno-items-center lg:vno-flex">
                 <nav className="vno-text-sm vno-font-semibold vno-leading-6 vno-text-slate-700 dark:vno-text-slate-200">
                   <ul className="vno-flex vno-space-x-8">
                     <NavItems />
                   </ul>
                 </nav>
-                <div className="vno-flex vno-items-center vno-pl-6 vno-ml-6 vno-border-l vno-border-slate-200 dark:vno-border-slate-800">
+                <div className="vno-ml-6 vno-flex vno-items-center vno-border-l vno-border-slate-200 vno-pl-6 dark:vno-border-slate-800">
                   <ThemeToggle panelClassName="vno-mt-8" />
                   <Link
                     href="https://github.com/vnodesign"
-                    className="vno-block vno-ml-6 vno-text-slate-400 hover:vno-text-slate-500 dark:hover:vno-text-slate-300"
+                    className="vno-ml-6 vno-block vno-text-slate-400 hover:vno-text-slate-500 dark:hover:vno-text-slate-300"
                     title="GitHub"
                   >
                     <span className="vno-sr-only">GitHub</span>
                     <svg
                       viewBox="0 0 16 16"
-                      className="vno-w-5 vno-h-5"
+                      className="vno-h-5 vno-w-5"
                       fill="currentColor"
                       aria-hidden="true"
                     >

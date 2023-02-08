@@ -84,7 +84,7 @@ code[class^='language-diff-'] > span {
 }
 
 .highlight-line {
-  @apply vno-relative -vno-ml-5 -vno-mr-9 vno-border-l-4 vno-pl-4 vno-pr-5 vno-border-sky-400 vno-bg-sky-300/[0.15];
+  @apply vno-relative -vno-ml-5 -vno-mr-9 vno-border-l-4 vno-border-sky-400 vno-bg-sky-300/[0.15] vno-pl-4 vno-pr-5;
 }
 
 .code-line {

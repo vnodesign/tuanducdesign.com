@@ -12,10 +12,10 @@ export default function ProjectsLayout({ frontMatter, next, prev, children }) {
     <>
       <PageSEO title={`Dự án ${title}`} description={summary} breadcrumb={true} />
       <article>
-        <header className="vno-bg-white/95 vno-z-40 supports-backdrop-blur:vno-bg-white/60 vno-backdrop-blur vno-py-4 vno-relative vno-shadow-md vno-shadow-slate-700/5 dark:vno-bg-transparent">
-          <div className="vno-max-w-8xl vno-mx-auto vno-px-4 sm:vno-px-6 lg:vno-px-8 vno-grid vno-items-center vno-grid-cols-[1fr,auto,1fr] vno-gap-6">
+        <header className="vno-relative vno-z-40 vno-bg-white/95 vno-py-4 vno-shadow-md vno-shadow-slate-700/5 vno-backdrop-blur supports-backdrop-blur:vno-bg-white/60 dark:vno-bg-transparent">
+          <div className="vno-mx-auto vno-grid vno-max-w-8xl vno-grid-cols-[1fr,auto,1fr] vno-items-center vno-gap-6 vno-px-4 sm:vno-px-6 lg:vno-px-8">
             <div className="vno-text-center">
-              <p className="vno-text-[0.8125rem] vno-leading-6 vno-font-semibold vno-text-sky-500">
+              <p className="vno-text-[0.8125rem] vno-font-semibold vno-leading-6 vno-text-sky-500">
                 <Link
                   href="/projects"
                   title="Dự án"
@@ -24,7 +24,7 @@ export default function ProjectsLayout({ frontMatter, next, prev, children }) {
                   Dự án
                 </Link>
               </p>
-              <h1 className="vno-mt-1 vno-text-xl vno-leading-8 vno-tracking-tight vno-font-semibold vno-text-slate-900 dark:vno-text-white">
+              <h1 className="vno-mt-1 vno-text-xl vno-font-semibold vno-leading-8 vno-tracking-tight vno-text-slate-900 dark:vno-text-white">
                 {title}
               </h1>
             </div>
@@ -36,18 +36,18 @@ export default function ProjectsLayout({ frontMatter, next, prev, children }) {
                   title={prev.title}
                   onClick={() => gtagTrack('PrevProjectsLink', `/projects/${prev.slug}`)}
                 >
-                  <div className="vno-hidden md:vno-block vno-text-[0.8125rem] vno-leading-6 vno-text-slate-500">
+                  <div className="vno-hidden vno-text-[0.8125rem] vno-leading-6 vno-text-slate-500 md:vno-block">
                     <span aria-hidden="true" className="vno-mr-2">
                       ←
                     </span>
                     Trước
                   </div>
-                  <div className="vno-hidden md:vno-block vno-mt-2 vno-text-sm vno-leading-6 vno-font-semibold vno-text-slate-900 dark:vno-text-white">
+                  <div className="vno-mt-2 vno-hidden vno-text-sm vno-font-semibold vno-leading-6 vno-text-slate-900 dark:vno-text-white md:vno-block">
                     {prev.title}
                   </div>
                   <div className="vno-absolute -vno-inset-1 md:vno-hidden" />
                   <svg
-                    className="md:vno-hidden vno-w-6 vno-h-6 vno-stroke-slate-900 dark:vno-stroke-white"
+                    className="vno-h-6 vno-w-6 vno-stroke-slate-900 dark:vno-stroke-white md:vno-hidden"
                     fill="none"
                     aria-hidden="true"
                   >
@@ -61,7 +61,7 @@ export default function ProjectsLayout({ frontMatter, next, prev, children }) {
                 </Link>
               )}
             </div>
-            <div className="vno-flex vno-text-right vno-justify-end">
+            <div className="vno-flex vno-justify-end vno-text-right">
               {next && (
                 <Link
                   href={`/projects/${next.slug}`}
@@ -69,18 +69,18 @@ export default function ProjectsLayout({ frontMatter, next, prev, children }) {
                   title={next.title}
                   onClick={() => gtagTrack('NextProjectsLink', `/projects/${next.slug}`)}
                 >
-                  <div className="vno-hidden md:vno-block vno-text-[0.8125rem] vno-leading-6 vno-text-slate-500">
+                  <div className="vno-hidden vno-text-[0.8125rem] vno-leading-6 vno-text-slate-500 md:vno-block">
                     Kế
                     <span aria-hidden="true" className="vno-ml-2">
                       →
                     </span>
                   </div>
-                  <div className="vno-hidden md:vno-block vno-mt-2 vno-text-sm vno-leading-6 vno-font-semibold vno-text-slate-900 dark:vno-text-white">
+                  <div className="vno-mt-2 vno-hidden vno-text-sm vno-font-semibold vno-leading-6 vno-text-slate-900 dark:vno-text-white md:vno-block">
                     {next.title}
                   </div>
                   <div className="vno-absolute -vno-inset-1 md:vno-hidden" />
                   <svg
-                    className="md:vno-hidden vno-w-6 vno-h-6 vno-stroke-slate-900 dark:vno-stroke-white"
+                    className="vno-h-6 vno-w-6 vno-stroke-slate-900 dark:vno-stroke-white md:vno-hidden"
                     fill="none"
                     aria-hidden="true"
                   >
@@ -102,7 +102,7 @@ export default function ProjectsLayout({ frontMatter, next, prev, children }) {
               <div className="vno-absolute vno-inset-x-0 vno-top-0 vno-h-px vno-bg-slate-900/5 dark:vno-bg-slate-100/5" />
               <div className="vno-absolute vno-inset-x-0 vno-bottom-0 vno-h-px vno-bg-slate-900/5 dark:vno-bg-slate-100/5" />
               <div className="vno-mx-auto vno-max-w-8xl">
-                <div className="vno-shadow-md vno-ring-1 vno-ring-slate-900/5 vno-shadow-slate-900/10 vno-bg-slate-200">
+                <div className="vno-bg-slate-200 vno-shadow-md vno-shadow-slate-900/10 vno-ring-1 vno-ring-slate-900/5">
                   <Image
                     src={images}
                     alt={title}
@@ -118,20 +118,20 @@ export default function ProjectsLayout({ frontMatter, next, prev, children }) {
           </figure>
         )}
         <div className="vno-overflow-hidden">
-          <div className="vno-relative vno-max-w-8xl vno-py-6 vno-mx-auto vno-px-4 sm:vno-px-6 lg:vno-px-8 vno-flex vno-flex-col sm:vno-flex-row sm:vno-items-center sm:vno-justify-between vno-gap-6">
+          <div className="vno-relative vno-mx-auto vno-flex vno-max-w-8xl vno-flex-col vno-gap-6 vno-py-6 vno-px-4 sm:vno-flex-row sm:vno-items-center sm:vno-justify-between sm:vno-px-6 lg:vno-px-8">
             <Image
               src={require('@/img/projects/beams-2@75.jpg')}
               alt="Background Light"
-              className="vno-absolute vno-top-[-20rem] sm:vno-top-[-25rem] vno-left-1/2 vno-ml-[-35rem] vno-max-w-none vno-w-[119.4375rem] dark:vno-hidden vno-pointer-events-none"
+              className="vno-pointer-events-none vno-absolute vno-top-[-20rem] vno-left-1/2 vno-ml-[-35rem] vno-w-[119.4375rem] vno-max-w-none dark:vno-hidden sm:vno-top-[-25rem]"
               priority
             />
             <Image
               src={require('@/img/projects/beams-2-dark@75.jpg')}
               alt="Background Dark"
-              className="vno-absolute vno-top-0 vno-right-[-12rem] md:vno-right-0 vno-max-w-none vno-w-[70.0625rem] vno-hidden dark:vno-block vno-pointer-events-none"
+              className="vno-pointer-events-none vno-absolute vno-top-0 vno-right-[-12rem] vno-hidden vno-w-[70.0625rem] vno-max-w-none dark:vno-block md:vno-right-0"
               priority
             />
-            <dl className="vno-relative vno-flex vno-flex-wrap vno-h-14 vno-overflow-hidden">
+            <dl className="vno-relative vno-flex vno-h-14 vno-flex-wrap vno-overflow-hidden">
               {[
                 ...(tech ? [{ name: 'Công nghệ', value: tech }] : []),
                 {
@@ -143,10 +143,10 @@ export default function ProjectsLayout({ frontMatter, next, prev, children }) {
                   key={item.name}
                   className={classNames(
                     itemIndex > 0 &&
-                      'vno-border-l vno-border-slate-500/10 dark:vno-border-slate-400/10 vno-ml-6 vno-pl-6 lg:vno-ml-8 lg:vno-pl-8'
+                      'vno-ml-6 vno-border-l vno-border-slate-500/10 vno-pl-6 dark:vno-border-slate-400/10 lg:vno-ml-8 lg:vno-pl-8'
                   )}
                 >
-                  <dt className="vno-text-[0.8125rem] vno-leading-6 vno-font-semibold vno-text-slate-700 dark:vno-text-slate-400">
+                  <dt className="vno-text-[0.8125rem] vno-font-semibold vno-leading-6 vno-text-slate-700 dark:vno-text-slate-400">
                     {item.name}
                   </dt>
                   <dd className="vno-mt-2 vno-text-sm vno-leading-6 vno-text-slate-700 dark:vno-text-slate-200">
@@ -157,7 +157,7 @@ export default function ProjectsLayout({ frontMatter, next, prev, children }) {
             </dl>
             <Link
               href={url}
-              className="vno-relative vno-flex-none vno-text-sm vno-text-center vno-font-semibold vno-text-white vno-py-2.5 vno-px-4 vno-rounded-lg vno-bg-slate-900 dark:vno-bg-sky-500 dark:vno-text-white focus:vno-outline-none hover:vno-bg-slate-700 focus:vno-ring-2 focus:vno-ring-slate-400 focus:vno-ring-offset-2 dark:vno-highlight-white/20 dark:hover:vno-bg-sky-400 dark:focus:vno-ring-2 dark:focus:vno-ring-sky-600 dark:focus:vno-ring-offset-slate-900"
+              className="vno-relative vno-flex-none vno-rounded-lg vno-bg-slate-900 vno-py-2.5 vno-px-4 vno-text-center vno-text-sm vno-font-semibold vno-text-white hover:vno-bg-slate-700 focus:vno-outline-none focus:vno-ring-2 focus:vno-ring-slate-400 focus:vno-ring-offset-2 dark:vno-bg-sky-500 dark:vno-text-white dark:vno-highlight-white/20 dark:hover:vno-bg-sky-400 dark:focus:vno-ring-2 dark:focus:vno-ring-sky-600 dark:focus:vno-ring-offset-slate-900"
             >
               Xem dự án
               <span aria-hidden="true" className="vno-ml-2">
@@ -167,7 +167,7 @@ export default function ProjectsLayout({ frontMatter, next, prev, children }) {
           </div>
           <div className="vno-relative [&>:first-child]:!vno-mt-0 [&>:last-child]:!vno-mb-0">
             <div className="vno-prose vno-prose-slate dark:vno-prose-dark">
-              <div className="vno-max-w-8xl vno-mx-auto vno-pt-14 sm:vno-pt-20 md:vno-pt-32 xl:vno-pt-36 vno-mb-20 md:vno-mb-32 vno-px-4 sm:vno-px-6 lg:vno-px-8">
+              <div className="vno-mx-auto vno-mb-20 vno-max-w-8xl vno-px-4 vno-pt-14 sm:vno-px-6 sm:vno-pt-20 md:vno-mb-32 md:vno-pt-32 lg:vno-px-8 xl:vno-pt-36">
                 {children}
               </div>
             </div>

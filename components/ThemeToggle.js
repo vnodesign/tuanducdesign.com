@@ -81,7 +81,7 @@ function PcIcon({ selected, ...props }) {
         strokeLinejoin="round"
         className={
           selected
-            ? 'vno-stroke-sky-500 vno-fill-sky-400/20'
+            ? 'vno-fill-sky-400/20 vno-stroke-sky-500'
             : 'vno-stroke-slate-400 dark:vno-stroke-slate-500'
         }
       />
@@ -107,15 +107,15 @@ export function ThemeToggle({ panelClassName = 'vno-mt-4' }) {
         <Listbox.Label className="vno-sr-only">Theme</Listbox.Label>
         <Listbox.Button type="button">
           <span className="dark:vno-hidden">
-            <SunIcon className="vno-w-6 vno-h-6" selected={theme} />
+            <SunIcon className="vno-h-6 vno-w-6" selected={theme} />
           </span>
           <span className="vno-hidden dark:vno-inline">
-            <MoonIcon className="vno-w-6 vno-h-6" selected={theme} />
+            <MoonIcon className="vno-h-6 vno-w-6" selected={theme} />
           </span>
         </Listbox.Button>
         <Listbox.Options
           className={classNames(
-            'vno-absolute vno-z-50 vno-top-full vno-right-0 vno-bg-white vno-rounded-lg vno-ring-1 vno-ring-slate-900/10 vno-shadow-lg vno-overflow-hidden vno-w-36 vno-py-1 vno-text-sm vno-text-slate-700 vno-font-semibold dark:vno-bg-slate-800 dark:vno-ring-0 dark:vno-text-slate-300',
+            'vno-absolute vno-top-full vno-right-0 vno-z-50 vno-w-36 vno-overflow-hidden vno-rounded-lg vno-bg-white vno-py-1 vno-text-sm vno-font-semibold vno-text-slate-700 vno-shadow-lg vno-ring-1 vno-ring-slate-900/10 dark:vno-bg-slate-800 dark:vno-text-slate-300 dark:vno-ring-0',
             panelClassName
           )}
         >
@@ -124,12 +124,12 @@ export function ThemeToggle({ panelClassName = 'vno-mt-4' }) {
               {({ active, selected }) => (
                 <li
                   className={classNames(
-                    'vno-py-1 vno-px-2 vno-flex vno-items-center vno-cursor-pointer',
+                    'vno-flex vno-cursor-pointer vno-items-center vno-py-1 vno-px-2',
                     selected && 'vno-text-sky-500',
                     active && 'vno-bg-slate-50 dark:vno-bg-slate-600/30'
                   )}
                 >
-                  <Icon selected={selected} className="vno-w-6 vno-h-6 vno-mr-2" />
+                  <Icon selected={selected} className="vno-mr-2 vno-h-6 vno-w-6" />
                   {label}
                 </li>
               )}
@@ -151,11 +151,11 @@ export function ThemeSelect() {
       <label htmlFor="theme" className="vno-font-normal vno-text-slate-700 dark:vno-text-slate-400">
         Switch theme
       </label>
-      <div className="vno-relative vno-flex vno-items-center vno-ring-1 vno-ring-slate-900/10 vno-rounded-lg vno-shadow-sm vno-p-2 vno-text-slate-700 vno-font-semibold dark:vno-bg-slate-600 dark:vno-ring-0 dark:vno-text-slate-200">
-        <SunIcon className="vno-w-6 vno-h-6 vno-mr-2 dark:vno-hidden" />
-        <MoonIcon className="vno-w-6 vno-h-6 vno-mr-2 vno-hidden dark:vno-block" />
+      <div className="vno-relative vno-flex vno-items-center vno-rounded-lg vno-p-2 vno-font-semibold vno-text-slate-700 vno-shadow-sm vno-ring-1 vno-ring-slate-900/10 dark:vno-bg-slate-600 dark:vno-text-slate-200 dark:vno-ring-0">
+        <SunIcon className="vno-mr-2 vno-h-6 vno-w-6 dark:vno-hidden" />
+        <MoonIcon className="vno-mr-2 vno-hidden vno-h-6 vno-w-6 dark:vno-block" />
         {label}
-        <svg className="vno-w-6 vno-h-6 vno-ml-2 vno-text-slate-400" fill="none">
+        <svg className="vno-ml-2 vno-h-6 vno-w-6 vno-text-slate-400" fill="none">
           <path
             d="m15 11-3 3-3-3"
             stroke="currentColor"
@@ -168,7 +168,7 @@ export function ThemeSelect() {
           id="theme"
           value={theme}
           onChange={(e) => setTheme(e.target.value)}
-          className="vno-absolute vno-appearance-none vno-inset-0 vno-w-full vno-h-full vno-opacity-0"
+          className="vno-absolute vno-inset-0 vno-h-full vno-w-full vno-appearance-none vno-opacity-0"
         >
           {themes.map(({ value, label }) => (
             <option key={value} value={value}>

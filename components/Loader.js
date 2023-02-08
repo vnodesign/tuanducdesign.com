@@ -1,10 +1,10 @@
 export default function Loader() {
   return (
     <div className="vno-h-screen vno-bg-gray-50 dark:vno-bg-gray-900">
-      <div className="vno-flex vno-flex-col vno-justify-center vno-items-center vno-px-6 vno-pt-8 vno-mx-auto md:vno-h-screen pt:vno-mt-0">
+      <div className="pt:vno-mt-0 vno-mx-auto vno-flex vno-flex-col vno-items-center vno-justify-center vno-px-6 vno-pt-8 md:vno-h-screen">
         <svg
           role="status"
-          className="vno-animate-spin vno-text-blue-200 vno-fill-blue-500 dark:vno-text-blue-600 dark:vno-fill-blue-400 vno-w-10 vno-h-10"
+          className="vno-h-10 vno-w-10 vno-animate-spin vno-fill-blue-500 vno-text-blue-200 dark:vno-fill-blue-400 dark:vno-text-blue-600"
           viewBox="0 0 100 101"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
