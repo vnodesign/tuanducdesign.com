@@ -110,7 +110,7 @@ export default function ListLayout({ posts, title, description, initialDisplayPo
                           </span>
                         )}
                       </h3>
-                      <div className="vno-prose vno-prose-slate vno-mt-2 vno-mb-4 vno-line-clamp-2 prose-a:vno-relative prose-a:vno-z-10 dark:vno-prose-dark">
+                      <div className="vno-prose vno-prose-slate vno-mt-2 vno-mb-4 vno-line-clamp-2 dark:vno-prose-dark prose-a:vno-relative prose-a:vno-z-10">
                         {frontMatter.summary}
                       </div>
                       <dl className="vno-absolute vno-left-0 vno-top-0 lg:vno-left-auto lg:vno-right-full lg:vno-mr-[calc(6.5rem+1px)]">

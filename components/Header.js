@@ -1,7 +1,7 @@
 import { Dialog } from '@headlessui/react'
 import { useEffect, useState } from 'react'
 import classNames from 'classnames'
-import Router from 'next/router'
+import Router, { useRouter } from 'next/router'
 import siteMetadata from '@/data/siteMetadata'
 import headerNavLinks from '@/data/headerNavLinks'
 import Image from './Image'
@@ -91,13 +91,18 @@ export function NavPopover({ display = 'md:vno-hidden', className, ...props }) {
 }
 
 export function NavItems() {
+  const { asPath } = useRouter()
   return (
     <>
       {headerNavLinks.map((link) => (
         <li key={link.href}>
           <Link
             href={link.href}
-            className="hover:vno-text-sky-500 dark:hover:vno-text-sky-400"
+            className={classNames(
+              asPath === link.href
+                ? 'vno-text-sky-500 dark:vno-text-sky-400'
+                : 'hover:vno-text-sky-500 dark:hover:vno-text-sky-400'
+            )}
             title={link.title}
             onClick={() => gtagTrack('NavLink', link.href)}
           >
