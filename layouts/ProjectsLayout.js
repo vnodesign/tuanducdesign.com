@@ -6,12 +6,12 @@ import Image from '@/components/Image'
 import formatDate from '@/lib/utils/formatDate'
 
 export default function ProjectsLayout({ frontMatter, next, prev, children }) {
-  const { url, date, title, summary, images, tech } = frontMatter
+  const { url, date, title, summary, images, tech, projectsStatus } = frontMatter
 
   return (
     <>
       <PageSEO title={`Dự án ${title}`} description={summary} breadcrumb={true} />
-      <article>
+      <article className="vno-pb-20 sm:vno-pb-32">
         <header className="vno-relative vno-z-40 vno-bg-white/95 vno-py-4 vno-shadow-md vno-shadow-slate-700/5 vno-backdrop-blur supports-backdrop-blur:vno-bg-white/60 dark:vno-bg-transparent">
           <div className="vno-mx-auto vno-grid vno-max-w-8xl vno-grid-cols-[1fr,auto,1fr] vno-items-center vno-gap-6 vno-px-4 sm:vno-px-6 lg:vno-px-8">
             <div className="vno-text-center">
@@ -138,6 +138,10 @@ export default function ProjectsLayout({ frontMatter, next, prev, children }) {
                   name: 'Phát triển lúc',
                   value: <time dateTime={date}>{formatDate(date)}</time>,
                 },
+                {
+                  name: 'Trạng thái dự án',
+                  value: <>{projectsStatus}</>,
+                },
               ].map((item, itemIndex) => (
                 <div
                   key={item.name}
@@ -166,8 +170,8 @@ export default function ProjectsLayout({ frontMatter, next, prev, children }) {
             </Link>
           </div>
           <div className="vno-relative [&>:first-child]:!vno-mt-0 [&>:last-child]:!vno-mb-0">
-            <div className="vno-prose vno-prose-slate dark:vno-prose-dark">
-              <div className="vno-mx-auto vno-mb-20 vno-max-w-8xl vno-px-4 vno-pt-14 sm:vno-px-6 sm:vno-pt-20 md:vno-mb-32 md:vno-pt-32 lg:vno-px-8 xl:vno-pt-36">
+            <div className="vno-mx-auto vno-mb-20 vno-max-w-8xl vno-px-4 vno-pt-14 sm:vno-px-6 sm:vno-pt-20 md:vno-mb-32 md:vno-pt-32 lg:vno-px-8 xl:vno-pt-36">
+              <div className="vno-mt-4 vno-max-w-3xl vno-prose vno-prose-slate dark:vno-prose-dark">
                 {children}
               </div>
             </div>

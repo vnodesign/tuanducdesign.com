@@ -1,5 +1,4 @@
 import fs from 'fs'
-import PageTitle from '@/components/PageTitle'
 import generateRss from '@/lib/generate-rss'
 import { MDXLayoutRenderer } from '@/components/MDXComponents'
 import { formatSlug, getAllFilesFrontMatter, getFileBySlug, getFiles } from '@/lib/mdx'
@@ -23,6 +22,7 @@ export async function getStaticProps({ params }) {
   const postIndex = allPosts.findIndex((post) => formatSlug(post.slug) === params.slug.join('/'))
   const prev = allPosts[postIndex + 1] || null
   const next = allPosts[postIndex - 1] || null
+
   const post = await getFileBySlug('blog', params.slug.join('/'))
   const authors = post.frontMatter.authors || 'tuanducdesign'
   const authorData = await getFileBySlug('authors', authors)
@@ -39,26 +39,13 @@ export default function Blog({ post, authorDetails, prev, next }) {
   const { mdxSource, frontMatter } = post
 
   return (
-    <>
-      {frontMatter.draft !== true ? (
-        <MDXLayoutRenderer
-          layout={LAYOUT}
-          mdxSource={mdxSource}
-          frontMatter={frontMatter}
-          authorDetails={authorDetails}
-          prev={prev}
-          next={next}
-        />
-      ) : (
-        <div className="vno-mt-24 vno-text-center">
-          <PageTitle>
-            Under Construction{' '}
-            <span role="img" aria-label="roadwork sign">
-              🚧
-            </span>
-          </PageTitle>
-        </div>
-      )}
-    </>
+    <MDXLayoutRenderer
+      layout={LAYOUT}
+      mdxSource={mdxSource}
+      frontMatter={frontMatter}
+      authorDetails={authorDetails}
+      prev={prev}
+      next={next}
+    />
   )
 }

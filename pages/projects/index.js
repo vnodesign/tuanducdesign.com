@@ -21,6 +21,7 @@ function Site({ frontMatter, priority = false }) {
           width="336"
           height="247"
           priority={priority}
+          sizes="(max-width 336px) 80vw, 50vw"
         />
       </div>
       <div className="vno-mt-6 vno-flex vno-flex-wrap vno-items-center">
@@ -34,15 +35,9 @@ function Site({ frontMatter, priority = false }) {
             {frontMatter.title}
           </Link>
         </h2>
-        {frontMatter.showStatus ? (
-          <p className="vno-ml-2 vno-rounded-full vno-border vno-border-transparent vno-bg-sky-100 vno-px-1.5 vno-text-[0.6875rem] vno-font-semibold vno-leading-5 vno-text-sky-500 dark:vno-bg-slate-600/50 dark:vno-text-slate-200 dark:group-hover:vno-bg-sky-500 dark:group-hover:vno-text-white">
-            {frontMatter.projectsStatus}
-          </p>
-        ) : (
-          <p className="vno-ml-2 vno-rounded-full vno-border vno-border-transparent vno-bg-sky-100 vno-px-1.5 vno-text-[0.6875rem] vno-font-semibold vno-leading-5 vno-text-sky-500 dark:vno-bg-slate-600/50 dark:vno-text-slate-200 dark:group-hover:vno-bg-sky-500 dark:group-hover:vno-text-white">
-            Hoạt động
-          </p>
-        )}
+        <p className="vno-ml-2 vno-rounded-full vno-border vno-border-transparent vno-bg-sky-100 vno-px-1.5 vno-text-[0.6875rem] vno-font-semibold vno-leading-5 vno-text-sky-500 dark:vno-bg-slate-600/50 dark:vno-text-slate-200 dark:group-hover:vno-bg-sky-500 dark:group-hover:vno-text-white">
+          {frontMatter.projectsStatus}
+        </p>
         <svg
           className="vno-h-6 vno-w-6 vno-flex-none vno-opacity-0 group-hover:vno-opacity-100"
           viewBox="0 0 24 24"

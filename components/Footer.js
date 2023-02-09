@@ -1,40 +1,31 @@
 import Link from './Link'
 import Image from './Image'
 import siteMetadata from '@/data/siteMetadata'
-import { clientLinks, toolsLinks, providerLinks } from '@/data/footerWidgetLinks'
+import gtagTrack from '@/lib/utils/gtag'
+import { FaFacebook, FaTwitter, FaGithub, FaLinkedin } from 'react-icons/fa'
+import {
+  clientLinks,
+  toolsLinks,
+  providerLinks,
+  customLinks,
+  productionLinks,
+} from '@/data/footerWidgetLinks'
 
 export default function Footer() {
   return (
-    <footer className="vno-justify-self-end vno-border-t vno-border-t-slate-200 vno-pt-16 vno-pb-8 dark:vno-border-t-slate-700 lg:vno-pt-24 lg:vno-pb-10">
-      <div className="vno-mx-auto vno-max-w-8xl vno-p-3 lg:vno-px-4">
-        <div className="vno-grid vno-gap-12 lg:vno-grid-cols-6 lg:vno-gap-24">
-          <div className="vno-col-span-2">
-            <Link href="/" className="vno-mb-6 vno-flex" title={`${siteMetadata.title} Logo`}>
-              <Image
-                src={siteMetadata.siteLogo}
-                width="32"
-                height="32"
-                alt={`${siteMetadata.title} Logo`}
-              />
-              <span className="vno-ml-3 vno-self-center vno-text-2xl vno-font-semibold vno-text-gray-900 dark:vno-text-white">
-                {siteMetadata.title}
-              </span>
-            </Link>
-            <div className="vno-text-gray-600 dark:vno-text-gray-400">
-              Blog này mình sẽ chia sẻ các bài viết và các kiến thức mà mình đã áp dụng khi phát
-              triển VPS và tối ưu Website.
-            </div>
-          </div>
+    <footer className="vno-justify-self-end vno-border-t vno-border-t-slate-200 dark:vno-border-t-slate-700">
+      <div className="vno-mx-auto vno-max-w-8xl vno-p-4 vno-py-6 md:vno-p-8 lg:vno-p-10">
+        <div className="vno-grid vno-grid-cols-2 vno-gap-8 md:vno-grid-cols-3 lg:vno-grid-cols-5">
           <div>
-            <h3 className="vno-mb-6 vno-text-sm vno-font-semibold vno-uppercase vno-text-gray-400 dark:vno-text-white">
+            <h2 className="vno-mb-6 vno-font-semibold vno-text-gray-900 dark:vno-text-slate-100">
               Khách hàng
-            </h3>
+            </h2>
             <ul>
               {clientLinks.map((item) => (
                 <li key={item.href} className="vno-mb-4">
                   <Link
                     href={item.href}
-                    className="vno-font-normal vno-text-gray-600 hover:vno-text-gray-400 dark:vno-text-gray-400 dark:hover:vno-text-white"
+                    className="hover:vno-text-slate-900 dark:hover:vno-text-slate-300"
                     title={item.label}
                   >
                     {item.label}
@@ -44,15 +35,15 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="vno-mb-6 vno-text-sm vno-font-semibold vno-uppercase vno-text-gray-400 dark:vno-text-white">
+            <h2 className="vno-mb-6 vno-font-semibold vno-text-gray-900 dark:vno-text-slate-100">
               Công cụ VPS
-            </h3>
+            </h2>
             <ul>
               {toolsLinks.map((item) => (
                 <li key={item.href} className="vno-mb-4">
                   <Link
                     href={item.href}
-                    className="vno-font-normal vno-text-gray-600 hover:vno-text-gray-400 dark:vno-text-gray-400 dark:hover:vno-text-white"
+                    className="hover:vno-text-slate-900 dark:hover:vno-text-slate-300"
                     title={item.label}
                   >
                     {item.label}
@@ -62,15 +53,15 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="vno-mb-6 vno-text-sm vno-font-semibold vno-uppercase vno-text-gray-400 dark:vno-text-white">
+            <h2 className="vno-mb-6 vno-font-semibold vno-text-gray-900 dark:vno-text-slate-100">
               Nhà cung cấp
-            </h3>
+            </h2>
             <ul>
               {providerLinks.map((item) => (
                 <li key={item.href} className="vno-mb-4">
                   <Link
                     href={item.href}
-                    className="vno-font-normal vno-text-gray-600 hover:vno-text-gray-400 dark:vno-text-gray-400 dark:hover:vno-text-white"
+                    className="hover:vno-text-slate-900 dark:hover:vno-text-slate-300"
                     title={item.label}
                   >
                     {item.label}
@@ -80,53 +71,102 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="vno-mb-6 vno-text-sm vno-font-semibold vno-uppercase vno-text-gray-400 dark:vno-text-white">
-              Mạng xã hội
-            </h3>
+            <h2 className="vno-mb-6 vno-font-semibold vno-text-gray-900 dark:vno-text-slate-100">
+              Liên kết
+            </h2>
             <ul>
-              <li className="vno-mb-4">
-                <Link
-                  href={siteMetadata.facebook}
-                  className="vno-font-normal vno-text-gray-600 hover:vno-text-gray-400 dark:vno-text-gray-400 dark:hover:vno-text-white"
-                  title="Facebook"
-                >
-                  Facebook
-                </Link>
-              </li>
-              <li className="vno-mb-4">
-                <Link
-                  href={siteMetadata.github}
-                  className="vno-font-normal vno-text-gray-600 hover:vno-text-gray-400 dark:vno-text-gray-400 dark:hover:vno-text-white"
-                  title="Github"
-                >
-                  Github
-                </Link>
-              </li>
-              <li className="vno-mb-4">
-                <Link
-                  href={siteMetadata.twitter}
-                  className="vno-font-normal vno-text-gray-600 hover:vno-text-gray-400 dark:vno-text-gray-400 dark:hover:vno-text-white"
-                  title="Twitter"
-                >
-                  Twitter
-                </Link>
-              </li>
-              <li className="vno-mb-4">
-                <Link
-                  href={siteMetadata.linkedin}
-                  className="vno-font-normal vno-text-gray-600 hover:vno-text-gray-400 dark:vno-text-gray-400 dark:hover:vno-text-white"
-                  title="Linkedin"
-                >
-                  Linkedin
-                </Link>
-              </li>
+              {customLinks.map((item) => (
+                <li key={item.href} className="vno-mb-4">
+                  <Link
+                    href={item.href}
+                    className="hover:vno-text-slate-900 dark:hover:vno-text-slate-300"
+                    title={item.label}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h2 className="vno-mb-6 vno-font-semibold vno-text-gray-900 dark:vno-text-slate-100">
+              Sản phẩm
+            </h2>
+            <ul>
+              {productionLinks.map((item) => (
+                <li key={item.href} className="vno-mb-4">
+                  <Link
+                    href={item.href}
+                    className="hover:vno-text-slate-900 dark:hover:vno-text-slate-300"
+                    title={item.label}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
-        <hr className="vno-my-8 vno-border-slate-200 dark:vno-border-slate-700 lg:vno-my-12" />
-        <span className="vno-block vno-text-center vno-font-normal vno-text-gray-600 dark:vno-text-gray-400">
-          © 2021-{new Date().getFullYear()} {siteMetadata.title}. All Rights Reserved.
-        </span>
+        <hr className="vno-my-6 vno-border-slate-200 sm:mx-auto dark:vno-border-slate-700 lg:vno-my-8" />
+        <div className="vno-text-center">
+          <Link
+            href="/"
+            className="vno-flex vno-justify-center vno-items-center vno-mb-5 vno-text-2xl vno-font-semibold vno-text-gray-900 dark:vno-text-white"
+            title={siteMetadata.title}
+            onClick={() => gtagTrack('FooterLogoLink', '/')}
+          >
+            <Image
+              src={siteMetadata.siteLogo}
+              className="vno-mr-2 vno-h-8"
+              width="32"
+              height="32"
+              sizes="(max-width 32px) 80vw, 50vw"
+              alt={siteMetadata.title}
+            />
+            {siteMetadata.title}
+          </Link>
+          <span className="vno-block vno-text-sm vno-text-center vno-text-gray-500">
+            © 2021-{new Date().getFullYear()} {siteMetadata.title}. All Rights Reserved.
+          </span>
+          <ul className="vno-flex vno-justify-center vno-mt-5 vno-space-x-5 vno-text-slate-400 dark:vno-text-slate-500">
+            <li>
+              <Link
+                href={siteMetadata.facebook}
+                className="hover:vno-text-slate-500 dark:hover:vno-text-slate-400"
+                title="Facebook"
+              >
+                <FaFacebook className="vno-w-5 vno-h-5" />
+              </Link>
+            </li>
+            <li>
+              <Link
+                href={siteMetadata.twitter}
+                className="hover:vno-text-slate-500 dark:hover:vno-text-slate-400"
+                title="Twitter"
+              >
+                <FaTwitter className="vno-w-5 vno-h-5" />
+              </Link>
+            </li>
+            <li>
+              <Link
+                href={siteMetadata.github}
+                className="hover:vno-text-slate-500 dark:hover:vno-text-slate-400"
+                title="Github"
+              >
+                <FaGithub className="vno-w-5 vno-h-5" />
+              </Link>
+            </li>
+            <li>
+              <Link
+                href={siteMetadata.linkedin}
+                className="hover:vno-text-slate-500 dark:hover:vno-text-slate-400"
+                title="Linkedin"
+              >
+                <FaLinkedin className="vno-w-5 vno-h-5" />
+              </Link>
+            </li>
+          </ul>
+        </div>
       </div>
     </footer>
   )

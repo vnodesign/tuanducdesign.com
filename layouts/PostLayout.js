@@ -55,11 +55,11 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
               </h1>
               <div className="vno-text-sm vno-leading-6">
                 <dl>
-                  <dt className="vno-sr-only">Date</dt>
+                  <dt className="vno-sr-only">Thời gian</dt>
                   <dd className="vno-absolute vno-inset-x-0 vno-top-0 vno-text-slate-700 dark:vno-text-slate-400">
                     <time dateTime={frontMatter.date}>{formatDate(frontMatter.date)}</time>{' '}
                     {frontMatter.lastmod > frontMatter.date &&
-                      `(Updated ${formatDate(frontMatter.lastmod)})`}
+                      `(Cập nhật lúc: ${formatDate(frontMatter.lastmod)})`}
                   </dd>
                 </dl>
               </div>
@@ -72,6 +72,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                         width="34"
                         height="34"
                         alt={authorDetails.name}
+                        sizes="(max-width 34px) 80vw, 50vw"
                         className="vno-h-9 vno-w-9 vno-rounded-full vno-bg-slate-50 dark:vno-bg-slate-800"
                       />
                     )}
@@ -126,7 +127,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                     <span aria-hidden="true" className="vno-mr-2">
                       ←
                     </span>
-                    {prev.title}
+                    Bài cũ hơn
                   </Link>
                 )}
                 {next && (
@@ -136,7 +137,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                     title={next.title}
                     onClick={() => gtagTrack('NextPostLink', `/blog/${next.slug}`)}
                   >
-                    {next.title}
+                    Bài kế tiếp
                     <span aria-hidden="true" className="vno-ml-2">
                       →
                     </span>

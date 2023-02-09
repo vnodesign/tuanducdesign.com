@@ -174,16 +174,17 @@ export function Header() {
               <Link
                 href="/"
                 className="vno-mr-3 vno-w-[2.0625rem] vno-flex-none vno-overflow-hidden md:vno-w-auto"
-                title={`Trang chủ ${siteMetadata.title}`}
-                onClick={() => gtagTrack('LogoLink', '/')}
+                title={siteMetadata.title}
+                onClick={() => gtagTrack('HeaderLogoLink', '/')}
               >
-                <span className="vno-sr-only">Trang chủ {siteMetadata.title}</span>
+                <span className="vno-sr-only">{siteMetadata.title}</span>
                 <Image
                   src={siteMetadata.siteLogo}
                   className="vno-rounded-full"
                   alt={siteMetadata.title}
                   width={32}
                   height={32}
+                  sizes="(max-width 32px) 80vw, 50vw"
                   priority
                 />
               </Link>

@@ -43,6 +43,7 @@ function Header() {
             alt={siteMetadata.title}
             width={32}
             height={32}
+            sizes="(max-width 32px) 80vw, 50vw"
             priority
           />
           <div className="vno-flex vno-items-center">
@@ -58,6 +59,7 @@ function Header() {
                 <Link
                   href="https://github.com/vnodesign"
                   className="vno-ml-6 vno-block vno-text-slate-400 hover:vno-text-slate-500 dark:hover:vno-text-slate-300"
+                  title="GitHub"
                 >
                   <span className="vno-sr-only">GitHub</span>
                   <svg
@@ -113,6 +115,7 @@ function Header() {
           height={300}
           alt="Tối ưu điểm Google PageSpeed Insights"
           className="vno-relative vno-mx-auto vno-w-full vno-max-w-4xl vno-rounded-3xl vno-border vno-border-gray-300 vno-shadow-2xl dark:vno-border-gray-700"
+          sizes="(max-width 300px) 80vw, 50vw"
           priority
         />
       </div>
@@ -176,7 +179,8 @@ export default function Home({ posts }) {
                   src="/static/avatar-author.png"
                   width="960"
                   height="1280"
-                  className="vno-aspect-video vno-h-auto vno-w-full vno-rounded-2xl vno-object-cover"
+                  className="vno-aspect-video vno-h-auto vno-w-full vno-rounded-lg vno-object-cover"
+                  sizes="(max-width 960px) 80vw, 50vw"
                   priority
                 />
               </div>
@@ -218,8 +222,8 @@ export default function Home({ posts }) {
                       className="vno-font-semibold vno-text-sky-500 dark:vno-text-sky-400"
                     >
                       Next.js
-                    </Link>{' '}
-                    một Framework được xây dựng trên thư viện{' '}
+                    </Link>
+                    , một Framework được xây dựng trên thư viện{' '}
                     <Link
                       href="https://reactjs.org/"
                       title="React.js"
@@ -227,7 +231,7 @@ export default function Home({ posts }) {
                     >
                       React.js
                     </Link>
-                    , để xây dựng các dự án phức tạp hơn.
+                    . Để xây dựng các dự án phức tạp hơn.
                   </p>
                 </div>
               </div>

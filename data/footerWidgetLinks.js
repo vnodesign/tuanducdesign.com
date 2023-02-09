@@ -18,3 +18,20 @@ export const providerLinks = [
   { label: 'HOSTVN', href: 'https://hostvn.net' },
   { label: 'INET', href: 'https://inet.vn' },
 ]
+
+export const customLinks = [
+  { label: 'Series', href: '/blog/series' },
+  { label: 'Series NextDNS', href: '/blog/series-nextdns' },
+]
+
+export const productionLinks = [
+  {
+    label: 'Gatsby Lumen Starter Dark',
+    href: 'https://github.com/vnodesign/gatsby-starter-lumen-dark',
+  },
+  {
+    label: 'Gatsby Starter Bootstrap',
+    href: 'https://github.com/vnodesign/gatsby-starter-bootstrap',
+  },
+  { label: 'Vue Vite Resume', href: 'https://github.com/vnodesign/cv.tuanducdesign.com' },
+]
