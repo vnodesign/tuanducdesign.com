@@ -1,7 +1,5 @@
 import Link from './Link'
-import Image from './Image'
 import siteMetadata from '@/data/siteMetadata'
-import gtagTrack from '@/lib/utils/gtag'
 import { FaFacebook, FaTwitter, FaGithub, FaLinkedin } from 'react-icons/fa'
 import {
   clientLinks,
@@ -9,13 +7,14 @@ import {
   providerLinks,
   customLinks,
   productionLinks,
+  otherLinks,
 } from '@/data/footerWidgetLinks'
 
 export default function Footer() {
   return (
     <footer className="vno-justify-self-end vno-border-t vno-border-t-slate-200 dark:vno-border-t-slate-700">
       <div className="vno-mx-auto vno-max-w-8xl vno-p-4 vno-py-6 md:vno-p-8 lg:vno-p-10">
-        <div className="vno-grid vno-grid-cols-2 vno-gap-8 md:vno-grid-cols-3 lg:vno-grid-cols-5">
+        <div className="vno-grid vno-grid-cols-2 vno-gap-8 md:vno-grid-cols-3 lg:vno-grid-cols-6">
           <div>
             <h2 className="vno-mb-6 vno-font-semibold vno-text-gray-900 dark:vno-text-slate-100">
               Khách hàng
@@ -106,25 +105,27 @@ export default function Footer() {
               ))}
             </ul>
           </div>
+          <div>
+            <h2 className="vno-mb-6 vno-font-semibold vno-text-gray-900 dark:vno-text-slate-100">
+              Các trang web
+            </h2>
+            <ul>
+              {otherLinks.map((item) => (
+                <li key={item.href} className="vno-mb-4">
+                  <Link
+                    href={item.href}
+                    className="hover:vno-text-slate-900 dark:hover:vno-text-slate-300"
+                    title={item.label}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
         <hr className="vno-my-6 vno-border-slate-200 sm:mx-auto dark:vno-border-slate-700 lg:vno-my-8" />
         <div className="vno-text-center">
-          <Link
-            href="/"
-            className="vno-flex vno-justify-center vno-items-center vno-mb-5 vno-text-2xl vno-font-semibold vno-text-gray-900 dark:vno-text-white"
-            title={siteMetadata.title}
-            onClick={() => gtagTrack('FooterLogoLink', '/')}
-          >
-            <Image
-              src={siteMetadata.siteLogo}
-              className="vno-mr-2 vno-h-8"
-              width="32"
-              height="32"
-              sizes="(max-width 32px) 80vw, 50vw"
-              alt={siteMetadata.title}
-            />
-            {siteMetadata.title}
-          </Link>
           <span className="vno-block vno-text-sm vno-text-center vno-text-gray-500">
             © 2021-{new Date().getFullYear()} {siteMetadata.title}. All Rights Reserved.
           </span>

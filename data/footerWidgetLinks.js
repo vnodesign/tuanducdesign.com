@@ -35,3 +35,14 @@ export const productionLinks = [
   },
   { label: 'Vue Vite Resume', href: 'https://github.com/vnodesign/cv.tuanducdesign.com' },
 ]
+
+export const otherLinks = [
+  {
+    label: 'Group HR Community',
+    href: 'https://www.facebook.com/groups/xomhr',
+  },
+  {
+    label: 'Trang Documentation cho HR',
+    href: 'https://hr.penci.me',
+  },
+]

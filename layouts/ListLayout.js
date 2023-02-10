@@ -73,13 +73,6 @@ export default function ListLayout({ posts, title, description, initialDisplayPo
             <div className="vno-absolute vno-top-3 vno-bottom-0 vno-right-full vno-mr-7 vno-hidden vno-w-px vno-bg-slate-200 dark:vno-bg-slate-800 sm:vno-block md:vno-mr-[3.25rem]" />
             <div className="vno-space-y-16">
               {displayPosts.map((frontMatter) => {
-                const publishDate = new Date(frontMatter.date)
-                const modifiedDate = new Date(frontMatter.lastmod)
-                const showNewBadge =
-                  Math.abs(new Date(publishDate).getTime() - new Date().getTime()) /
-                    (24 * 60 * 60 * 1000) <
-                  30
-                const showModifiedBadge = modifiedDate > publishDate
                 return (
                   <article key={frontMatter.slug} className="vno-group vno-relative">
                     <div className="vno-absolute -vno-inset-y-2.5 -vno-inset-x-4 group-hover:vno-bg-slate-50/70 dark:group-hover:vno-bg-slate-800/50 sm:vno-rounded-2xl md:-vno-inset-y-4 md:-vno-inset-x-6" />
@@ -98,23 +91,13 @@ export default function ListLayout({ posts, title, description, initialDisplayPo
                     </svg>
                     <div className="vno-relative">
                       <h3 className="vno-pt-8 vno-text-base vno-font-semibold vno-tracking-tight vno-text-slate-900 dark:vno-text-slate-200 lg:vno-pt-0">
-                        {frontMatter.title}{' '}
-                        {showNewBadge && (
-                          <span className="vno-relative -vno-top-[2px] vno-ml-2 vno-inline-block vno-rounded-full vno-bg-sky-400/10 vno-px-2 vno-py-0.5 vno-text-xs vno-font-medium vno-text-sky-600 dark:vno-text-sky-400">
-                            New
-                          </span>
-                        )}
-                        {showModifiedBadge && (
-                          <span className="vno-relative -vno-top-[2px] vno-ml-2 vno-inline-block vno-rounded-full vno-bg-sky-400/10 vno-px-2 vno-py-0.5 vno-text-xs vno-font-medium vno-text-sky-600 dark:vno-text-sky-400">
-                            Modified
-                          </span>
-                        )}
+                        {frontMatter.title}
                       </h3>
                       <div className="vno-prose vno-prose-slate vno-mt-2 vno-mb-4 vno-line-clamp-2 dark:vno-prose-dark prose-a:vno-relative prose-a:vno-z-10">
                         {frontMatter.summary}
                       </div>
                       <dl className="vno-absolute vno-left-0 vno-top-0 lg:vno-left-auto lg:vno-right-full lg:vno-mr-[calc(6.5rem+1px)]">
-                        <dt className="vno-sr-only">Published</dt>
+                        <dt className="vno-sr-only">Ngày đăng</dt>
                         <dd className="vno-whitespace-nowrap vno-text-sm vno-leading-6 dark:vno-text-slate-400">
                           <time dateTime={frontMatter.date}>{formatDate(frontMatter.date)}</time>
                         </dd>

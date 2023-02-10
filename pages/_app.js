@@ -1,23 +1,13 @@
 import '@/styles/tailwind.css'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { useRouter } from 'next/router'
 import NProgress from 'nprogress'
-import Loader from '@/components/Loader'
 import { Header } from '@/components/Header'
 import Footer from '@/components/Footer'
 import { Analytics } from '@vercel/analytics/react'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
 
-function useMounted() {
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => setMounted(true), [])
-
-  return mounted
-}
-
 export default function App({ Component, pageProps }) {
-  const isMounted = useMounted()
   const router = useRouter()
   const showHeader = router.pathname !== '/'
   NProgress.configure({ showSpinner: false })
@@ -39,17 +29,11 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <div className="vno-flex vno-flex-col">
-        {isMounted ? (
-          <>
-            {showHeader && <Header />}
-            <main className="vno-min-h-screen vno-flex-1">
-              <Component {...pageProps} />
-            </main>
-            <Footer />
-          </>
-        ) : (
-          <Loader />
-        )}
+        {showHeader && <Header />}
+        <main className="vno-min-h-screen vno-flex-1">
+          <Component {...pageProps} />
+        </main>
+        <Footer />
       </div>
       <Analytics />
       <GoogleAnalytics />
