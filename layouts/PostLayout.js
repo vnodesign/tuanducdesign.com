@@ -8,7 +8,7 @@ const Tag = dynamic(() => import('@/components/Tag'))
 import siteMetadata from '@/data/siteMetadata'
 import formatDate from '@/lib/utils/formatDate'
 import classNames from 'classnames'
-import Disqus from '@/components/Disqus'
+// import Disqus from '@/components/Disqus'
 
 export default function PostLayout({ frontMatter, authorDetails, next, prev, children }) {
   return (
@@ -146,7 +146,6 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                 )}
               </div>
             )}
-            <Disqus frontMatter={frontMatter} />
           </footer>
         </div>
       </div>
