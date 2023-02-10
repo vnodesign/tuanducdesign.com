@@ -1,16 +1,30 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import gtagTrack from '@/lib/utils/gtag'
 import Link from '@/components/Link'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import formatDate from '@/lib/utils/formatDate'
 
-export default function ListLayout({ posts, title, description, initialDisplayPosts = [] }) {
+export default function ListLayout({ posts, title, description }) {
   const [searchValue, setSearchValue] = useState('')
-  const filteredBlogPosts = posts.filter((frontMatter) => {
-    return frontMatter.title.toLowerCase().match(searchValue.toLowerCase())
-  })
+  const [filteredList, setFilteredList] = useState(posts)
 
-  const displayPosts =
-    initialDisplayPosts.length > 0 && !searchValue ? initialDisplayPosts : filteredBlogPosts
+  const handleSearch = (e) => {
+    e.preventDefault()
+    setSearchValue(e.target.value)
+  }
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const results = posts.filter(
+        (frontMatter) =>
+          frontMatter.title.toLowerCase().includes(searchValue.toLowerCase()) ||
+          frontMatter.tags.join(' ').toLowerCase().includes(searchValue.toLowerCase())
+      )
+      setFilteredList(results)
+    }, 200)
+
+    return () => clearTimeout(timer)
+  }, [searchValue])
 
   return (
     <div className="vno-mx-auto vno-max-w-[52rem] vno-px-4 vno-pb-28 sm:vno-px-6 md:vno-px-8 lg:vno-max-w-6xl xl:vno-px-12">
@@ -42,7 +56,7 @@ export default function ListLayout({ posts, title, description, initialDisplayPo
                   type="text"
                   name="search"
                   value={searchValue}
-                  onChange={(e) => setSearchValue(e.target.value)}
+                  onChange={handleSearch}
                   autoComplete="off"
                   autoCorrect="off"
                   autoCapitalize="off"
@@ -55,7 +69,7 @@ export default function ListLayout({ posts, title, description, initialDisplayPo
           </div>
         </section>
       </header>
-      {!displayPosts.length && (
+      {!filteredList.length && (
         <div className="vno-text-center">
           <p>
             Không có kết quả cho <strong>{searchValue}</strong>
@@ -68,11 +82,11 @@ export default function ListLayout({ posts, title, description, initialDisplayPo
         </div>
       )}
       <div className="vno-relative sm:vno-ml-[calc(2rem+1px)] sm:vno-pb-12 md:vno-ml-[calc(3.5rem+1px)] lg:vno-ml-[max(calc(14.5rem+1px),calc(100%-48rem))]">
-        {displayPosts && displayPosts.length > 0 && (
+        {filteredList && filteredList.length > 0 && (
           <>
             <div className="vno-absolute vno-top-3 vno-bottom-0 vno-right-full vno-mr-7 vno-hidden vno-w-px vno-bg-slate-200 dark:vno-bg-slate-800 sm:vno-block md:vno-mr-[3.25rem]" />
             <div className="vno-space-y-16">
-              {displayPosts.map((frontMatter) => {
+              {filteredList.map((frontMatter) => {
                 return (
                   <article key={frontMatter.slug} className="vno-group vno-relative">
                     <div className="vno-absolute -vno-inset-y-2.5 -vno-inset-x-4 group-hover:vno-bg-slate-50/70 dark:group-hover:vno-bg-slate-800/50 sm:vno-rounded-2xl md:-vno-inset-y-4 md:-vno-inset-x-6" />

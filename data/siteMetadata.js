@@ -15,9 +15,13 @@ const siteMetadata = {
     googleAnalyticsId: 'UA-175649416-1', // e.g. UA-000000-2 or G-XXXXXXX
   },
   comment: {
-    disqus: {
-      // https://help.disqus.com/en/articles/1717111-what-s-a-shortname
-      shortname: 'tuanducdesign',
+    utterancesConfig: {
+      // Visit the link below, and follow the steps in the 'configuration' section
+      // https://utteranc.es/
+      repo: 'tuanducdesign/tuanducdesign',
+      issueTerm: 'pathname',
+      label: 'Comment',
+      theme: 'preferred-color-scheme',
     },
   },
 }

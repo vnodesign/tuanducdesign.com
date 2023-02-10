@@ -4,11 +4,10 @@ import { PageSEO } from '@/components/SEO'
 
 export async function getStaticProps() {
   const posts = await getAllFilesFrontMatter('blog')
-  const initialDisplayPosts = posts
-  return { props: { posts, initialDisplayPosts } }
+  return { props: { posts } }
 }
 
-export default function Blog({ posts, initialDisplayPosts }) {
+export default function Blog({ posts }) {
   return (
     <>
       <PageSEO
@@ -17,7 +16,6 @@ export default function Blog({ posts, initialDisplayPosts }) {
       />
       <ListLayout
         posts={posts}
-        initialDisplayPosts={initialDisplayPosts}
         title="Tuan Duc Design Blog"
         description="Không có gì ngoài các bài viết chất lượng, chuyên sâu."
       />

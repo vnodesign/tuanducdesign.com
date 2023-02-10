@@ -1,13 +1,13 @@
 import dynamic from 'next/dynamic'
-import { Suspense } from 'react'
 import gtagTrack from '@/lib/utils/gtag'
 import Link from '@/components/Link'
 import { BlogSEO } from '@/components/SEO'
 import Image from '@/components/Image'
-const Tag = dynamic(() => import('@/components/Tag'))
+import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import formatDate from '@/lib/utils/formatDate'
 import classNames from 'classnames'
+const Utterances = dynamic(() => import('@/components/Utterances'))
 
 export default function PostLayout({ frontMatter, authorDetails, next, prev, children }) {
   return (
@@ -47,7 +47,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
         </div>
       </div>
       <div className="vno-px-4 sm:vno-px-6 md:vno-px-8">
-        <div className="vno-mx-auto vno-max-w-3xl vno-pb-28">
+        <div className="vno-mx-auto vno-max-w-3xl">
           <main>
             <article className="vno-relative vno-pt-10">
               <h1 className="vno-text-2xl vno-font-extrabold vno-tracking-tight vno-text-slate-900 dark:vno-text-slate-200 md:vno-text-3xl">
@@ -103,16 +103,14 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
           <footer
             className={classNames(
               'vno-text-sm vno-leading-6',
-              prev || next ? 'vno-mt-12' : 'vno-mt-16'
+              prev || next ? 'vno-py-12' : 'vno-py-16'
             )}
           >
             {frontMatter.tags && (
               <div className="vno-mb-3.5 vno-flex vno-flex-wrap">
-                <Suspense fallback={<div>Loading...</div>}>
-                  {frontMatter.tags.map((tag) => (
-                    <Tag key={tag} text={tag} />
-                  ))}
-                </Suspense>
+                {frontMatter.tags.map((tag) => (
+                  <Tag key={tag} text={tag} />
+                ))}
               </div>
             )}
             {(next || prev) && (
@@ -145,6 +143,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                 )}
               </div>
             )}
+            <Utterances />
           </footer>
         </div>
       </div>

@@ -1,125 +1,15 @@
-import { Dialog } from '@headlessui/react'
+import NavPopover from './NavPopover'
+import NavItems from './NavItems'
 import { useEffect, useState } from 'react'
 import classNames from 'classnames'
-import Router, { useRouter } from 'next/router'
 import siteMetadata from '@/data/siteMetadata'
 import headerNavLinks from '@/data/headerNavLinks'
 import Image from './Image'
 import Link from './Link'
 import gtagTrack from '@/lib/utils/gtag'
-import { ThemeSelect, ThemeToggle } from './ThemeToggle'
+import { ThemeToggle } from './ThemeToggle'
 
-export function NavPopover({ display = 'md:vno-hidden', className, ...props }) {
-  let [isOpen, setIsOpen] = useState(false)
-
-  useEffect(() => {
-    if (!isOpen) return
-    function handleRouteChange() {
-      setIsOpen(false)
-    }
-    Router.events.on('routeChangeComplete', handleRouteChange)
-    return () => {
-      Router.events.off('routeChangeComplete', handleRouteChange)
-    }
-  }, [isOpen])
-
-  return (
-    <div className={classNames(className, display)} {...props}>
-      <button
-        type="button"
-        className="vno-flex vno-h-8 vno-w-8 vno-items-center vno-justify-center vno-text-slate-500 hover:vno-text-slate-600 dark:hover:vno-text-slate-300"
-        onClick={() => setIsOpen(true)}
-      >
-        <span className="vno-sr-only">Navigation</span>
-        <svg width="24" height="24" fill="none" aria-hidden="true">
-          <path
-            d="M12 6v.01M12 12v.01M12 18v.01M12 7a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm0 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm0 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-      </button>
-      <Dialog
-        as="div"
-        className={classNames('vno-fixed vno-inset-0 vno-z-50', display)}
-        open={isOpen}
-        onClose={setIsOpen}
-      >
-        <Dialog.Overlay className="vno-fixed vno-inset-0 vno-bg-black/20 vno-backdrop-blur-sm dark:vno-bg-slate-900/80" />
-        <div className="vno-fixed vno-top-4 vno-right-4 vno-w-full vno-max-w-xs vno-rounded-lg vno-bg-white vno-p-6 vno-text-base vno-font-semibold vno-text-slate-900 vno-shadow-lg dark:vno-bg-slate-800 dark:vno-text-slate-400 dark:vno-highlight-white/5">
-          <button
-            type="button"
-            className="vno-absolute vno-top-5 vno-right-5 vno-flex vno-h-8 vno-w-8 vno-items-center vno-justify-center vno-text-slate-500 hover:vno-text-slate-600 dark:vno-text-slate-400 dark:hover:vno-text-slate-300"
-            onClick={() => setIsOpen(false)}
-          >
-            <span className="vno-sr-only">Close navigation</span>
-            <svg
-              viewBox="0 0 10 10"
-              className="vno-h-2.5 vno-w-2.5 vno-overflow-visible"
-              aria-hidden="true"
-            >
-              <path
-                d="M0 0L10 10M10 0L0 10"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-              />
-            </svg>
-          </button>
-          <ul className="vno-space-y-6">
-            <NavItems />
-            <li>
-              <Link
-                href="https://github.com/vnodesign"
-                className="hover:vno-text-sky-500 dark:hover:vno-text-sky-400"
-                title="GitHub"
-              >
-                GitHub
-              </Link>
-            </li>
-          </ul>
-          <div className="vno-mt-6 vno-border-t vno-border-slate-200 vno-pt-6 dark:vno-border-slate-200/10">
-            <ThemeSelect />
-          </div>
-        </div>
-      </Dialog>
-    </div>
-  )
-}
-
-export function NavItems() {
-  const { asPath } = useRouter()
-  return (
-    <>
-      {headerNavLinks.map((link) => (
-        <li key={link.href}>
-          <Link
-            href={link.href}
-            className={classNames(
-              asPath === link.href
-                ? 'vno-text-sky-500 dark:vno-text-sky-400'
-                : 'hover:vno-text-sky-500 dark:hover:vno-text-sky-400'
-            )}
-            title={link.title}
-            onClick={() => gtagTrack('NavLink', link.href)}
-          >
-            {link.title}
-            {link.showNew && (
-              <span className="vno-ml-2 vno-rounded-full vno-bg-sky-400/10 vno-px-2 vno-py-0.5 vno-text-xs vno-font-medium vno-leading-5 vno-text-sky-600 dark:vno-text-sky-400">
-                New
-              </span>
-            )}
-          </Link>
-        </li>
-      ))}
-    </>
-  )
-}
-
-export function Header() {
+export default function Header() {
   let [isOpaque, setIsOpaque] = useState(false)
 
   useEffect(() => {
@@ -191,13 +81,13 @@ export function Header() {
               <div className="vno-relative vno-ml-auto vno-hidden vno-items-center lg:vno-flex">
                 <nav className="vno-text-sm vno-font-semibold vno-leading-6 vno-text-slate-700 dark:vno-text-slate-200">
                   <ul className="vno-flex vno-space-x-8">
-                    <NavItems />
+                    <NavItems item={headerNavLinks} />
                   </ul>
                 </nav>
                 <div className="vno-ml-6 vno-flex vno-items-center vno-border-l vno-border-slate-200 vno-pl-6 dark:vno-border-slate-800">
                   <ThemeToggle panelClassName="vno-mt-8" />
                   <Link
-                    href="https://github.com/vnodesign"
+                    href={siteMetadata.github}
                     className="vno-ml-6 vno-block vno-text-slate-400 hover:vno-text-slate-500 dark:hover:vno-text-slate-300"
                     title="GitHub"
                   >
