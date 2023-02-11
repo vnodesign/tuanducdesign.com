@@ -11,7 +11,7 @@ export default class Document extends NextDocument {
     return (
       <Html
         lang={siteMetadata.language}
-        className="dark [--scroll-mt:9.875rem] lg:[--scroll-mt:6.3125rem]"
+        className="[--scroll-mt:9.875rem] lg:[--scroll-mt:6.3125rem]"
       >
         <Head>
           <script
@@ -22,13 +22,13 @@ export default class Document extends NextDocument {
           <script
             dangerouslySetInnerHTML={{
               __html: `
-                try {
-                  if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                    document.documentElement.classList.add('dark')
-                  } else {
-                    document.documentElement.classList.remove('dark')
-                  }
-                } catch (_) {}
+                if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                  document.documentElement.classList.remove('light')
+                  document.documentElement.classList.add('dark')
+                } else {
+                  document.documentElement.classList.remove('dark')
+                  document.documentElement.classList.add('light')
+                }
               `,
             }}
           />
