@@ -101,9 +101,9 @@ export default function About() {
               </p>
             </div>
           </div>
-          <div className="vno-col-span-2 md:vno-col-span-1">
+          <div className="vno-col-span-2 md:vno-col-span-1 vno-text-sm vno-leading-6">
             <div className="vno-mx-auto vno-mb-5 vno-max-w-8xl vno-rounded-lg vno-bg-slate-50 last:vno-mb-0 dark:vno-bg-slate-800 dark:vno-highlight-white/5">
-              <div className="vno-p-5">
+              <div className="vno-p-6">
                 <Link href="https://tuanducdesign.com/" title="Blog cá nhân">
                   <h5 className="vno-mb-2 vno-text-2xl vno-font-bold vno-tracking-tight vno-text-slate-700 dark:vno-text-slate-300">
                     Blog cá nhân
@@ -136,7 +136,7 @@ export default function About() {
               </div>
             </div>
             <div className="vno-mx-auto vno-mb-5 vno-max-w-8xl vno-rounded-lg vno-bg-slate-50 last:vno-mb-0 dark:vno-bg-slate-800 dark:vno-highlight-white/5">
-              <div className="vno-p-5">
+              <div className="vno-p-6">
                 <Link href="https://cv.tuanducdesign.com/" title="Portfolio & Resume">
                   <h5 className="vno-mb-2 vno-text-2xl vno-font-bold vno-tracking-tight vno-text-slate-700 dark:vno-text-slate-300">
                     Portfolio & Resume

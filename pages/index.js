@@ -2,7 +2,7 @@ import dynamic from 'next/dynamic'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import { PageSEO } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata'
-const Header = dynamic(() => import('@/components/home/Header'))
+import Header from '@/components/home/Header'
 const About = dynamic(() => import('@/components/home/About'))
 const LatestPosts = dynamic(() => import('@/components/home/LatestPosts'))
 
