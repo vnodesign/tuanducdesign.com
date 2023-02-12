@@ -55,7 +55,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
               </h1>
               <div className="vno-text-sm vno-leading-6">
                 <dl>
-                  <dt className="vno-sr-only">Thời gian</dt>
+                  <dt className="vno-sr-only">Ngày đăng</dt>
                   <dd className="vno-absolute vno-inset-x-0 vno-top-0 vno-text-slate-700 dark:vno-text-slate-400">
                     <time dateTime={frontMatter.date}>{formatDate(frontMatter.date)}</time>{' '}
                     {frontMatter.lastmod > frontMatter.date &&

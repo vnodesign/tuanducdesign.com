@@ -1,16 +1,15 @@
 import '@/styles/tailwind.css'
-import dynamic from 'next/dynamic'
 import React from 'react'
 import { useRouter } from 'next/router'
 import NProgress from 'nprogress'
-const Header = dynamic(() => import('@/components/Header'))
-const Footer = dynamic(() => import('@/components/Footer'))
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 import { Analytics } from '@vercel/analytics/react'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
 
 export default function App({ Component, pageProps }) {
   const router = useRouter()
-  const showHeader = router.pathname !== '/'
+  const showHeader = router.pathname !== '/' && router.pathname !== '/service'
   NProgress.configure({ showSpinner: false })
   React.useEffect(() => {
     const handleRouteStart = () => NProgress.start()

@@ -107,10 +107,10 @@ export function ThemeToggle({ panelClassName = 'vno-mt-4' }) {
         <Listbox.Label className="vno-sr-only">Theme</Listbox.Label>
         <Listbox.Button type="button">
           <span className="dark:vno-hidden">
-            <SunIcon className="vno-h-6 vno-w-6" selected={theme} />
+            <SunIcon className="vno-h-6 vno-w-6" selected={theme !== 'system'} />
           </span>
           <span className="vno-hidden dark:vno-inline">
-            <MoonIcon className="vno-h-6 vno-w-6" selected={theme} />
+            <MoonIcon className="vno-h-6 vno-w-6" selected={theme !== 'system'} />
           </span>
         </Listbox.Button>
         <Listbox.Options

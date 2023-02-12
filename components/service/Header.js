@@ -68,16 +68,41 @@ export default function Header() {
         </div>
         <div className="vno-relative vno-mx-auto vno-max-w-5xl vno-pt-20 sm:vno-pt-24 lg:vno-pt-32">
           <h1 className="vno-text-center vno-text-4xl vno-font-extrabold vno-tracking-tight vno-text-slate-900 dark:vno-text-white sm:vno-text-5xl lg:vno-text-6xl">
-            Hi, Mình là Đức, mình đang làm việc ở vị trí Front-end Developer.
+            Tối ưu VPS và Website của bạn với các dịch vụ tốt nhất tại Tuan Duc Design.
           </h1>
           <p className="vno-mx-auto vno-mt-6 vno-max-w-3xl vno-text-center vno-text-lg vno-text-slate-600 dark:vno-text-slate-400">
-            Blog này mình sẽ chia sẻ các bài viết và các kiến thức mà mình đã áp dụng khi{' '}
+            Chuyên cung cấp dịch vụ về{' '}
+            <span className="vno-font-extrabold vno-text-sky-500 dark:vno-text-sky-400">VPS</span>{' '}
+            và{' '}
             <span className="vno-font-extrabold vno-text-sky-500 dark:vno-text-sky-400">
-              Phát triển VPS
+              Website
+            </span>
+            , hướng dẫn{' '}
+            <span className="vno-font-extrabold vno-text-sky-500 dark:vno-text-sky-400">
+              bảo mật VPS
             </span>{' '}
             và{' '}
             <span className="vno-font-extrabold vno-text-sky-500 dark:vno-text-sky-400">
-              Tối ưu Website
+              Website
+            </span>{' '}
+            từ cơ bản đến nâng cao cho người không chuyên, hỗ trợ{' '}
+            <span className="vno-font-extrabold vno-text-sky-500 dark:vno-text-sky-400">
+              cài đặt VPS
+            </span>
+            ,{' '}
+            <span className="vno-font-extrabold vno-text-sky-500 dark:vno-text-sky-400">
+              tối ưu VPS
+            </span>
+            ,{' '}
+            <span className="vno-font-extrabold vno-text-sky-500 dark:vno-text-sky-400">
+              cài đặt Memcached
+            </span>
+            ,{' '}
+            <span className="vno-font-extrabold vno-text-sky-500 dark:vno-text-sky-400">Redis</span>
+            , <span className="vno-font-extrabold vno-text-sky-500 dark:vno-text-sky-400">SSL</span>{' '}
+            và{' '}
+            <span className="vno-font-extrabold vno-text-sky-500 dark:vno-text-sky-400">
+              CloudFlare
             </span>
             .
           </p>
