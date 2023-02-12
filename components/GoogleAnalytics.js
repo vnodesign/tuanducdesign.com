@@ -3,7 +3,9 @@ import siteMetadata from '@/data/siteMetadata'
 
 const GoogleAnalytics = () => {
   ;<>
-    <Script src={`https://www.googletagmanager.com/gtag/js?id=${siteMetadata.analytics.googleAnalyticsId}`} />
+    <Script
+      src={`https://www.googletagmanager.com/gtag/js?id=${siteMetadata.analytics.googleAnalyticsId}`}
+    />
 
     <Script id="gtag-script">
       {`
