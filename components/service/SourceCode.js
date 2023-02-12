@@ -15,24 +15,24 @@ export default function SourceCode() {
               Những mã nguồn phổ biến trên thế giới như{' '}
               <span className="vno-font-semibold vno-text-green-500 dark:vno-text-green-400">
                 WordPress
-              </span>{' '}
-              ,{' '}
+              </span>
+              ,
               <span className="vno-font-semibold vno-text-emerald-500 dark:vno-text-emerald-400">
                 Joomla
-              </span>{' '}
-              ,{' '}
+              </span>
+              ,
               <span className="vno-font-semibold vno-text-teal-500 dark:vno-text-teal-400">
                 Drupal
               </span>
-              ,{' '}
+              ,
               <span className="vno-font-semibold vno-text-teal-500 dark:vno-text-teal-400">
                 Xenforo
               </span>
-              ,{' '}
+              ,
               <span className="vno-font-semibold vno-text-cyan-500 dark:vno-text-cyan-400">
                 Laravel
               </span>
-              ,{' '}
+              ,
               <span className="vno-font-semibold vno-text-fuchsia-500 dark:vno-text-fuchsia-400">
                 Codeigniter
               </span>
