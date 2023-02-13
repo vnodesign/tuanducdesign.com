@@ -28,15 +28,17 @@ export default function Header() {
           />
         </div>
         <div className="vno-relative vno-flex vno-items-center vno-justify-between vno-pt-6 vno-text-sm vno-font-semibold vno-leading-6 vno-text-slate-700 dark:vno-text-slate-200 lg:vno-pt-8">
-          <Image
-            src={siteMetadata.siteLogo}
-            className="vno-rounded-full"
-            alt={siteMetadata.title}
-            width={32}
-            height={32}
-            sizes="(max-width 32px) 80vw, 50vw"
-            priority
-          />
+          <Link href="/" title={siteMetadata.title}>
+            <Image
+              src={siteMetadata.siteLogo}
+              className="vno-rounded-full"
+              alt={siteMetadata.title}
+              width={32}
+              height={32}
+              sizes="(max-width 32px) 80vw, 50vw"
+              priority
+            />
+          </Link>
           <div className="vno-flex vno-items-center">
             <NavPopover className="vno-ml-auto" display="md:vno-hidden" />
             <div className="vno-hidden vno-items-center md:vno-flex">
