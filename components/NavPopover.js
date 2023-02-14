@@ -26,7 +26,7 @@ export default function NavPopover({ display = 'md:vno-hidden', className, ...pr
     <div className={classNames(className, display)} {...props}>
       <button
         type="button"
-        className="vno-flex vno-h-8 vno-w-8 vno-items-center vno-justify-center vno-text-slate-500 hover:vno-text-slate-600 dark:hover:vno-text-slate-300"
+        className="vno-text-slate-500 vno-w-8 vno-h-8 vno-flex vno-items-center vno-justify-center hover:vno-text-slate-600 dark:vno-text-slate-400 dark:hover:vno-text-slate-300"
         onClick={() => setIsOpen(true)}
       >
         <span className="vno-sr-only">Navigation</span>
@@ -42,21 +42,21 @@ export default function NavPopover({ display = 'md:vno-hidden', className, ...pr
       </button>
       <Dialog
         as="div"
-        className={classNames('vno-fixed vno-inset-0 vno-z-50', display)}
+        className={classNames('vno-fixed vno-z-50 vno-inset-0', display)}
         open={isOpen}
         onClose={setIsOpen}
       >
         <Dialog.Overlay className="vno-fixed vno-inset-0 vno-bg-black/20 vno-backdrop-blur-sm dark:vno-bg-slate-900/80" />
-        <div className="vno-fixed vno-top-4 vno-right-4 vno-w-full vno-max-w-xs vno-rounded-lg vno-bg-white vno-p-6 vno-text-base vno-font-semibold vno-text-slate-900 vno-shadow-lg dark:vno-bg-slate-800 dark:vno-text-slate-400 dark:vno-highlight-white/5">
+        <div className="vno-fixed vno-top-4 vno-right-4 vno-w-full vno-max-w-xs vno-bg-white vno-rounded-lg vno-shadow-lg vno-p-6 vno-text-base vno-font-semibold vno-text-slate-900 dark:vno-bg-slate-800 dark:vno-text-slate-400 dark:vno-highlight-white/5">
           <button
             type="button"
-            className="vno-absolute vno-top-5 vno-right-5 vno-flex vno-h-8 vno-w-8 vno-items-center vno-justify-center vno-text-slate-500 hover:vno-text-slate-600 dark:vno-text-slate-400 dark:hover:vno-text-slate-300"
+            className="vno-flex vno-items-center vno-justify-center vno-h-8 vno-absolute vno-top-5 vno-right-5 vno-w-8 vno-text-slate-500 hover:vno-text-slate-600 dark:vno-text-slate-400 dark:hover:vno-text-slate-300"
             onClick={() => setIsOpen(false)}
           >
             <span className="vno-sr-only">Close navigation</span>
             <svg
               viewBox="0 0 10 10"
-              className="vno-h-2.5 vno-w-2.5 vno-overflow-visible"
+              className="vno-w-2.5 vno-h-2.5 vno-overflow-visible"
               aria-hidden="true"
             >
               <path
@@ -73,14 +73,14 @@ export default function NavPopover({ display = 'md:vno-hidden', className, ...pr
             <li>
               <Link
                 href={siteMetadata.github}
-                className="hover:vno-text-sky-500 dark:hover:vno-text-sky-400"
+                className="hover:vno-text-sky-500 dark:hover:text-sky-400"
                 title="GitHub"
               >
                 GitHub
               </Link>
             </li>
           </ul>
-          <div className="vno-mt-6 vno-border-t vno-border-slate-200 vno-pt-6 dark:vno-border-slate-200/10">
+          <div className="vno-pt-6 vno-mt-6 vno-border-t vno-border-slate-200 dark:vno-border-slate-200/10">
             <ThemeSelect />
           </div>
         </div>

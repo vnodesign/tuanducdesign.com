@@ -8,12 +8,10 @@ export default function About() {
       <div className="vno-mx-auto vno-max-w-7xl">
         <div className="vno-grid vno-grid-cols-1 vno-gap-10 md:vno-grid-cols-3">
           <div className="vno-col-span-2">
-            <h2 className="vno-text-4xl vno-font-extrabold vno-tracking-tight vno-text-slate-900 dark:vno-text-white sm:vno-text-5xl">
-              <span className="vno-bg-gradient-to-r vno-from-blue-400 vno-to-blue-500 vno-bg-clip-text vno-text-transparent">
-                Mình là ai?
-              </span>
+            <h2 className="vno-text-3xl vno-font-extrabold vno-tracking-tight vno-text-slate-900 dark:vno-text-slate-50 sm:vno-text-4xl">
+              Mình là ai?
             </h2>
-            <div className="vno-mt-6 vno-text-lg">
+            <div className="vno-mt-6 vno-text-lg vno-space-y-6">
               <p>
                 Mình là một{' '}
                 <span className="vno-text-sky-500 dark:vno-text-sky-400">Front-end Developer</span>
@@ -22,12 +20,12 @@ export default function About() {
                 {' và là một '}
                 <span className="vno-text-sky-500 dark:vno-text-sky-400">Designer</span>.
               </p>
-              <p className="vno-mt-6">
+              <p>
                 Trong hơn 5 năm làm việc với Front-end, Back-end và Design, trải qua nhiều vấp ngã
                 và bầm dập với nghề. Bây giờ, mình chia sẻ lại những kiến thức hay mà mình đúc kết
                 lại trên blog này.
               </p>
-              <p className="vno-mt-6">
+              <p>
                 Nội dung trên blog đa dạng chủ đề từ{' '}
                 <span className="vno-text-sky-500 dark:vno-text-sky-400">Phát triển VPS</span>
                 {', '}
@@ -53,10 +51,8 @@ export default function About() {
         </div>
         <div className="vno-mt-20 vno-grid vno-grid-cols-1 vno-gap-10 md:vno-grid-cols-3">
           <div className="vno-col-span-2">
-            <h2 className="vno-text-4xl vno-font-extrabold vno-tracking-tight vno-text-slate-900 dark:vno-text-white sm:vno-text-5xl">
-              <span className="vno-bg-gradient-to-r vno-from-pink-400 vno-to-pink-500 vno-bg-clip-text vno-text-transparent">
-                Dự án cá nhân
-              </span>
+            <h2 className="vno-text-3xl vno-font-extrabold vno-tracking-tight vno-text-slate-900 dark:vno-text-slate-50 sm:vno-text-4xl">
+              Dự án cá nhân
             </h2>
             <div className="vno-mt-10 vno-flex">
               <FaReact className="vno-mr-5 vno-h-10 vno-w-10 vno-text-blue-500" />

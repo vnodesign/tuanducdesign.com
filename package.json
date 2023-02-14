@@ -9,7 +9,6 @@
     "serve": "next start",
     "analyze": "cross-env ANALYZE=true next build",
     "lint": "next lint --fix --dir pages --dir components --dir lib --dir layouts",
-    "prepare": "husky install",
     "prettier": "prettier --write ."
   },
   "browserslist": [
@@ -59,20 +58,11 @@
     "eslint-config-next": "13.1.6",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "husky": "^8.0.3",
     "lint-staged": "^13.1.1",
     "next-remote-watch": "^2.0.0",
     "postcss": "^8.4.21",
     "prettier": "^2.8.4",
     "prettier-plugin-tailwindcss": "^0.2.2",
     "tailwindcss": "^3.2.6"
-  },
-  "lint-staged": {
-    "*.+(js|jsx|ts|tsx)": [
-      "eslint --fix"
-    ],
-    "*.+(js|jsx|ts|tsx|json|css|md|mdx)": [
-      "pnpm prettier"
-    ]
   }
 }

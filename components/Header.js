@@ -33,33 +33,38 @@ export default function Header() {
       <div className="vno-pointer-events-none vno-absolute vno-inset-x-0 vno-top-0 vno-z-20 vno-flex vno-justify-center vno-overflow-hidden">
         <div className="vno-flex vno-w-[108rem] vno-flex-none vno-justify-end">
           <picture>
+            <source srcSet={require('@/img/beams/docs@30.avif').default.src} type="image/avif" />
             <Image
               src={require('@/img/beams/docs@tinypng.png')}
               alt="Background Light"
-              className="vno-w-[71.75rem] vno-max-w-none vno-flex-none dark:vno-hidden"
-              priority
+              className="vno-w-[71.75rem] vno-flex-none vno-max-w-none dark:vno-hidden"
+              unoptimized
             />
           </picture>
           <picture>
+            <source
+              srcSet={require('@/img/beams/docs-dark@30.avif').default.src}
+              type="image/avif"
+            />
             <Image
               src={require('@/img/beams/docs-dark@tinypng.png')}
               alt="Background Dark"
-              className="vno-hidden vno-w-[90rem] vno-max-w-none vno-flex-none dark:vno-block"
-              priority
+              className="vno-w-[90rem] vno-flex-none vno-max-w-none vno-hidden dark:vno-block"
+              unoptimized
             />
           </picture>
         </div>
       </div>
       <header
         className={classNames(
-          'vno-sticky vno-top-0 vno-z-50 vno-w-full vno-flex-none vno-backdrop-blur vno-transition-colors vno-duration-500 dark:vno-border-slate-50/[0.06] lg:vno-z-50 lg:vno-border-b lg:vno-border-slate-900/10',
+          'vno-sticky vno-top-0 vno-z-40 vno-w-full vno-backdrop-blur vno-flex-none vno-transition-colors vno-duration-500 lg:vno-z-50 lg:vno-border-b lg:vno-border-slate-900/10 dark:vno-border-slate-50/[0.06]',
           isOpaque
             ? 'vno-bg-white supports-backdrop-blur:vno-bg-white/95 dark:vno-bg-slate-900/75'
             : 'vno-bg-white/95 supports-backdrop-blur:vno-bg-white/60 dark:vno-bg-transparent'
         )}
       >
         <div className="vno-mx-auto vno-max-w-8xl">
-          <div className="vno-mx-4 vno-border-b vno-border-slate-900/10 vno-py-4 dark:vno-border-slate-300/10 lg:vno-border-0">
+          <div className="vno-py-4 vno-border-b vno-border-slate-900/10 lg:vno-px-8 lg:vno-border-0 dark:vno-border-slate-300/10 vno-px-4">
             <div className="vno-relative vno-flex vno-items-center">
               <Link
                 href="/"

@@ -3,7 +3,7 @@ import { SiPagespeedinsights, SiNginx } from 'react-icons/si'
 
 export default function InfoService() {
   return (
-    <section className="vno-mt-20 vno-px-8 sm:vno-mt-32 md:vno-mt-40 sm:vno-text-lg">
+    <section className="vno-mt-20 vno-px-8 sm:vno-mt-32 md:vno-mt-40">
       <div className="vno-mx-auto vno-max-w-7xl vno-px-4 md:vno-px-5">
         <div className="vno-grid vno-grid-cols-1 vno-gap-x-6 lg:vno-grid-cols-2">
           <div>
@@ -11,8 +11,8 @@ export default function InfoService() {
             <p className="vno-mt-4 vno-text-3xl sm:vno-text-4xl vno-text-slate-900 vno-font-extrabold vno-tracking-tight dark:vno-text-slate-50">
               Dịch vụ nổi bật tại Tuan Duc Design.
             </p>
-            <div>
-              <p className="vno-mt-6">
+            <div className="vno-mt-6 vno-text-lg vno-space-y-6">
+              <p>
                 Mình biết có những dịch vụ{' '}
                 <span className="vno-font-semibold vno-text-sky-500 dark:vno-text-sky-400">
                   VPS
@@ -24,7 +24,7 @@ export default function InfoService() {
                 ngoài kia đã khá tốt rồi, nhưng mình vẫn muốn giới thiệu thêm với bạn về các dịch vụ
                 nổi bật của mình, để bạn tham khảo và lựa chọn.
               </p>
-              <p className="vno-mt-6">
+              <p>
                 Mình đã có hai bài viết hướng dẫn chi tiết về{' '}
                 <span className="vno-font-semibold vno-text-pink-500 dark:vno-text-pink-400">
                   cách cài đặt Module PageSpeed lên máy chủ Nginx và máy chủ OpenLiteSpeed

@@ -15,7 +15,7 @@ const GoogleAnalytics = () => {
             gtag('config', '${siteMetadata.analytics.googleAnalyticsId}', {
               page_path: window.location.pathname,
             });
-        `}
+      `}
     </Script>
   </>
 }

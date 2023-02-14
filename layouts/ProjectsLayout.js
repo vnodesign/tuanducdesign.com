@@ -123,13 +123,13 @@ export default function ProjectsLayout({ frontMatter, next, prev, children }) {
               src={require('@/img/projects/beams-2@75.jpg')}
               alt="Background Light"
               className="vno-pointer-events-none vno-absolute vno-top-[-20rem] vno-left-1/2 vno-ml-[-35rem] vno-w-[119.4375rem] vno-max-w-none dark:vno-hidden sm:vno-top-[-25rem]"
-              priority
+              unoptimized
             />
             <Image
               src={require('@/img/projects/beams-2-dark@75.jpg')}
               alt="Background Dark"
               className="vno-pointer-events-none vno-absolute vno-top-0 vno-right-[-12rem] vno-hidden vno-w-[70.0625rem] vno-max-w-none dark:vno-block md:vno-right-0"
-              priority
+              unoptimized
             />
             <dl className="vno-relative vno-flex vno-h-14 vno-flex-wrap vno-overflow-hidden">
               {[
