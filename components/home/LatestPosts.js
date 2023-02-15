@@ -7,7 +7,7 @@ export default function LatestPosts({ posts, totalPages }) {
     <section className="vno-relative vno-my-10 vno-py-10 md:vno-my-20">
       <div className="vno-mx-auto vno-max-w-7xl vno-px-4 md:vno-px-5">
         <h2 className="vno-text-3xl vno-font-extrabold vno-tracking-tight vno-text-slate-900 dark:vno-text-slate-50 sm:vno-text-4xl">
-          Bài viết mới đăng
+          Bài viết gần đây
         </h2>
         <div className="vno-mt-10 vno-grid vno-grid-cols-1 vno-items-start vno-gap-y-10 vno-gap-x-6 md:vno-grid-cols-3 xl:vno-grid-cols-3">
           {posts.slice(0, totalPages).map((frontMatter) => {
