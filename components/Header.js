@@ -33,7 +33,6 @@ export default function Header() {
       <div className="vno-pointer-events-none vno-absolute vno-inset-x-0 vno-top-0 vno-z-20 vno-flex vno-justify-center vno-overflow-hidden">
         <div className="vno-flex vno-w-[108rem] vno-flex-none vno-justify-end">
           <picture>
-            <source srcSet={require('@/img/beams/docs@30.avif').default.src} type="image/avif" />
             <Image
               src={require('@/img/beams/docs@tinypng.png')}
               alt="Background Light"
@@ -42,10 +41,6 @@ export default function Header() {
             />
           </picture>
           <picture>
-            <source
-              srcSet={require('@/img/beams/docs-dark@30.avif').default.src}
-              type="image/avif"
-            />
             <Image
               src={require('@/img/beams/docs-dark@tinypng.png')}
               alt="Background Dark"
