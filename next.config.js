@@ -7,9 +7,6 @@ const nextConfig = {
   swcMinify: true,
   poweredByHeader: false,
   pageExtensions: ['js', 'jsx', 'mdx'],
-  images: {
-    formats: ['image/avif', 'image/webp'],
-  },
   eslint: {
     dirs: ['pages', 'components', 'lib', 'layouts'],
   },
