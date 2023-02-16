@@ -7,7 +7,7 @@ export default function Provider() {
     <section className="vno-relative">
       <div className="vno-max-w-7xl vno-mx-auto vno-px-4 sm:vno-px-6 md:vno-px-8">
         <div>
-          <h2 className="vno-font-semibold vno-text-indigo-500 dark:vno-text-indigo-400">
+          <h2 className="vno-font-semibold vno-text-pink-500 dark:vno-text-pink-400">
             Nhà cung cấp
           </h2>
           <p className="vno-mt-4 vno-text-3xl sm:vno-text-4xl vno-text-slate-900 vno-font-extrabold vno-tracking-tight dark:vno-text-slate-50">

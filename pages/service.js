@@ -1,14 +1,14 @@
-import dynamic from 'next/dynamic'
 import { PageSEO } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata'
 import Header from '@/components/service/Header'
-const InfoService = dynamic(() => import('@/components/service/InfoService'))
-const Tools = dynamic(() => import('@/components/service/Tools'))
-const ServiceSelection = dynamic(() => import('@/components/service/ServiceSelection'))
-const OSVPS = dynamic(() => import('@/components/service/OSVPS'))
-const SourceCode = dynamic(() => import('@/components/service/SourceCode'))
-const Provider = dynamic(() => import('@/components/service/Provider'))
-const Faq = dynamic(() => import('@/components/service/Faq'))
+import InfoService from '@/components/service/InfoService'
+import Tools from '@/components/service/Tools'
+import ServiceSelection from '@/components/service/ServiceSelection'
+import OSVPS from '@/components/service/OSVPS'
+import SourceCode from '@/components/service/SourceCode'
+import Provider from '@/components/service/Provider'
+import Pricing from '@/components/service/Pricing'
+import Faq from '@/components/service/Faq'
 
 export default function Service() {
   return (
@@ -28,6 +28,7 @@ export default function Service() {
         <OSVPS />
         <SourceCode />
         <Provider />
+        <Pricing />
         <Faq />
       </div>
     </>

@@ -86,7 +86,7 @@ function FaqItem(props) {
             <summary className="vno-flex vno-w-full vno-cursor-pointer vno-select-none vno-justify-between vno-text-left vno-text-base vno-font-semibold vno-text-gray-900 dark:vno-text-slate-300 group-open:vno-text-sky-500 dark:group-open:vno-text-sky-400 [&::-webkit-details-marker]:vno-hidden">
               {item.title}{' '}
               <svg
-                class="vno-mt-0.5 vno-ml-4 vno-h-6 vno-w-6 vno-flex-none vno-stroke-slate-900 dark:vno-stroke-slate-300 group-open:vno-stroke-sky-500 dark:group-open:vno-text-sky-400"
+                className="vno-mt-0.5 vno-ml-4 vno-h-6 vno-w-6 vno-flex-none vno-stroke-slate-900 dark:vno-stroke-slate-300 group-open:vno-stroke-sky-500 dark:group-open:vno-text-sky-400"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
                 strokeWidth="2"

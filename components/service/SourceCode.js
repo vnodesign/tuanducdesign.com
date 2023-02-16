@@ -6,7 +6,9 @@ export default function SourceCode() {
     <section className="vno-relative">
       <div className="vno-max-w-7xl vno-mx-auto vno-px-4 sm:vno-px-6 md:vno-px-8">
         <div>
-          <h2 className="vno-font-semibold vno-text-sky-500 dark:vno-text-sky-400">Mã nguồn</h2>
+          <h2 className="vno-font-semibold vno-text-orange-500 dark:vno-text-orange-400">
+            Mã nguồn
+          </h2>
           <p className="vno-mt-4 vno-text-3xl sm:vno-text-4xl vno-text-slate-900 vno-font-extrabold vno-tracking-tight dark:vno-text-slate-50">
             Hỗ trợ cài đặt mã nguồn
           </p>
