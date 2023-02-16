@@ -6,6 +6,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { Analytics } from '@vercel/analytics/react'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
+import { FBChatScript } from '@/components/CustomizeChat'
 
 export default function App({ Component, pageProps }) {
   const router = useRouter()
@@ -37,6 +38,9 @@ export default function App({ Component, pageProps }) {
       </div>
       <Analytics />
       <GoogleAnalytics />
+      <div id="fb-root"></div>
+      <div id="fb-customer-chat" className="fb-customerchat"></div>
+      <FBChatScript />
     </>
   )
 }
