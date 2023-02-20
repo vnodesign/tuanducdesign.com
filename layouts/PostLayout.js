@@ -11,7 +11,7 @@ const Utterances = dynamic(() => import('@/components/Utterances'))
 
 export default function PostLayout({ frontMatter, authorDetails, next, prev, children }) {
   return (
-    <>
+    <div className="vno-overflow-hidden">
       <BlogSEO
         title={frontMatter.title}
         summary={frontMatter.summary}
@@ -95,7 +95,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                   </li>
                 </ul>
               </div>
-              <div className="vno-prose vno-prose-slate vno-mt-12 dark:vno-prose-dark">
+              <div className="vno-prose vno-prose-slate vno-mt-12 dark:vno-prose-dark vno-break-words">
                 {children}
               </div>
             </article>
@@ -147,6 +147,6 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
           </footer>
         </div>
       </div>
-    </>
+    </div>
   )
 }
