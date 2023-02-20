@@ -7,6 +7,7 @@ import Footer from '@/components/Footer'
 import { Analytics } from '@vercel/analytics/react'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
 import { FBChatScript } from '@/components/CustomizeChat'
+import { JsonContext } from 'context/state'
 
 export default function App({ Component, pageProps }) {
   const router = useRouter()
@@ -28,7 +29,7 @@ export default function App({ Component, pageProps }) {
     }
   }, [router.events])
   return (
-    <>
+    <JsonContext>
       <div className="vno-flex vno-flex-col">
         {showHeader && <Header />}
         <main className="vno-min-h-screen vno-flex-1">
@@ -41,6 +42,6 @@ export default function App({ Component, pageProps }) {
       <div id="fb-root"></div>
       <div id="fb-customer-chat" className="fb-customerchat"></div>
       <FBChatScript />
-    </>
+    </JsonContext>
   )
 }

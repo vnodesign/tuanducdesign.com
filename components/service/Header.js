@@ -1,6 +1,7 @@
 import Link from '@/components/Link'
 import siteMetadata from '@/data/siteMetadata'
 import headerNavLinks from '@/data/headerNavLinks'
+import { SearchModal } from '@/components/SearchModal'
 import Image from '@/components/Image'
 import styles from './Header.module.css'
 import classNames from 'classnames'
@@ -40,7 +41,23 @@ export default function Header() {
             />
           </Link>
           <div className="vno-flex vno-items-center">
-            <NavPopover className="vno-ml-auto" display="md:vno-hidden" />
+            <SearchModal className="vno-flex vno-items-center vno-justify-center vno-w-8 vno-h-8 vno-ml-auto -vno-my-1 vno-text-slate-500 hover:vno-text-slate-600 md:vno-hidden dark:vno-text-slate-400 dark:hover:vno-text-slate-300">
+              <span className="vno-sr-only">Search</span>
+              <svg
+                width="24"
+                height="24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <path d="m19 19-3.5-3.5" />
+                <circle cx="11" cy="11" r="6" />
+              </svg>
+            </SearchModal>
+            <NavPopover className="vno-ml-2 -vno-my-1" display="md:vno-hidden" />
             <div className="vno-hidden vno-items-center md:vno-flex">
               <nav>
                 <ul className="vno-flex vno-items-center vno-space-x-8">
@@ -108,21 +125,31 @@ export default function Header() {
             </span>
             .
           </p>
-          <div className="vno-mt-6 vno-flex vno-flex-col vno-text-sm sm:vno-mt-10 md:vno-flex-row lg:vno-justify-center">
+          <div className="vno-mt-6 sm:vno-mt-10 vno-flex vno-justify-center vno-space-x-6 vno-text-sm">
             <Link
               href="https://www.facebook.com/tuanduc.support"
-              className="vno-mb-3 vno-inline-flex vno-items-center vno-justify-center vno-rounded-lg vno-bg-blue-600 vno-px-6 vno-py-2.5 vno-text-center vno-text-base vno-font-medium vno-text-white hover:vno-bg-blue-700 focus:vno-ring-4 focus:vno-ring-blue-300 dark:focus:vno-ring-blue-800 md:vno-mr-5 md:vno-mb-0"
+              className="vno-bg-slate-900 hover:vno-bg-slate-700 focus:vno-outline-none focus:vno-ring-2 focus:vno-ring-slate-400 focus:vno-ring-offset-2 focus:vno-ring-offset-slate-50 vno-text-white vno-font-semibold vno-h-12 vno-px-6 vno-rounded-lg vno-w-full vno-flex vno-items-center vno-justify-center sm:vno-w-auto dark:vno-bg-sky-500 dark:vno-highlight-white/20 dark:hover:vno-bg-sky-400"
               title="Kết nối với mình trên Facebook"
             >
               Kết nối với mình trên Facebook
             </Link>
-            <Link
-              href="https://github.com/tuanducdesign"
-              className="vno-mb-3 vno-inline-flex vno-items-center vno-justify-center vno-rounded-lg vno-bg-pink-600 vno-px-6 vno-py-2.5 vno-text-center vno-text-base vno-font-medium vno-text-white hover:vno-bg-pink-700 focus:vno-ring-4 focus:vno-ring-pink-300 dark:focus:vno-ring-pink-800 md:vno-mr-5 md:vno-mb-0"
-              title="Theo dõi mình trên GitHub"
-            >
-              Theo dõi mình trên GitHub
-            </Link>
+            <SearchModal className="vno-hidden sm:vno-flex vno-items-center vno-w-72 vno-text-left vno-space-x-3 vno-px-4 vno-h-12 vno-bg-white vno-ring-1 vno-ring-slate-900/10 hover:vno-ring-slate-300 focus:vno-outline-none focus:vno-ring-2 focus:vno-ring-sky-500 vno-shadow-sm vno-rounded-lg vno-text-slate-400 dark:vno-bg-slate-800 dark:vno-ring-0 dark:vno-text-slate-300 dark:vno-highlight-white/5 dark:hover:vno-bg-slate-700">
+              <svg
+                width="24"
+                height="24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="vno-flex-none vno-text-slate-300 dark:vno-text-slate-400"
+                aria-hidden="true"
+              >
+                <path d="m19 19-3.5-3.5" />
+                <circle cx="11" cy="11" r="6" />
+              </svg>
+              <span className="vno-flex-auto">Tìm kiếm nhanh...</span>
+            </SearchModal>
           </div>
         </div>
       </div>

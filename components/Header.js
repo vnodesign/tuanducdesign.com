@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import classNames from 'classnames'
 import siteMetadata from '@/data/siteMetadata'
 import headerNavLinks from '@/data/headerNavLinks'
+import { SearchModal } from './SearchModal'
 import Image from './Image'
 import Link from './Link'
 import gtagTrack from '@/lib/utils/gtag'
@@ -103,7 +104,23 @@ export default function Header() {
                   </Link>
                 </div>
               </div>
-              <NavPopover className="vno-ml-auto" display="lg:vno-hidden" />
+              <SearchModal className="vno-flex vno-items-center vno-justify-center vno-w-8 vno-h-8 vno-ml-auto -vno-my-1 vno-text-slate-500 hover:vno-text-slate-600 lg:vno-hidden dark:vno-text-slate-400 dark:hover:vno-text-slate-300">
+                <span className="vno-sr-only">Search</span>
+                <svg
+                  width="24"
+                  height="24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="m19 19-3.5-3.5" />
+                  <circle cx="11" cy="11" r="6" />
+                </svg>
+              </SearchModal>
+              <NavPopover className="vno-ml-2 -vno-my-1" display="lg:vno-hidden" />
             </div>
           </div>
         </div>

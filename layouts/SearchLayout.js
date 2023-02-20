@@ -2,7 +2,7 @@ import gtagTrack from '@/lib/utils/gtag'
 import Link from '@/components/Link'
 import formatDate from '@/lib/utils/formatDate'
 
-export default function ListLayout({ posts, title, description }) {
+export default function SearchLayout({ posts, title, description }) {
   return (
     <div className="vno-mx-auto vno-max-w-[52rem] vno-px-4 vno-pb-28 sm:vno-px-6 md:vno-px-8 lg:vno-max-w-6xl xl:vno-px-12">
       <header className="vno-py-16 sm:vno-text-center">
@@ -19,9 +19,9 @@ export default function ListLayout({ posts, title, description }) {
       <div className="vno-relative sm:vno-ml-[calc(2rem+1px)] sm:vno-pb-12 md:vno-ml-[calc(3.5rem+1px)] lg:vno-ml-[max(calc(14.5rem+1px),calc(100%-48rem))]">
         <div className="vno-absolute vno-top-3 vno-bottom-0 vno-right-full vno-mr-7 vno-hidden vno-w-px vno-bg-slate-200 dark:vno-bg-slate-800 sm:vno-block md:vno-mr-[3.25rem]" />
         <div className="vno-space-y-16">
-          {posts.map((frontMatter) => {
+          {posts.map((post) => {
             return (
-              <article key={frontMatter.slug} className="vno-group vno-relative">
+              <article key={post.slug} className="vno-group vno-relative">
                 <div className="vno-absolute -vno-inset-y-2.5 -vno-inset-x-4 group-hover:vno-bg-slate-50/70 dark:group-hover:vno-bg-slate-800/50 sm:vno-rounded-2xl md:-vno-inset-y-4 md:-vno-inset-x-6" />
                 <svg
                   viewBox="0 0 9 9"
@@ -38,22 +38,24 @@ export default function ListLayout({ posts, title, description }) {
                 </svg>
                 <div className="vno-relative">
                   <h3 className="vno-pt-8 vno-text-base vno-font-semibold vno-tracking-tight vno-text-slate-900 dark:vno-text-slate-200 lg:vno-pt-0">
-                    {frontMatter.title}
+                    {post.frontmatter.title}
                   </h3>
                   <div className="vno-prose vno-prose-slate vno-mt-2 vno-mb-4 vno-line-clamp-2 dark:vno-prose-dark prose-a:vno-relative prose-a:vno-z-10">
-                    {frontMatter.summary}
+                    {post.frontmatter.summary}
                   </div>
                   <dl className="vno-absolute vno-left-0 vno-top-0 lg:vno-left-auto lg:vno-right-full lg:vno-mr-[calc(6.5rem+1px)]">
                     <dt className="vno-sr-only">Ngày đăng</dt>
                     <dd className="vno-whitespace-nowrap vno-text-sm vno-leading-6 dark:vno-text-slate-400">
-                      <time dateTime={frontMatter.date}>{formatDate(frontMatter.date)}</time>
+                      <time dateTime={post.frontmatter.date}>
+                        {formatDate(post.frontmatter.date)}
+                      </time>
                     </dd>
                   </dl>
                 </div>
                 <Link
-                  href={`/blog/${frontMatter.slug}`}
+                  href={`/blog/${post.slug}`}
                   className="vno-flex vno-items-center vno-text-sm vno-font-medium vno-text-sky-500"
-                  onClick={() => gtagTrack('ReadMoreLink', `/blog/${frontMatter.slug}`)}
+                  onClick={() => gtagTrack('ReadMoreLink', `/blog/${post.slug}`)}
                 >
                   <span className="vno-absolute -vno-inset-y-2.5 -vno-inset-x-4 sm:vno-rounded-2xl md:-vno-inset-y-4 md:-vno-inset-x-6" />
                   <span className="vno-relative">Đọc tiếp</span>
