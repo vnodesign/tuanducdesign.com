@@ -1,17 +1,17 @@
 import SearchLayout from '@/layouts/SearchLayout'
 import { PageSEO } from '@/components/SEO'
-import kebabCase from '@/lib/utils/kebabCase'
+import { slugify } from '@/lib/utils/textConverter'
 import { useSearchContext } from 'context/state'
 import { useRouter } from 'next/router'
 
 const SearchPage = () => {
   const router = useRouter()
   const { query } = router
-  const keyword = kebabCase(query.key)
+  const keyword = slugify(query.key)
   const { posts } = useSearchContext()
 
   const searchResults = posts.filter((post) => {
-    if (kebabCase(post.frontmatter.title).includes(keyword)) {
+    if (slugify(post.frontmatter.title).includes(keyword)) {
       return post
     }
   })

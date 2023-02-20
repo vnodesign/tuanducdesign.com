@@ -1,11 +1,11 @@
-import { useRouter } from 'next/router'
 import { Fragment, useState, useCallback, useEffect } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
+import { useRouter } from 'next/router'
 
 export function SearchModal({ children, ...props }) {
   const router = useRouter()
   const [isOpen, setIsOpen] = useState(false)
-  const [input, setInput] = useState('')
+  const [input, setInput] = useState(null)
 
   const onOpen = useCallback(() => {
     setIsOpen(true)
@@ -42,7 +42,7 @@ export function SearchModal({ children, ...props }) {
       >
         <Dialog
           as="div"
-          className="vno-fixed vno-inset-0 vno-z-50 vno-flex vno-items-start vno-justify-center"
+          className="vno-fixed vno-inset-0 vno-z-50 vno-flex vno-items-start"
           open={isOpen}
           onClose={onClose}
         >
