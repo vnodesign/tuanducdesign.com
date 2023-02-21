@@ -4,7 +4,7 @@ import headerNavLinks from '@/data/headerNavLinks'
 import { SearchModal } from '@/components/SearchModal'
 import Image from '@/components/Image'
 import styles from './Header.module.css'
-import classNames from 'classnames'
+import clsx from 'clsx'
 import NavItems from '@/components/NavItems'
 import NavPopover from '@/components/NavPopover'
 import { ThemeToggle } from '@/components/ThemeToggle'
@@ -15,7 +15,7 @@ export default function Header() {
     <header className="vno-relative">
       <div className="vno-px-4 sm:vno-px-6 md:vno-px-8">
         <div
-          className={classNames(
+          className={clsx(
             'vno-absolute vno-inset-0 vno-bottom-10 vno-bg-slate-50 vno-bg-bottom vno-bg-no-repeat dark:vno-bg-[#0B1120]',
             styles.beams
           )}

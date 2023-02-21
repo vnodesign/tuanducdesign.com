@@ -1,0 +1,12 @@
+#searchModal:focus,
+#searchModal:focus-visible,
+#searchModal:focus-within {
+  outline: 2px dotted transparent;
+}
+
+#searchModal::-webkit-search-cancel-button,
+#searchModal::-webkit-search-decoration,
+#searchModal::-webkit-search-results-button,
+#searchModal::-webkit-search-results-decoration {
+  @apply vno-hidden;
+}

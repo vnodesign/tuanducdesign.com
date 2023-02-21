@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 import Link from './Link'
-import classNames from 'classnames'
+import clsx from 'clsx'
 import gtagTrack from '@/lib/utils/gtag'
 
 export default function NavItems({ item }) {
@@ -11,7 +11,7 @@ export default function NavItems({ item }) {
         <li key={link.href}>
           <Link
             href={link.href}
-            className={classNames(
+            className={clsx(
               asPath === link.href
                 ? 'vno-text-sky-500 dark:vno-text-sky-400'
                 : 'hover:vno-text-sky-500 dark:hover:vno-text-sky-400'

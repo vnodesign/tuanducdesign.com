@@ -1,6 +1,6 @@
 import { useTheme } from './Theme'
 import { Listbox } from '@headlessui/react'
-import classNames from 'classnames'
+import clsx from 'clsx'
 import { Fragment } from 'react'
 
 let themes = [
@@ -114,7 +114,7 @@ export function ThemeToggle({ panelClassName = 'vno-mt-4' }) {
           </span>
         </Listbox.Button>
         <Listbox.Options
-          className={classNames(
+          className={clsx(
             'vno-absolute vno-top-full vno-right-0 vno-z-50 vno-w-36 vno-overflow-hidden vno-rounded-lg vno-bg-white vno-py-1 vno-text-sm vno-font-semibold vno-text-slate-700 vno-shadow-lg vno-ring-1 vno-ring-slate-900/10 dark:vno-bg-slate-800 dark:vno-text-slate-300 dark:vno-ring-0',
             panelClassName
           )}
@@ -123,7 +123,7 @@ export function ThemeToggle({ panelClassName = 'vno-mt-4' }) {
             <Listbox.Option key={value} value={value} as={Fragment}>
               {({ active, selected }) => (
                 <li
-                  className={classNames(
+                  className={clsx(
                     'vno-flex vno-cursor-pointer vno-items-center vno-py-1 vno-px-2',
                     selected && 'vno-text-sky-500',
                     active && 'vno-bg-slate-50 dark:vno-bg-slate-600/30'

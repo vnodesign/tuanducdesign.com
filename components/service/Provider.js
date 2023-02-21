@@ -21,7 +21,7 @@ export default function Provider() {
         </div>
         <div>
           <div className="vno-mt-10 vno-space-y-4 sm:vno-grid sm:vno-grid-cols-2 sm:vno-gap-4 sm:vno-space-y-0 lg:vno-grid-cols-4 xl:vno-gap-8">
-            <div className="vno-block vno-px-8 vno-py-12 vno-text-center vno-rounded-lg vno-bg-slate-100/50 vno-ring-1 vno-ring-inset vno-ring-slate-400/20 vno-backdrop-blur dark:vno-bg-slate-900/70 dark:vno-ring-white/10">
+            <div className="vno-block vno-px-8 vno-py-12 vno-text-center vno-rounded-lg vno-bg-slate-50 dark:vno-bg-slate-800">
               <Link href="https://vietnix.vn/" title="Vietnix">
                 <HiServer className="vno-w-12 vno-h-12 vno-mx-auto vno-text-gray-600 dark:vno-text-slate-300" />
                 <h3 className="vno-mt-3.5 vno-text-xl vno-font-semibold vno-text-gray-600 dark:vno-text-slate-300">
@@ -29,7 +29,7 @@ export default function Provider() {
                 </h3>
               </Link>
             </div>
-            <div className="vno-block vno-px-8 vno-py-12 vno-text-center vno-rounded-lg vno-bg-slate-100/50 vno-ring-1 vno-ring-inset vno-ring-slate-400/20 vno-backdrop-blur dark:vno-bg-slate-900/70 dark:vno-ring-white/10">
+            <div className="vno-block vno-px-8 vno-py-12 vno-text-center vno-rounded-lg vno-bg-slate-50 dark:vno-bg-slate-800">
               <Link href="https://vultr.com/" title="Vultr">
                 <SiVultr className="vno-w-12 vno-h-12 vno-mx-auto vno-text-gray-600 dark:vno-text-slate-300" />
                 <h3 className="vno-mt-3.5 vno-text-xl vno-font-semibold vno-text-gray-600 dark:vno-text-slate-300">
@@ -37,7 +37,7 @@ export default function Provider() {
                 </h3>
               </Link>
             </div>
-            <div className="vno-block vno-px-8 vno-py-12 vno-text-center vno-rounded-lg vno-bg-slate-100/50 vno-ring-1 vno-ring-inset vno-ring-slate-400/20 vno-backdrop-blur dark:vno-bg-slate-900/70 dark:vno-ring-white/10">
+            <div className="vno-block vno-px-8 vno-py-12 vno-text-center vno-rounded-lg vno-bg-slate-50 dark:vno-bg-slate-800">
               <Link href="https://hostvn.net/" title="HostVN">
                 <HiServer className="vno-w-12 vno-h-12 vno-mx-auto vno-text-gray-600 dark:vno-text-slate-300" />
                 <h3 className="vno-mt-3.5 vno-text-xl vno-font-semibold vno-text-gray-600 dark:vno-text-slate-300">
@@ -45,7 +45,7 @@ export default function Provider() {
                 </h3>
               </Link>
             </div>
-            <div className="vno-block vno-px-8 vno-py-12 vno-text-center vno-rounded-lg vno-bg-slate-100/50 vno-ring-1 vno-ring-inset vno-ring-slate-400/20 vno-backdrop-blur dark:vno-bg-slate-900/70 dark:vno-ring-white/10">
+            <div className="vno-block vno-px-8 vno-py-12 vno-text-center vno-rounded-lg vno-bg-slate-50 dark:vno-bg-slate-800">
               <Link href="https://inet.vn/" title="INET">
                 <HiServer className="vno-w-12 vno-h-12 vno-mx-auto vno-text-gray-600 dark:vno-text-slate-300" />
                 <h3 className="vno-mt-3.5 vno-text-xl vno-font-semibold vno-text-gray-600 dark:vno-text-slate-300">

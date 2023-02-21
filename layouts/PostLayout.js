@@ -6,7 +6,7 @@ import Image from '@/components/Image'
 import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import formatDate from '@/lib/utils/formatDate'
-import classNames from 'classnames'
+import clsx from 'clsx'
 const Utterances = dynamic(() => import('@/components/Utterances'))
 
 export default function PostLayout({ frontMatter, authorDetails, next, prev, children }) {
@@ -101,10 +101,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
             </article>
           </main>
           <footer
-            className={classNames(
-              'vno-text-sm vno-leading-6',
-              prev || next ? 'vno-py-12' : 'vno-py-16'
-            )}
+            className={clsx('vno-text-sm vno-leading-6', prev || next ? 'vno-py-12' : 'vno-py-16')}
           >
             {frontMatter.tags && (
               <div className="vno-mb-3.5 vno-flex vno-flex-wrap">

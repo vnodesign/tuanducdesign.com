@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useContext, createContext, useRef } from 'react'
 import { useTop } from '@/hooks/useTop'
-import classNames from 'classnames'
+import clsx from 'clsx'
 
 const CustomHeading = ({ level, id, children, ...props }) => {
   let Component = level
@@ -21,7 +21,7 @@ const CustomHeading = ({ level, id, children, ...props }) => {
   }, [top, id, context?.registerHeading, context?.unregisterHeading])
   return (
     <Component
-      className={classNames(
+      className={clsx(
         'vno-group vno-flex vno-whitespace-pre-wrap',
         level === 'h2' &&
           'vno-mb-2 vno-text-sm vno-font-semibold vno-leading-6 vno-tracking-normal vno-text-sky-500 dark:vno-text-sky-400'

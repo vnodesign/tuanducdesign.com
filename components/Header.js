@@ -1,7 +1,7 @@
 import NavPopover from './NavPopover'
 import NavItems from './NavItems'
 import { useEffect, useState } from 'react'
-import classNames from 'classnames'
+import clsx from 'clsx'
 import siteMetadata from '@/data/siteMetadata'
 import headerNavLinks from '@/data/headerNavLinks'
 import { SearchModal } from './SearchModal'
@@ -52,7 +52,7 @@ export default function Header() {
         </div>
       </div>
       <header
-        className={classNames(
+        className={clsx(
           'vno-sticky vno-top-0 vno-z-40 vno-w-full vno-backdrop-blur vno-flex-none vno-transition-colors vno-duration-500 lg:vno-z-50 lg:vno-border-b lg:vno-border-slate-900/10 dark:vno-border-slate-50/[0.06]',
           isOpaque
             ? 'vno-bg-white supports-backdrop-blur:vno-bg-white/95 dark:vno-bg-slate-900/75'

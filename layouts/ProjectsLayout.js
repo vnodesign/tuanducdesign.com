@@ -1,7 +1,7 @@
 import gtagTrack from '@/lib/utils/gtag'
 import Link from '@/components/Link'
 import { PageSEO } from '@/components/SEO'
-import classNames from 'classnames'
+import clsx from 'clsx'
 import Image from '@/components/Image'
 import formatDate from '@/lib/utils/formatDate'
 
@@ -145,7 +145,7 @@ export default function ProjectsLayout({ frontMatter, next, prev, children }) {
               ].map((item, itemIndex) => (
                 <div
                   key={item.name}
-                  className={classNames(
+                  className={clsx(
                     itemIndex > 0 &&
                       'vno-ml-6 vno-border-l vno-border-slate-500/10 vno-pl-6 dark:vno-border-slate-400/10 lg:vno-ml-8 lg:vno-pl-8'
                   )}

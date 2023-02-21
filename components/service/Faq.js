@@ -61,7 +61,7 @@ export default function Faq() {
             </p>
           </div>
         </div>
-        <div className="-vno-mb-4 vno-space-y-12 lg:vno-col-span-8 xl:vno-col-span-7 xl:vno-col-start-6">
+        <div className="vno-my-4 vno-space-y-12 lg:vno-col-span-8 xl:vno-col-span-7 xl:vno-col-start-6">
           {faq.map((faq) => (
             <FaqItem key={faq.title} {...faq} />
           ))}
@@ -79,7 +79,7 @@ function FaqItem(props) {
       </h3>
       {props.item.map((item) => (
         <div
-          className="vno-mt-2 vno-divide-y vno-divide-gray-200 dark:vno-divide-gray-700 vno-border-gray-200 dark:vno-border-gray-700"
+          className="vno-my-2 vno-border-b vno-border-gray-200 dark:vno-border-gray-700"
           key={item.title}
         >
           <details className="vno-group vno-py-4 marker:vno-content-['']">

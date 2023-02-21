@@ -40,7 +40,7 @@ export default function ServiceSelection() {
         </div>
         <div>
           <div className="vno-mt-10 vno-space-y-10 md:vno-grid md:vno-grid-cols-2 md:vno-gap-x-8 md:vno-gap-y-10 md:vno-space-y-0 md:vno-mt-12">
-            <div className="vno-relative vno-p-3 vno-rounded-lg vno-bg-slate-100/50 vno-ring-1 vno-ring-inset vno-ring-slate-400/20 vno-backdrop-blur dark:vno-bg-slate-900/70 dark:vno-ring-white/10">
+            <div className="vno-relative vno-p-3 vno-rounded-lg vno-bg-slate-50 dark:vno-bg-slate-800">
               <div>
                 <div className="vno-absolute vno-flex vno-items-center vno-justify-center vno-w-12 vno-h-12 vno-bg-sky-500 dark:vno-bg-sky-400 vno-rounded-lg">
                   <HiSupport className="vno-w-6 vno-h-6 vno-text-white" />
@@ -54,7 +54,7 @@ export default function ServiceSelection() {
                 ưu Website.
               </div>
             </div>
-            <div className="vno-relative vno-p-3 vno-rounded-lg vno-bg-slate-100/50 vno-ring-1 vno-ring-inset vno-ring-slate-400/20 vno-backdrop-blur dark:vno-bg-slate-900/70 dark:vno-ring-white/10">
+            <div className="vno-relative vno-p-3 vno-rounded-lg vno-bg-slate-50 dark:vno-bg-slate-800">
               <div>
                 <div className="vno-absolute vno-flex vno-items-center vno-justify-center vno-w-12 vno-h-12 vno-bg-sky-500 dark:vno-bg-sky-400 vno-rounded-lg">
                   <HiCreditCard className="vno-w-6 vno-h-6 vno-text-white" />
@@ -68,7 +68,7 @@ export default function ServiceSelection() {
                 duy trì nữa.
               </div>
             </div>
-            <div className="vno-relative vno-p-3 vno-rounded-lg vno-bg-slate-100/50 vno-ring-1 vno-ring-inset vno-ring-slate-400/20 vno-backdrop-blur dark:vno-bg-slate-900/70 dark:vno-ring-white/10">
+            <div className="vno-relative vno-p-3 vno-rounded-lg vno-bg-slate-50 dark:vno-bg-slate-800">
               <div>
                 <div className="vno-absolute vno-flex vno-items-center vno-justify-center vno-w-12 vno-h-12 vno-bg-sky-500 dark:vno-bg-sky-400 vno-rounded-lg">
                   <FaMoneyBill className="vno-w-6 vno-h-6 vno-text-white" />
@@ -82,7 +82,7 @@ export default function ServiceSelection() {
                 lòng, mình sẽ hoàn trả đúng với số tiền mà bạn đã đăng ký dịch vụ.
               </div>
             </div>
-            <div className="vno-relative vno-p-3 vno-rounded-lg vno-bg-slate-100/50 vno-ring-1 vno-ring-inset vno-ring-slate-400/20 vno-backdrop-blur dark:vno-bg-slate-900/70 dark:vno-ring-white/10">
+            <div className="vno-relative vno-p-3 vno-rounded-lg vno-bg-slate-50 dark:vno-bg-slate-800">
               <div>
                 <div className="vno-absolute vno-flex vno-items-center vno-justify-center vno-w-12 vno-h-12 vno-bg-sky-500 dark:vno-bg-sky-400 vno-rounded-lg">
                   <HiGift className="vno-w-6 vno-h-6 vno-text-white" />

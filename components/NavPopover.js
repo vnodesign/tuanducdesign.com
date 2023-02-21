@@ -1,6 +1,6 @@
 import { Dialog } from '@headlessui/react'
 import { useEffect, useState } from 'react'
-import classNames from 'classnames'
+import clsx from 'clsx'
 import Router from 'next/router'
 import siteMetadata from '@/data/siteMetadata'
 import headerNavLinks from '@/data/headerNavLinks'
@@ -23,7 +23,7 @@ export default function NavPopover({ display = 'md:vno-hidden', className, ...pr
   }, [isOpen])
 
   return (
-    <div className={classNames(className, display)} {...props}>
+    <div className={clsx(className, display)} {...props}>
       <button
         type="button"
         className="vno-text-slate-500 vno-w-8 vno-h-8 vno-flex vno-items-center vno-justify-center hover:vno-text-slate-600 dark:vno-text-slate-400 dark:hover:vno-text-slate-300"
@@ -42,7 +42,7 @@ export default function NavPopover({ display = 'md:vno-hidden', className, ...pr
       </button>
       <Dialog
         as="div"
-        className={classNames('vno-fixed vno-z-50 vno-inset-0', display)}
+        className={clsx('vno-fixed vno-z-50 vno-inset-0', display)}
         open={isOpen}
         onClose={setIsOpen}
       >

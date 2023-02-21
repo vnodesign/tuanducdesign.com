@@ -21,7 +21,7 @@ export default function Pricing() {
         <div>
           <div className="vno-mt-10 lg:vno-mt-12 vno-space-y-8 lg:vno-grid lg:vno-grid-cols-3 sm:vno-gap-6 xl:vno-gap-10 lg:vno-space-y-0">
             {/* Service VPS */}
-            <div className="vno-flex vno-flex-col vno-p-6 vno-mx-auto vno-max-w-lg vno-text-center vno-bg-slate-100/50 vno-ring-1 vno-ring-inset vno-ring-slate-400/20 vno-backdrop-blur dark:vno-bg-slate-900/70 dark:vno-ring-white/10 xl:vno-p-8">
+            <div className="vno-flex vno-flex-col vno-p-6 vno-mx-auto vno-max-w-lg vno-text-center vno-bg-slate-50 dark:vno-bg-slate-800 xl:vno-p-8 vno-rounded-lg">
               <h3 className="vno-mb-4 vno-text-2xl vno-font-extrabold vno-text-gray-600 dark:vno-text-slate-300">
                 Dịch vụ VPS
               </h3>
@@ -133,7 +133,7 @@ export default function Pricing() {
               </Link>
             </div>
             {/* Service Website */}
-            <div className="vno-flex vno-flex-col vno-p-6 vno-mx-auto vno-max-w-lg vno-text-center vno-bg-slate-100/50 vno-ring-1 vno-ring-inset vno-ring-slate-400/20 vno-backdrop-blur dark:vno-bg-slate-900/70 dark:vno-ring-white/10 xl:vno-p-8">
+            <div className="vno-flex vno-flex-col vno-p-6 vno-mx-auto vno-max-w-lg vno-text-center vno-bg-slate-50 dark:vno-bg-slate-800 xl:vno-p-8 vno-rounded-lg">
               <h3 className="vno-mb-4 vno-text-2xl vno-font-extrabold vno-text-gray-600 dark:vno-text-slate-300">
                 Dịch vụ Website
               </h3>
@@ -245,7 +245,7 @@ export default function Pricing() {
               </Link>
             </div>
             {/* Service WordPress */}
-            <div className="vno-flex vno-flex-col vno-p-6 vno-mx-auto vno-max-w-lg vno-text-center vno-bg-slate-100/50 vno-ring-1 vno-ring-inset vno-ring-slate-400/20 vno-backdrop-blur dark:vno-bg-slate-900/70 dark:vno-ring-white/10 xl:vno-p-8">
+            <div className="vno-flex vno-flex-col vno-p-6 vno-mx-auto vno-max-w-lg vno-text-center vno-bg-slate-50 dark:vno-bg-slate-800 xl:vno-p-8 vno-rounded-lg">
               <h3 className="vno-mb-4 vno-text-2xl vno-font-extrabold vno-text-gray-600 dark:vno-text-slate-300">
                 Dịch vụ WordPress
               </h3>
@@ -402,7 +402,7 @@ export default function Pricing() {
               </Link>
             </div>
             {/* Service Manager VPS */}
-            <div className="vno-flex vno-flex-col vno-p-6 vno-mx-auto vno-max-w-lg vno-text-center vno-bg-slate-100/50 vno-ring-1 vno-ring-inset vno-ring-slate-400/20 vno-backdrop-blur dark:vno-bg-slate-900/70 dark:vno-ring-white/10 xl:vno-p-8">
+            <div className="vno-flex vno-flex-col vno-p-6 vno-mx-auto vno-max-w-lg vno-text-center vno-bg-slate-50 dark:vno-bg-slate-800 xl:vno-p-8 vno-rounded-lg">
               <h3 className="vno-mb-4 vno-text-2xl vno-font-extrabold vno-text-gray-600 dark:vno-text-slate-300">
                 Dịch vụ quản lý VPS
               </h3>

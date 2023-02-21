@@ -44,7 +44,7 @@ export default function SourceCode() {
         </div>
         <div>
           <div className="vno-mt-10 vno-space-y-10 md:vno-grid md:vno-grid-cols-2 md:vno-gap-x-8 md:vno-gap-y-10 md:vno-space-y-0 md:vno-mt-12">
-            <div className="vno-relative vno-p-3 vno-rounded-lg vno-bg-slate-100/50 vno-ring-1 vno-ring-inset vno-ring-slate-400/20 vno-backdrop-blur dark:vno-bg-slate-900/70 dark:vno-ring-white/10">
+            <div className="vno-relative vno-p-3 vno-rounded-lg vno-bg-slate-50 dark:vno-bg-slate-800">
               <div>
                 <div className="vno-absolute vno-flex vno-items-center vno-justify-center vno-w-12 vno-h-12 vno-bg-sky-500 dark:vno-bg-sky-400 vno-rounded-lg">
                   <SiWordpress className="vno-w-6 vno-h-6 vno-text-white" />
@@ -57,7 +57,7 @@ export default function SourceCode() {
                 WordPress là mã nguồn mở giúp bạn tạo website, blog hay ứng dụng dễ dàng và đẹp mắt.
               </div>
             </div>
-            <div className="vno-relative vno-p-3 vno-rounded-lg vno-bg-slate-100/50 vno-ring-1 vno-ring-inset vno-ring-slate-400/20 vno-backdrop-blur dark:vno-bg-slate-900/70 dark:vno-ring-white/10">
+            <div className="vno-relative vno-p-3 vno-rounded-lg vno-bg-slate-50 dark:vno-bg-slate-800">
               <div>
                 <div className="vno-absolute vno-flex vno-items-center vno-justify-center vno-w-12 vno-h-12 vno-bg-sky-500 dark:vno-bg-sky-400 vno-rounded-lg">
                   <SiJoomla className="vno-w-6 vno-h-6 vno-text-white" />
@@ -71,7 +71,7 @@ export default function SourceCode() {
                 ứng dụng trực tuyến mạnh mẽ.
               </div>
             </div>
-            <div className="vno-relative vno-p-3 vno-rounded-lg vno-bg-slate-100/50 vno-ring-1 vno-ring-inset vno-ring-slate-400/20 vno-backdrop-blur dark:vno-bg-slate-900/70 dark:vno-ring-white/10">
+            <div className="vno-relative vno-p-3 vno-rounded-lg vno-bg-slate-50 dark:vno-bg-slate-800">
               <div>
                 <div className="vno-absolute vno-flex vno-items-center vno-justify-center vno-w-12 vno-h-12 vno-bg-sky-500 dark:vno-bg-sky-400 vno-rounded-lg">
                   <SiDrupal className="vno-w-6 vno-h-6 vno-text-white" />
@@ -85,7 +85,7 @@ export default function SourceCode() {
                 miễn phí và mã nguồn mở.
               </div>
             </div>
-            <div className="vno-relative vno-p-3 vno-rounded-lg vno-bg-slate-100/50 vno-ring-1 vno-ring-inset vno-ring-slate-400/20 vno-backdrop-blur dark:vno-bg-slate-900/70 dark:vno-ring-white/10">
+            <div className="vno-relative vno-p-3 vno-rounded-lg vno-bg-slate-50 dark:vno-bg-slate-800">
               <div>
                 <div className="vno-absolute vno-flex vno-items-center vno-justify-center vno-w-12 vno-h-12 vno-bg-sky-500 dark:vno-bg-sky-400 vno-rounded-lg">
                   <HiCode className="vno-w-6 vno-h-6 vno-text-white" />
@@ -99,7 +99,7 @@ export default function SourceCode() {
                 vBullentin (vBB).
               </div>
             </div>
-            <div className="vno-relative vno-p-3 vno-rounded-lg vno-bg-slate-100/50 vno-ring-1 vno-ring-inset vno-ring-slate-400/20 vno-backdrop-blur dark:vno-bg-slate-900/70 dark:vno-ring-white/10">
+            <div className="vno-relative vno-p-3 vno-rounded-lg vno-bg-slate-50 dark:vno-bg-slate-800">
               <div>
                 <div className="vno-absolute vno-flex vno-items-center vno-justify-center vno-w-12 vno-h-12 vno-bg-sky-500 dark:vno-bg-sky-400 vno-rounded-lg">
                   <SiLaravel className="vno-w-6 vno-h-6 vno-text-white" />
@@ -113,7 +113,7 @@ export default function SourceCode() {
                 xây dựng ứng dụng web từ các dự án nhỏ đến lớn.
               </div>
             </div>
-            <div className="vno-relative vno-p-3 vno-rounded-lg vno-bg-slate-100/50 vno-ring-1 vno-ring-inset vno-ring-slate-400/20 vno-backdrop-blur dark:vno-bg-slate-900/70 dark:vno-ring-white/10">
+            <div className="vno-relative vno-p-3 vno-rounded-lg vno-bg-slate-50 dark:vno-bg-slate-800">
               <div>
                 <div className="vno-absolute vno-flex vno-items-center vno-justify-center vno-w-12 vno-h-12 vno-bg-sky-500 dark:vno-bg-sky-400 vno-rounded-lg">
                   <SiCodeigniter className="vno-w-6 vno-h-6 vno-text-white" />

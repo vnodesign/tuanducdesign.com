@@ -1,35 +1,41 @@
-import '@/styles/tailwind.css'
-import React from 'react'
-import { useRouter } from 'next/router'
-import NProgress from 'nprogress'
+import '@/styles/main.css'
+import 'focus-visible'
+import Router from 'next/router'
+import ProgressBar from '@badrap/bar-of-progress'
+import { ResizeObserver } from '@juggle/resize-observer'
+import 'intersection-observer'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { Analytics } from '@vercel/analytics/react'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
 import { FBChatScript } from '@/components/CustomizeChat'
-import { JsonContext } from 'context/state'
 
-export default function App({ Component, pageProps }) {
-  const router = useRouter()
+if (typeof window !== 'undefined' && !('ResizeObserver' in window)) {
+  window.ResizeObserver = ResizeObserver
+}
+
+const progress = new ProgressBar({
+  size: 2,
+  color: '#38bdf8',
+  className: 'bar-of-progress',
+  delay: 100,
+})
+
+// this fixes safari jumping to the bottom of the page
+// when closing the search modal using the `esc` key
+if (typeof window !== 'undefined') {
+  progress.start()
+  progress.finish()
+}
+
+Router.events.on('routeChangeStart', () => progress.start())
+Router.events.on('routeChangeComplete', () => progress.finish())
+Router.events.on('routeChangeError', () => progress.finish())
+
+export default function App({ Component, pageProps, router }) {
   const showHeader = router.pathname !== '/' && router.pathname !== '/service'
-  NProgress.configure({ showSpinner: false })
-  React.useEffect(() => {
-    const handleRouteStart = () => NProgress.start()
-    const handleRouteDone = () => NProgress.done()
-
-    router.events.on('routeChangeStart', handleRouteStart)
-    router.events.on('routeChangeComplete', handleRouteDone)
-    router.events.on('routeChangeError', handleRouteDone)
-
-    return () => {
-      // Make sure to remove the event handler on unmount!
-      router.events.off('routeChangeStart', handleRouteStart)
-      router.events.off('routeChangeComplete', handleRouteDone)
-      router.events.off('routeChangeError', handleRouteDone)
-    }
-  }, [router.events])
   return (
-    <JsonContext>
+    <>
       <div className="vno-flex vno-flex-col">
         {showHeader && <Header />}
         <main className="vno-min-h-screen vno-flex-1">
@@ -42,6 +48,6 @@ export default function App({ Component, pageProps }) {
       <div id="fb-root"></div>
       <div id="fb-customer-chat" className="fb-customerchat"></div>
       <FBChatScript />
-    </JsonContext>
+    </>
   )
 }
