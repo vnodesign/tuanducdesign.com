@@ -1,5 +1,4 @@
 import '@/styles/main.css'
-import 'focus-visible'
 import Router from 'next/router'
 import ProgressBar from '@badrap/bar-of-progress'
 import { ResizeObserver } from '@juggle/resize-observer'
