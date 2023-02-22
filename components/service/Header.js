@@ -134,21 +134,36 @@ export default function Header() {
               Kết nối với mình trên Facebook
             </Link>
             <SearchModal className="vno-hidden sm:vno-flex vno-items-center vno-w-72 vno-text-left vno-space-x-3 vno-px-4 vno-h-12 vno-bg-white vno-ring-1 vno-ring-slate-900/10 hover:vno-ring-slate-300 focus:vno-outline-none focus:vno-ring-2 focus:vno-ring-sky-500 vno-shadow-sm vno-rounded-lg vno-text-slate-400 dark:vno-bg-slate-800 dark:vno-ring-0 dark:vno-text-slate-300 dark:vno-highlight-white/5 dark:hover:vno-bg-slate-700">
-              <svg
-                width="24"
-                height="24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="vno-flex-none vno-text-slate-300 dark:vno-text-slate-400"
-                aria-hidden="true"
-              >
-                <path d="m19 19-3.5-3.5" />
-                <circle cx="11" cy="11" r="6" />
-              </svg>
-              <span className="vno-flex-auto">Tìm kiếm nhanh...</span>
+              {({ actionKey }) => (
+                <>
+                  <svg
+                    width="24"
+                    height="24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="vno-flex-none vno-text-slate-300 dark:vno-text-slate-400"
+                    aria-hidden="true"
+                  >
+                    <path d="m19 19-3.5-3.5" />
+                    <circle cx="11" cy="11" r="6" />
+                  </svg>
+                  <span className="vno-flex-auto">Tìm kiếm...</span>
+                  {actionKey && (
+                    <kbd className="vno-font-sans vno-font-semibold dark:vno-text-slate-500">
+                      <abbr
+                        title={actionKey[1]}
+                        className="vno-no-underline vno-text-slate-300 dark:vno-text-slate-500"
+                      >
+                        {actionKey[0]}
+                      </abbr>{' '}
+                      K
+                    </kbd>
+                  )}
+                </>
+              )}
             </SearchModal>
           </div>
         </div>

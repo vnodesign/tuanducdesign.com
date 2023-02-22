@@ -40,7 +40,9 @@ export default function PageLayout({ frontMatter, children }) {
               <h1 className="vno-text-2xl vno-font-extrabold vno-tracking-tight vno-text-slate-900 dark:vno-text-slate-200 md:vno-text-3xl">
                 {title}
               </h1>
-              <div className="vno-prose vno-prose-slate dark:vno-prose-dark">{children}</div>
+              <div className="vno-prose vno-prose-slate vno-mt-12 dark:vno-prose-dark vno-break-words">
+                {children}
+              </div>
             </article>
           </main>
         </div>
