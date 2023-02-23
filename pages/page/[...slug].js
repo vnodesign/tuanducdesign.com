@@ -1,7 +1,6 @@
 import { MDXLayoutRenderer } from '@/components/MDXComponents'
 import { formatSlug, getFileBySlug, getFiles } from '@/lib/mdx'
-
-const LAYOUT = 'PageLayout'
+import PageLayout from '@/layouts/PageLayout'
 
 export async function getStaticPaths() {
   const pages = getFiles('page')
@@ -22,7 +21,11 @@ export async function getStaticProps({ params }) {
 }
 
 export default function Page({ page }) {
-  const { mdxSource, frontMatter } = page
+  const { source, frontMatter } = page
 
-  return <MDXLayoutRenderer layout={LAYOUT} mdxSource={mdxSource} frontMatter={frontMatter} />
+  return (
+    <PageLayout frontMatter={frontMatter}>
+      <MDXLayoutRenderer {...source} />
+    </PageLayout>
+  )
 }

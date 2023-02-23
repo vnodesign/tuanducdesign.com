@@ -1,7 +1,6 @@
 import { MDXLayoutRenderer } from '@/components/MDXComponents'
 import { formatSlug, getAllFilesFrontMatter, getFileBySlug, getFiles } from '@/lib/mdx'
-
-const LAYOUT = 'ProjectsLayout'
+import ProjectsLayout from '@/layouts/ProjectsLayout'
 
 export async function getStaticPaths() {
   const projects = getFiles('projects')
@@ -28,15 +27,11 @@ export async function getStaticProps({ params }) {
 }
 
 export default function Projects({ projects, next, prev }) {
-  const { mdxSource, frontMatter } = projects
+  const { source, frontMatter } = projects
 
   return (
-    <MDXLayoutRenderer
-      layout={LAYOUT}
-      mdxSource={mdxSource}
-      frontMatter={frontMatter}
-      prev={prev}
-      next={next}
-    />
+    <ProjectsLayout frontMatter={frontMatter} prev={prev} next={next}>
+      <MDXLayoutRenderer {...source} />
+    </ProjectsLayout>
   )
 }

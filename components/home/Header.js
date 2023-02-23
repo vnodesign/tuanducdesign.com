@@ -29,19 +29,17 @@ export default function Header() {
           />
         </div>
         <div className="vno-relative vno-flex vno-items-center vno-justify-between vno-pt-6 vno-text-sm vno-font-semibold vno-leading-6 vno-text-slate-700 dark:vno-text-slate-200 lg:vno-pt-8">
-          <Link href="/" title={siteMetadata.title}>
-            <Image
-              src={siteMetadata.siteLogo}
-              className="vno-rounded-full"
-              alt={siteMetadata.title}
-              width={32}
-              height={32}
-              sizes="(max-width 32px) 80vw, 50vw"
-              priority
-            />
-          </Link>
+          <Image
+            src={siteMetadata.siteLogo}
+            className="vno-rounded-full vno-w-auto vno-h-5"
+            alt={siteMetadata.title}
+            width={32}
+            height={32}
+            sizes="(max-width 32px) 80vw, 50vw"
+            priority
+          />
           <div className="vno-flex vno-items-center">
-            <SearchModal className="vno-flex vno-items-center vno-justify-center vno-w-8 vno-h-8 vno-ml-auto -vno-my-1 vno-text-slate-500 hover:vno-text-slate-600 md:vno-hidden dark:vno-text-slate-400 dark:hover:vno-text-slate-300">
+            <SearchModal className="vno-text-slate-500 hover:vno-text-slate-600 vno-w-8 vno-h-8 -vno-my-1 vno-flex vno-items-center vno-justify-center md:vno-hidden dark:hover:vno-text-slate-300">
               <span className="vno-sr-only">Search</span>
               <svg
                 width="24"
@@ -57,7 +55,7 @@ export default function Header() {
                 <circle cx="11" cy="11" r="6" />
               </svg>
             </SearchModal>
-            <NavPopover className="vno-ml-2 -vno-my-1" display="md:vno-hidden" />
+            <NavPopover className="-vno-my-1 vno-ml-2 -vno-mr-1" display="md:vno-hidden" />
             <div className="vno-hidden vno-items-center md:vno-flex">
               <nav>
                 <ul className="vno-flex vno-items-center vno-space-x-8">
