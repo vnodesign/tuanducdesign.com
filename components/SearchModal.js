@@ -190,7 +190,7 @@ export function SearchModal({ children, ...props }) {
                       >
                         <span className="vno-absolute vno-inset-0" />
                       </Link>
-                      <div className="sm:vno-ml-3">
+                      <div>
                         <div className="vno-font-semibold">{post.frontmatter.title}</div>
                         <div className="vno-text-xs vno-mt-1">
                           <Link
