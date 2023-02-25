@@ -98,8 +98,8 @@ export function SearchModal({ children, ...props }) {
 
   const searchResults = posts.filter((post) => {
     return (
-      post.frontmatter.title.toLowerCase().includes(input) ||
-      post.frontmatter.summary.toLowerCase().includes(input)
+      post.frontmatter.title.toLowerCase().includes(input.toLowerCase()) ||
+      post.frontmatter.summary.toLowerCase().includes(input.toLowerCase())
     )
   })
 
