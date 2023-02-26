@@ -1,9 +1,12 @@
+import Series from './Series'
+// import Featured from './Featured'
 import NavPopover from './NavPopover'
 import NavItems from './NavItems'
 import { useEffect, useState } from 'react'
 import clsx from 'clsx'
 import siteMetadata from '@/data/siteMetadata'
 import headerNavLinks from '@/data/headerNavLinks'
+import seriesNavLinks from '@/data/seriesNavLinks'
 import { SearchModal } from './SearchModal'
 import Image from './Image'
 import Link from './Link'
@@ -79,6 +82,8 @@ export default function Header() {
                   priority
                 />
               </Link>
+              <Series item={seriesNavLinks} />
+              {/* <Featured /> */}
               <div className="vno-relative vno-ml-auto vno-hidden vno-items-center lg:vno-flex">
                 <nav className="vno-text-sm vno-font-semibold vno-leading-6 vno-text-slate-700 dark:vno-text-slate-200">
                   <ul className="vno-flex vno-space-x-8">

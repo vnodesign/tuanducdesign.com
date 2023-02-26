@@ -14,6 +14,7 @@ export default class Document extends NextDocument {
         className="dark [--scroll-mt:9.875rem] lg:[--scroll-mt:6.3125rem]"
       >
         <Head>
+          <meta name="theme-color" content="#f8fafc" />
           <script
             async
             src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4183134625750063"
@@ -25,6 +26,7 @@ export default class Document extends NextDocument {
                 if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
                   document.documentElement.classList.remove('light')
                   document.documentElement.classList.add('dark')
+                  document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0B1120')
                 } else {
                   document.documentElement.classList.remove('dark')
                   document.documentElement.classList.add('light')

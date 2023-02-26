@@ -125,48 +125,40 @@ export default function Footer() {
           </div>
         </div>
         <hr className="vno-my-6 vno-border-slate-200 sm:mx-auto dark:vno-border-slate-700 lg:vno-my-8" />
-        <div className="vno-text-center">
-          <span className="vno-block vno-text-sm vno-text-center vno-text-gray-500">
+        <div className="sm:vno-flex sm:vno-items-center sm:vno-justify-between">
+          <span className="vno-text-sm vno-text-gray-500 sm:vno-text-center dark:vno-text-gray-400">
             © 2021-{new Date().getFullYear()} {siteMetadata.title}. All Rights Reserved.
           </span>
-          <ul className="vno-flex vno-justify-center vno-mt-5 vno-space-x-5 vno-text-slate-400 dark:vno-text-slate-500">
-            <li>
-              <Link
-                href={siteMetadata.facebook}
-                className="hover:vno-text-slate-500 dark:hover:vno-text-slate-400"
-                title="Facebook"
-              >
-                <FaFacebook className="vno-w-5 vno-h-5" />
-              </Link>
-            </li>
-            <li>
-              <Link
-                href={siteMetadata.twitter}
-                className="hover:vno-text-slate-500 dark:hover:vno-text-slate-400"
-                title="Twitter"
-              >
-                <FaTwitter className="vno-w-5 vno-h-5" />
-              </Link>
-            </li>
-            <li>
-              <Link
-                href={siteMetadata.github}
-                className="hover:vno-text-slate-500 dark:hover:vno-text-slate-400"
-                title="Github"
-              >
-                <FaGithub className="vno-w-5 vno-h-5" />
-              </Link>
-            </li>
-            <li>
-              <Link
-                href={siteMetadata.linkedin}
-                className="hover:vno-text-slate-500 dark:hover:vno-text-slate-400"
-                title="Linkedin"
-              >
-                <FaLinkedin className="vno-w-5 vno-h-5" />
-              </Link>
-            </li>
-          </ul>
+          <div className="vno-flex vno-mt-4 vno-space-x-6 sm:vno-justify-center sm:vno-mt-0">
+            <Link
+              href={siteMetadata.facebook}
+              className="vno-text-gray-500 hover:vno-text-gray-900 dark:hover:vno-text-white"
+              title="Facebook"
+            >
+              <FaFacebook className="vno-w-5 vno-h-5" />
+            </Link>
+            <Link
+              href={siteMetadata.twitter}
+              className="vno-text-gray-500 hover:vno-text-gray-900 dark:hover:vno-text-white"
+              title="Twitter"
+            >
+              <FaTwitter className="vno-w-5 vno-h-5" />
+            </Link>
+            <Link
+              href={siteMetadata.github}
+              className="vno-text-gray-500 hover:vno-text-gray-900 dark:hover:vno-text-white"
+              title="Github"
+            >
+              <FaGithub className="vno-w-5 vno-h-5" />
+            </Link>
+            <Link
+              href={siteMetadata.linkedin}
+              className="vno-text-gray-500 hover:vno-text-gray-900 dark:hover:vno-text-white"
+              title="Linkedin"
+            >
+              <FaLinkedin className="vno-w-5 vno-h-5" />
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

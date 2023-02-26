@@ -14,11 +14,11 @@ const headerNavLinks = [
     title: 'Dự án',
     showNew: true,
   },
-  {
-    href: '/blog/series-nextdns',
-    title: 'Series NextDNS',
-    showNew: false,
-  },
+  // {
+  //   href: '/cv',
+  //   title: 'CV',
+  //   showNew: false,
+  // },
 ]
 
 export default headerNavLinks
