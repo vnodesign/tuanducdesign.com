@@ -39,7 +39,7 @@ export default function Blog({ post, authorDetails, prev, next }) {
 
   return (
     <PostLayout frontMatter={frontMatter} authorDetails={authorDetails} prev={prev} next={next}>
-      <MDXLayoutRenderer {...source} />
+      <MDXLayoutRenderer {...source} lazy />
     </PostLayout>
   )
 }
