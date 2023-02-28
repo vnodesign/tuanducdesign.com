@@ -31,7 +31,7 @@ export default function Projects({ projects, next, prev }) {
 
   return (
     <ProjectsLayout frontMatter={frontMatter} prev={prev} next={next}>
-      <MDXLayoutRenderer {...source} />
+      <MDXLayoutRenderer {...source} lazy />
     </ProjectsLayout>
   )
 }

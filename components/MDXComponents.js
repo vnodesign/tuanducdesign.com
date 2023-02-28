@@ -21,4 +21,4 @@ export const MDXComponents = {
   h6: H6,
 }
 
-export const MDXLayoutRenderer = ({ ...rest }) => <MDXRemote components={MDXComponents} {...rest} />
+export const MDXLayoutRenderer = ({ ...rest }) => <MDXRemote {...rest} />

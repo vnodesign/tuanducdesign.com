@@ -8,6 +8,8 @@ import Footer from '@/components/Footer'
 import { Analytics } from '@vercel/analytics/react'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
 import { FBChatScript } from '@/components/CustomizeChat'
+import { MDXProvider } from '@mdx-js/react'
+import { MDXComponents } from '@/components/MDXComponents'
 
 if (typeof window !== 'undefined' && !('ResizeObserver' in window)) {
   window.ResizeObserver = ResizeObserver
@@ -34,7 +36,7 @@ Router.events.on('routeChangeError', () => progress.finish())
 export default function App({ Component, pageProps, router }) {
   const showHeader = router.pathname !== '/' && router.pathname !== '/service'
   return (
-    <>
+    <MDXProvider components={MDXComponents}>
       <div className="vno-flex vno-flex-col">
         {showHeader && <Header />}
         <main className="vno-min-h-screen vno-flex-1">
@@ -47,6 +49,6 @@ export default function App({ Component, pageProps, router }) {
       <div id="fb-root"></div>
       <div id="fb-customer-chat" className="fb-customerchat"></div>
       <FBChatScript />
-    </>
+    </MDXProvider>
   )
 }

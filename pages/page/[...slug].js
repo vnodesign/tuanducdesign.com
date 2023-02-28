@@ -25,7 +25,7 @@ export default function Page({ page }) {
 
   return (
     <PageLayout frontMatter={frontMatter}>
-      <MDXLayoutRenderer {...source} />
+      <MDXLayoutRenderer {...source} lazy />
     </PageLayout>
   )
 }
