@@ -1,7 +1,7 @@
 import Link from '@/components/Link'
 import siteMetadata from '@/data/siteMetadata'
 import headerNavLinks from '@/data/headerNavLinks'
-import { SearchModal } from '@/components/SearchModal'
+import { Search } from '@/components/Search'
 import Image from '@/components/Image'
 import styles from './Header.module.css'
 import clsx from 'clsx'
@@ -39,7 +39,7 @@ export default function Header() {
             priority
           />
           <div className="vno-flex vno-items-center">
-            <SearchModal className="vno-text-slate-500 hover:vno-text-slate-600 vno-w-8 vno-h-8 -vno-my-1 vno-flex vno-items-center vno-justify-center md:vno-hidden dark:hover:vno-text-slate-300">
+            <Search className="vno-text-slate-500 hover:vno-text-slate-600 vno-w-8 vno-h-8 -vno-my-1 vno-flex vno-items-center vno-justify-center md:vno-hidden dark:hover:vno-text-slate-300">
               <span className="vno-sr-only">Search</span>
               <svg
                 width="24"
@@ -54,7 +54,7 @@ export default function Header() {
                 <path d="m19 19-3.5-3.5" />
                 <circle cx="11" cy="11" r="6" />
               </svg>
-            </SearchModal>
+            </Search>
             <NavPopover className="-vno-my-1 vno-ml-2 -vno-mr-1" display="md:vno-hidden" />
             <div className="vno-hidden vno-items-center md:vno-flex">
               <nav>
@@ -106,7 +106,7 @@ export default function Header() {
             >
               Kết nối với mình trên Facebook
             </Link>
-            <SearchModal className="vno-hidden sm:vno-flex vno-items-center vno-w-72 vno-text-left vno-space-x-3 vno-px-4 vno-h-12 vno-bg-white vno-ring-1 vno-ring-slate-900/10 hover:vno-ring-slate-300 focus:vno-outline-none focus:vno-ring-2 focus:vno-ring-sky-500 vno-shadow-sm vno-rounded-lg vno-text-slate-400 dark:vno-bg-slate-800 dark:vno-ring-0 dark:vno-text-slate-300 dark:vno-highlight-white/5 dark:hover:vno-bg-slate-700">
+            <Search className="vno-hidden sm:vno-flex vno-items-center vno-w-72 vno-text-left vno-space-x-3 vno-px-4 vno-h-12 vno-bg-white vno-ring-1 vno-ring-slate-900/10 hover:vno-ring-slate-300 focus:vno-outline-none focus:vno-ring-2 focus:vno-ring-sky-500 vno-shadow-sm vno-rounded-lg vno-text-slate-400 dark:vno-bg-slate-800 dark:vno-ring-0 dark:vno-text-slate-300 dark:vno-highlight-white/5 dark:hover:vno-bg-slate-700">
               {({ actionKey }) => (
                 <>
                   <svg
@@ -137,7 +137,7 @@ export default function Header() {
                   )}
                 </>
               )}
-            </SearchModal>
+            </Search>
           </div>
         </div>
       </div>

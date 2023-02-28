@@ -7,7 +7,7 @@ import clsx from 'clsx'
 import siteMetadata from '@/data/siteMetadata'
 import headerNavLinks from '@/data/headerNavLinks'
 import seriesNavLinks from '@/data/seriesNavLinks'
-import { SearchModal } from './SearchModal'
+import { Search } from './Search'
 import Image from './Image'
 import Link from './Link'
 import gtagTrack from '@/lib/utils/gtag'
@@ -109,7 +109,7 @@ export default function Header() {
                   </Link>
                 </div>
               </div>
-              <SearchModal className="vno-ml-auto vno-text-slate-500 vno-w-8 vno-h-8 -vno-my-1 vno-flex vno-items-center vno-justify-center hover:vno-text-slate-600 lg:vno-hidden dark:vno-text-slate-400 dark:hover:vno-text-slate-300">
+              <Search className="vno-ml-auto vno-text-slate-500 vno-w-8 vno-h-8 -vno-my-1 vno-flex vno-items-center vno-justify-center hover:vno-text-slate-600 lg:vno-hidden dark:vno-text-slate-400 dark:hover:vno-text-slate-300">
                 <span className="vno-sr-only">Search</span>
                 <svg
                   width="24"
@@ -124,7 +124,7 @@ export default function Header() {
                   <path d="m19 19-3.5-3.5" />
                   <circle cx="11" cy="11" r="6" />
                 </svg>
-              </SearchModal>
+              </Search>
               <NavPopover className="vno-ml-2 -vno-my-1" display="lg:vno-hidden" />
             </div>
           </div>

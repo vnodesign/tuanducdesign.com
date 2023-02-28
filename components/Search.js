@@ -1,6 +1,13 @@
-import { Fragment, useState, useCallback, useEffect, useRef } from 'react'
+import {
+  Fragment,
+  createContext,
+  useContext,
+  useState,
+  useCallback,
+  useEffect,
+  useRef,
+} from 'react'
 import { Dialog, Transition } from '@headlessui/react'
-import Router from 'next/router'
 import { useActionKey } from '@/hooks/useActionKey'
 import posts from '../json/posts.json'
 import kebabCase from '@/lib/utils/kebabCase'
@@ -8,24 +15,13 @@ import formatDate from '@/lib/utils/formatDate'
 import { dateSortDesc } from '@/lib/dateSortDesc'
 import Link from './Link'
 
+const SearchContext = createContext()
+
 posts.sort((a, b) => dateSortDesc(a.frontmatter.date, b.frontmatter.date))
 
-export function SearchModal({ children, ...props }) {
+export function SearchProvider({ children }) {
   const [isOpen, setIsOpen] = useState(false)
   const [input, setInput] = useState('')
-  let searchButtonRef = useRef(null)
-  let actionKey = useActionKey()
-
-  useEffect(() => {
-    if (!isOpen) return
-    function handleRouteChange() {
-      setIsOpen(false)
-    }
-    Router.events.on('routeChangeComplete', handleRouteChange)
-    return () => {
-      Router.events.off('routeChangeComplete', handleRouteChange)
-    }
-  }, [isOpen])
 
   useEffect(() => {
     if (isOpen) {
@@ -38,58 +34,27 @@ export function SearchModal({ children, ...props }) {
     }
   }, [isOpen])
 
-  useEffect(() => {
-    function onKeyDown(e) {
-      if (searchButtonRef && searchButtonRef.current === document.activeElement && setInput) {
-        if (/[a-zA-Z0-9]/.test(String.fromCharCode(e.keyCode))) {
-          setInput(e)
-        }
-      }
-    }
-    window.addEventListener('keydown', onKeyDown)
-    return () => {
-      window.removeEventListener('keydown', onKeyDown)
-    }
-  }, [setInput, searchButtonRef])
-
   const onOpen = useCallback(() => {
     setIsOpen(true)
   }, [setIsOpen])
 
   const onClose = useCallback(() => {
     setIsOpen(false)
-    setInput('')
   }, [setIsOpen])
 
-  useEffect(() => {
-    function onKeyDown(event) {
-      function open() {
-        // We check that no other SearchModal is showing before opening
-        // another one.
-        if (!document.body.classList.contains('SearchModal--show')) {
-          onOpen()
-        }
-      }
+  const onInput = useCallback(
+    (e) => {
+      setIsOpen(true)
+      setInput(e.key)
+    },
+    [setIsOpen, setInput]
+  )
 
-      if (
-        (event.keyCode === 27 && isOpen) ||
-        (event.key === 'k' && (event.metaKey || event.ctrlKey))
-      ) {
-        event.preventDefault()
-
-        if (isOpen) {
-          onClose()
-        } else if (!document.body.classList.contains('SearchModal--show')) {
-          open()
-        }
-      }
-    }
-
-    window.addEventListener('keydown', onKeyDown)
-    return () => {
-      window.removeEventListener('keydown', onKeyDown)
-    }
-  }, [isOpen, onOpen, onClose])
+  useDocSearchKeyboardEvents({
+    isOpen,
+    onOpen,
+    onClose,
+  })
 
   const handleSearch = (e) => {
     e.preventDefault()
@@ -105,9 +70,16 @@ export function SearchModal({ children, ...props }) {
 
   return (
     <>
-      <button type="button" ref={searchButtonRef} onClick={onOpen} {...props}>
-        {typeof children === 'function' ? children({ actionKey }) : children}
-      </button>
+      <SearchContext.Provider
+        value={{
+          isOpen,
+          onOpen,
+          onClose,
+          onInput,
+        }}
+      >
+        {children}
+      </SearchContext.Provider>
       <Transition show={isOpen} as={Fragment}>
         <Dialog
           as="div"
@@ -213,4 +185,62 @@ export function SearchModal({ children, ...props }) {
       </Transition>
     </>
   )
+}
+
+export function Search({ children, ...props }) {
+  let searchButtonRef = useRef()
+  let actionKey = useActionKey()
+  let { onOpen, onInput } = useContext(SearchContext)
+
+  useEffect(() => {
+    function onKeyDown(event) {
+      if (searchButtonRef && searchButtonRef.current === document.activeElement && onInput) {
+        if (/[a-zA-Z0-9]/.test(String.fromCharCode(event.keyCode))) {
+          onInput(event)
+        }
+      }
+    }
+    window.addEventListener('keydown', onKeyDown)
+    return () => {
+      window.removeEventListener('keydown', onKeyDown)
+    }
+  }, [onInput, searchButtonRef])
+
+  return (
+    <button type="button" ref={searchButtonRef} onClick={onOpen} {...props}>
+      {typeof children === 'function' ? children({ actionKey }) : children}
+    </button>
+  )
+}
+
+function useDocSearchKeyboardEvents({ isOpen, onOpen, onClose }) {
+  useEffect(() => {
+    function onKeyDown(event) {
+      function open() {
+        // We check that no other Search modal is showing before opening
+        // another one.
+        if (!document.body.classList.contains('SearchModal--active')) {
+          onOpen()
+        }
+      }
+
+      if (
+        (event.keyCode === 27 && isOpen) ||
+        (event.key === 'k' && (event.metaKey || event.ctrlKey))
+      ) {
+        event.preventDefault()
+
+        if (isOpen) {
+          onClose()
+        } else if (!document.body.classList.contains('SearchModal--active')) {
+          open()
+        }
+      }
+    }
+
+    window.addEventListener('keydown', onKeyDown)
+    return () => {
+      window.removeEventListener('keydown', onKeyDown)
+    }
+  }, [isOpen, onOpen, onClose])
 }
