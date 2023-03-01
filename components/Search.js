@@ -14,6 +14,7 @@ import kebabCase from '@/lib/utils/kebabCase'
 import formatDate from '@/lib/utils/formatDate'
 import { dateSortDesc } from '@/lib/dateSortDesc'
 import Link from './Link'
+import Router from 'next/router'
 
 const SearchContext = createContext()
 
@@ -22,6 +23,17 @@ posts.sort((a, b) => dateSortDesc(a.frontmatter.date, b.frontmatter.date))
 export function SearchProvider({ children }) {
   const [isOpen, setIsOpen] = useState(false)
   const [input, setInput] = useState('')
+  
+  useEffect(() => {
+    if (!isOpen) return
+    function handleRouteChange() {
+      setIsOpen(false)
+    }
+    Router.events.on('routeChangeComplete', handleRouteChange)
+    return () => {
+      Router.events.off('routeChangeComplete', handleRouteChange)
+    }
+  }, [isOpen])
 
   useEffect(() => {
     if (isOpen) {
