@@ -1,24 +1,37 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useEffect, useContext, createContext, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useTop } from '@/hooks/useTop'
 import clsx from 'clsx'
 
 const CustomHeading = ({ level, id, children, ...props }) => {
   let Component = level
-  const context = useContext(createContext)
 
   let ref = useRef()
   let top = useTop(ref)
+  const [headingState, setHeadingState] = useState(null)
 
   useEffect(() => {
-    if (!context) return
-    if (typeof top !== 'undefined') {
-      context.registerHeading(id, top)
+    const registerHeading = () => {
+      if (typeof top !== 'undefined') {
+        headingState.registerHeading(id, top)
+      }
     }
-    return () => {
-      context.unregisterHeading(id)
+    const unregisterHeading = () => {
+      headingState.unregisterHeading(id)
     }
-  }, [top, id, context?.registerHeading, context?.unregisterHeading])
+
+    if (headingState) {
+      registerHeading()
+      return () => unregisterHeading()
+    }
+  }, [top, id, headingState])
+
+  const handleRef = (state) => {
+    if (state) {
+      setHeadingState(state)
+    }
+  }
+
   return (
     <Component
       className={clsx(
@@ -27,7 +40,10 @@ const CustomHeading = ({ level, id, children, ...props }) => {
           'vno-mb-2 vno-text-sm vno-font-semibold vno-leading-6 vno-tracking-normal vno-text-sky-500 dark:vno-text-sky-400'
       )}
       id={id}
-      ref={ref}
+      ref={(ref) => {
+        handleRef(ref)
+        this.ref = ref
+      }}
       {...props}
     >
       <a
