@@ -23,7 +23,7 @@ posts.sort((a, b) => dateSortDesc(a.frontmatter.date, b.frontmatter.date))
 export function SearchProvider({ children }) {
   const [isOpen, setIsOpen] = useState(false)
   const [input, setInput] = useState('')
-  
+
   useEffect(() => {
     if (!isOpen) return
     function handleRouteChange() {
