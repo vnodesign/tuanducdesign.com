@@ -14,23 +14,29 @@ import gtagTrack from '@/lib/utils/gtag'
 import { ThemeToggle } from './ThemeToggle'
 
 export default function Header() {
-  let [isOpaque, setIsOpaque] = useState(false)
+  const [isOpaque, setIsOpaque] = useState(false)
 
   useEffect(() => {
+    let opaque = false
     let offset = 50
+
     function onScroll() {
-      if (!isOpaque && window.scrollY > offset) {
+      if (!opaque && window.scrollY > offset) {
+        opaque = true
         setIsOpaque(true)
-      } else if (isOpaque && window.scrollY <= offset) {
+      } else if (opaque && window.scrollY <= offset) {
+        opaque = false
         setIsOpaque(false)
       }
     }
+
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
+
     return () => {
       window.removeEventListener('scroll', onScroll, { passive: true })
     }
-  }, [isOpaque])
+  }, [])
 
   return (
     <>

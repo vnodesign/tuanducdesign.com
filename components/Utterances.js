@@ -1,8 +1,9 @@
-import React, { useState, useEffect, useCallback } from 'react'
+import React, { useState, useEffect, useCallback, useRef } from 'react'
 import siteMetadata from '@/data/siteMetadata'
 
 const Utterances = () => {
   const [enableLoadComments, setEnabledLoadComments] = useState(true)
+  const commentsRef = useRef(null)
 
   const COMMENTS_ID = 'comments-container'
 
@@ -17,14 +18,14 @@ const Utterances = () => {
     script.setAttribute('crossorigin', 'anonymous')
     script.async = true
 
-    const comments = document.getElementById(COMMENTS_ID)
+    const comments = commentsRef.current
     if (comments) comments.appendChild(script)
 
     return () => {
-      const comments = document.getElementById(COMMENTS_ID)
-      if (comments) comments.innerHTML = ''
+      const comments = commentsRef.current
+      if (comments) comments.textContent = ''
     }
-  }, [])
+  }, [commentsRef])
 
   // Reload on theme change
   useEffect(() => {
@@ -43,7 +44,7 @@ const Utterances = () => {
           Tải bình luận
         </button>
       )}
-      <div className="utterances-frame vno-relative" id={COMMENTS_ID} />
+      <div className="utterances-frame vno-relative" id={COMMENTS_ID} ref={commentsRef} />
     </div>
   )
 }
