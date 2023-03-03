@@ -1,17 +1,13 @@
-import { useIsomorphicLayoutEffect } from '@/hooks/useIsomorphicLayoutEffect'
+import { useLayoutEffect, useEffect, useRef } from 'react'
 import { create } from 'zustand'
-import { useEffect, useRef } from 'react'
 
 const useSettingTheme = create((set) => ({
   theme: '',
   setTheme: (theme) => set({ theme }),
 }))
 
-function update() {
-  if (
-    localStorage.theme === 'dark' ||
-    (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
-  ) {
+function update(theme) {
+  if (theme === 'dark') {
     document.documentElement.classList.remove('light')
     document.documentElement.classList.add('dark')
     document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0B1120')
@@ -23,53 +19,34 @@ function update() {
 }
 
 export function useTheme() {
-  let { theme, setTheme } = useSettingTheme()
-  let initial = useRef(true)
+  const { theme, setTheme } = useSettingTheme()
+  const initial = useRef(true)
 
-  useIsomorphicLayoutEffect(() => {
-    let theme = localStorage.theme
-    if (theme === 'light' || theme === 'dark') {
-      setTheme(theme)
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme')
+    if (savedTheme === 'dark' || savedTheme === 'light') {
+      setTheme(savedTheme)
     } else {
       setTheme('system')
     }
-  }, [])
+  }, [setTheme])
 
-  useIsomorphicLayoutEffect(() => {
+  useEffect(() => {
     if (theme === 'system') {
       localStorage.removeItem('theme')
-    } else if (theme === 'light' || theme === 'dark') {
-      localStorage.theme = theme
-    }
-    if (initial.current) {
-      initial.current = false
     } else {
-      update()
+      localStorage.setItem('theme', theme)
+    }
+    if (!initial.current) {
+      update(theme)
+    } else {
+      initial.current = false
     }
   }, [theme])
 
-  useEffect(() => {
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', update)
-
-    function onStorage() {
-      update()
-      let theme = localStorage.theme
-      if (theme === 'light' || theme === 'dark') {
-        setTheme(theme)
-      } else {
-        setTheme('system')
-      }
-    }
-
-    window.addEventListener('storage', onStorage)
-    window.addEventListener('load', update)
-
-    return () => {
-      window.matchMedia('(prefers-color-scheme: dark)').removeEventListener('change', update)
-
-      window.removeEventListener('storage', onStorage)
-    }
-  }, [setTheme])
+  useLayoutEffect(() => {
+    update(theme)
+  }, [theme])
 
   return [theme, setTheme]
 }
