@@ -12,3 +12,4 @@ module.exports = {
   bracketSameLine: false,
   plugins: [require('prettier-plugin-tailwind')],
 }
+
