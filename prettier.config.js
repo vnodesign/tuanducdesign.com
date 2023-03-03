@@ -10,6 +10,6 @@ module.exports = {
   jsxSingleQuote: false,
   bracketSpacing: true,
   bracketSameLine: false,
-  plugins: [require('prettier-plugin-tailwind')],
+  plugins: [require('prettier-plugin-tailwindcss')],
 }
 
