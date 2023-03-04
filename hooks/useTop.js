@@ -2,15 +2,15 @@ import { useState, useEffect } from 'react'
 import { useRect } from '@reach/rect'
 
 export function useTop(ref) {
-  let [top, setTop] = useState()
-  let rect = useRect(ref)
-  let rectTop = rect ? rect.top : undefined
+  const [top, setTop] = useState()
+  const rect = useRect(ref)
+  const rectTop = rect?.top
+
   useEffect(() => {
     if (typeof rectTop === 'undefined') return
-    let newTop = rectTop + window.pageYOffset
-    if (newTop !== top) {
-      setTop(newTop)
-    }
-  }, [rectTop, top])
+    const newTop = rectTop + window.pageYOffset
+    setTop(prevTop => (prevTop === newTop ? prevTop : newTop))
+  }, [rectTop])
+
   return top
 }
