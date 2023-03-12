@@ -1,4 +1,4 @@
-import { MDXLayoutRenderer } from '@/components/MDXComponents'
+import { MDXRemote } from 'next-mdx-remote'
 import { formatSlug, getAllFilesFrontMatter, getFileBySlug, getFiles } from '@/lib/mdx'
 import ProjectsLayout from '@/layouts/ProjectsLayout'
 
@@ -31,7 +31,7 @@ export default function Projects({ projects, next, prev }) {
 
   return (
     <ProjectsLayout frontMatter={frontMatter} prev={prev} next={next}>
-      <MDXLayoutRenderer {...source} lazy />
+      <MDXRemote {...source} />
     </ProjectsLayout>
   )
 }

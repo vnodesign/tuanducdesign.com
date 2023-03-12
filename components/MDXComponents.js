@@ -1,4 +1,3 @@
-import { MDXRemote } from 'next-mdx-remote'
 import NextImage from 'next/image'
 import CustomLink from './Link'
 import Pre from './Pre'
@@ -20,5 +19,3 @@ export const MDXComponents = {
   h5: H5,
   h6: H6,
 }
-
-export const MDXLayoutRenderer = ({ ...rest }) => <MDXRemote {...rest} />

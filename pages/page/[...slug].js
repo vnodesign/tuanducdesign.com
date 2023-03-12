@@ -1,4 +1,4 @@
-import { MDXLayoutRenderer } from '@/components/MDXComponents'
+import { MDXRemote } from 'next-mdx-remote'
 import { formatSlug, getFileBySlug, getFiles } from '@/lib/mdx'
 import PageLayout from '@/layouts/PageLayout'
 
@@ -25,7 +25,7 @@ export default function Page({ page }) {
 
   return (
     <PageLayout frontMatter={frontMatter}>
-      <MDXLayoutRenderer {...source} lazy />
+      <MDXRemote {...source} />
     </PageLayout>
   )
 }

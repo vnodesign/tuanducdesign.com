@@ -1,6 +1,6 @@
 import fs from 'fs'
 import generateRss from '@/lib/generate-rss'
-import { MDXLayoutRenderer } from '@/components/MDXComponents'
+import { MDXRemote } from 'next-mdx-remote'
 import { formatSlug, getAllFilesFrontMatter, getFileBySlug, getFiles } from '@/lib/mdx'
 import PostLayout from '@/layouts/PostLayout'
 
@@ -39,7 +39,7 @@ export default function Blog({ post, authorDetails, prev, next }) {
 
   return (
     <PostLayout frontMatter={frontMatter} authorDetails={authorDetails} prev={prev} next={next}>
-      <MDXLayoutRenderer {...source} lazy />
+      <MDXRemote {...source} />
     </PostLayout>
   )
 }
