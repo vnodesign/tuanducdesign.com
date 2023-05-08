@@ -44,7 +44,7 @@
     "next": "^13.2.1",
     "next-mdx-remote": "^3.0.1",
     "next-remote-watch": "1.0.0",
-    "next-seo": "^5.15.0",
+    "next-seo": "^6.0.0",
     "next-sitemap": "^4.0.0",
     "prismjs": "^1.29.0",
     "react": "^18.2.0",
