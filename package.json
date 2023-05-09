@@ -63,7 +63,7 @@
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^13.2.1",
-    "@svgr/webpack": "^6.5.1",
+    "@svgr/webpack": "^8.0.0",
     "autoprefixer": "^10.4.13",
     "cross-env": "^7.0.3",
     "eslint": "^8.34.0",
