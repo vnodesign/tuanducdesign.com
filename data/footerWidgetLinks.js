@@ -43,6 +43,6 @@ export const otherLinks = [
   },
   {
     label: 'Trang Documentation cho HR',
-    href: 'https://hr.penci.me',
+    href: 'https://hrpenci.site',
   },
 ]
