@@ -6,7 +6,6 @@ import { ResizeObserver } from '@juggle/resize-observer'
 import 'intersection-observer'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import { Analytics } from '@vercel/analytics/react'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
 import { FBChatScript } from '@/components/CustomizeChat'
 import { MDXProvider } from '@mdx-js/react'
@@ -46,7 +45,6 @@ export default function App({ Component, pageProps, router }) {
           </main>
           <Footer />
         </div>
-        <Analytics />
         <GoogleAnalytics />
         <div id="fb-root"></div>
         <div id="fb-customer-chat" className="fb-customerchat"></div>
