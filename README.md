@@ -3,13 +3,13 @@
 To run the project locally, first install the dependencies:
 
 ```bash
-yarn
+pnpm install
 ```
 
 Next, run the development server:
 
 ```bash
-yarn dev
+pnpm dev
 ```
 
 ## License
