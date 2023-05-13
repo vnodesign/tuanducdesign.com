@@ -1,15 +1,9 @@
 # tuanducdesign.com
 
-To run the project locally, first install the dependencies:
+To run the project locally, first install the dependencies and run the development server:
 
 ```bash
-pnpm install
-```
-
-Next, run the development server:
-
-```bash
-pnpm dev
+yarn && yarn dev
 ```
 
 ## License
