@@ -33,7 +33,6 @@
     "@tailwindcss/forms": "^0.5.3",
     "@tailwindcss/line-clamp": "0.4.4",
     "@tailwindcss/typography": "^0.5.9",
-    "@vercel/analytics": "^0.1.10",
     "clsx": "^1.2.1",
     "feed": "^4.2.2",
     "focus-visible": "^5.2.0",
@@ -56,14 +55,13 @@
     "rehype-prism-plus": "^1.5.1",
     "rehype-slug": "^5.1.0",
     "remark-gfm": "^3.0.1",
-    "sharp": "0.32.1",
     "slug": "^8.2.2",
     "unist-util-visit": "^4.1.2",
     "zustand": "^4.3.3"
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^13.2.1",
-    "@svgr/webpack": "^7.0.0",
+    "@svgr/webpack": "^8.0.1",
     "autoprefixer": "^10.4.13",
     "cross-env": "^7.0.3",
     "eslint": "^8.34.0",
