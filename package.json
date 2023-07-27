@@ -25,7 +25,7 @@
   ],
   "dependencies": {
     "@badrap/bar-of-progress": "^0.2.2",
-    "@headlessui/react": "1.7.14",
+    "@headlessui/react": "1.7.16",
     "@juggle/resize-observer": "^3.4.0",
     "@mdx-js/react": "^2.3.0",
     "@reach/rect": "^0.18.0",
