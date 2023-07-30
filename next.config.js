@@ -7,9 +7,6 @@ const nextConfig = {
   swcMinify: true,
   poweredByHeader: false,
   pageExtensions: ['js', 'jsx', 'mdx'],
-  eslint: {
-    dirs: ['pages', 'components', 'lib', 'layouts'],
-  },
   async redirects() {
     return [
       {

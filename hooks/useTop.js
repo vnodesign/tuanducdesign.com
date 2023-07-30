@@ -9,7 +9,7 @@ export function useTop(ref) {
   useEffect(() => {
     if (typeof rectTop === 'undefined') return
     const newTop = rectTop + window.pageYOffset
-    setTop(prevTop => (prevTop === newTop ? prevTop : newTop))
+    setTop((prevTop) => (prevTop === newTop ? prevTop : newTop))
   }, [rectTop])
 
   return top

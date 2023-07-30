@@ -8,3 +8,9 @@ yarn.lock
 
 # assets
 public
+
+# Github
+.github
+
+# Search
+json
