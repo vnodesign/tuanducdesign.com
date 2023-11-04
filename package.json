@@ -40,7 +40,7 @@
     "image-size": "^1.0.2",
     "intersection-observer": "^0.12.2",
     "mini-svg-data-uri": "^1.4.4",
-    "next": "^13.4.12",
+    "next": "^14.0.0",
     "next-mdx-remote": "^4.4.1",
     "next-remote-watch": "^2.0.0",
     "next-seo": "^6.1.0",
@@ -61,12 +61,12 @@
     "zustand": "^4.3.9"
   },
   "devDependencies": {
-    "@next/bundle-analyzer": "^13.4.12",
+    "@next/bundle-analyzer": "^14.0.0",
     "@svgr/webpack": "^8.0.1",
     "autoprefixer": "^10.4.14",
     "cross-env": "^7.0.3",
     "eslint": "^8.46.0",
-    "eslint-config-next": "^13.4.12",
+    "eslint-config-next": "^14.0.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
     "husky": "^8.0.3",
